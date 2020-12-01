@@ -1,31 +1,86 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+<!-- slideshow -->
+<div class="content">
+    <div id="slide" class="w3-content w3-display-container slideshow-container" style="margin-top: 1px">
+        <img class="mySlides" src="~/Content/image/travel02.jpg" style="width:100%; height: 496px">
+        <img class="mySlides" src="~/Content/image/travel03.jpg" style="width:100%; height: 496px">
+        <img class="mySlides" src="~/Content/image/travel04.jpg" style="width:100%">
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+        <div class="icon" style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
 </div>
+<!-- slider end -->
+
+
+<!-- Search -->
+@*<section class="search-wrapper-kiritm">
+    <div class="content">
+        <form id="searchFormKiritm" method="get" role="form" action="#">
+            <div class="search-body-kiritm">
+                <div class="row ">
+                    <div class="col-sm-offset-2 col-sm-8 col-xs-12 serch-box-kiritm">
+                        <div class="serch-box-kiritm-content" id="searchboxkiritm">
+                            <input onkeyup="return showResult(event, this.value)"
+                                   onkeypress="return checkSubmitSearch(event)"
+                                   type="text" name="search"
+                                   class="input-search-kiritm"
+                                   id="inputSearchHomepage"
+                                   autocomplete="off"
+                                   placeholder="Tìm kiếm..."
+                                   aria-describedby="basic-addon2">
+                            <i class="fa fa-search fa-kiritm" id="basic-addon2"
+                               onclick="javascript:$(this).parents('form').submit()"></i>
+                        </div>
+                        <div id="showSuggestion" class="suggestions hidden-cls">
+                            <ul id="suggestionSearchHomePage" class="ul-suggestion">
+                            </ul>
+                        </div>
+                        <div class="advance-search-kiritm hidden-cls" id="advanceSearchKiritm">
+                            <div class="arrow-advance"></div>
+                            <div class="col-xs-6">
+                                <div id="fromDateSearchBox" class="input-group date filterDate ed-datepicker">
+                                    <input type="text" class="form-control " name="from"
+                                           autocomplete="off"
+                                           placeholder="Từ ngày (DD/MM/YYYY)"
+                                           value="">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div id="toDateSearchBox" class="input-group date ed-datepicker filterDate">
+                                    <input type="text" class="form-control" name="to"
+                                           autocomplete="off"
+                                           placeholder="Đến ngày (DD/MM/YYYY)" value="">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mark-close hidden-cls" id="markclose"></div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</section>*@
+<!--search end -->
+
+
+<!-- Tour introduce -->

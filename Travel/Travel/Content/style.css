@@ -1,0 +1,45 @@
+﻿body {
+}
+
+@media (min-width: 1200px) .container {
+    width: 1170px;
+}
+
+@media (min-width: 992px) .container {
+    width: calc(100% - 30px);
+}
+
+* {
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: "Open Sans",sans-serif !important;
+}
+
+@media (min-width: 992px) .col-md-6 {
+    width: 50%;
+}
+
+ul li {
+    list-style: none;
+    color: #000;
+    list-style-type: none;
+}
+
+a {
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none !important;
+}
+
+.pd-0 {
+    padding: 0
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+}

@@ -3,40 +3,594 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-social.css" rel="stylesheet" />
+    <link href="~/Content/css/select2.css" rel="stylesheet" />
+    <link href="~/Content/css/slick.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/settings.css" rel="stylesheet" />
+    <link href="~/Content/css/select_option1.css" rel="stylesheet" />
+    <link href="~/Content/css/datepicker.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/Content/css/isotope.css" rel="stylesheet" />
+    <link href="~/Content/lib/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet" />
+
+    <!--CUSTOM CSS-->
+    <link href="~/Content/css/font.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/default.css" rel="stylesheet" />
+    <link href="~/Content/css/12195e8.css" rel="stylesheet" />
+    <link href="~/Content/css/custom-style.css" rel="stylesheet" />
+    <link href="~/Content/css/f1d475a.css" rel="stylesheet" />
+    <link href="~/Content/css/custom.css" rel="stylesheet" />
+
+    <link href="~/Content/css/custom_bannerSlider.css" rel="stylesheet" />
+    <link href="~/Content/css/custom_banner.css" rel="stylesheet" />
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+
+<body class="changeHeader">
+    <!-- header -->
+    <header id="header" class="header" style="background-color: rgb(255, 255, 255);">
+        <div class="container-fruid top-header navbar-fixed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 no-padding">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-envelope"></i>
+                                    info@viettravel.vn
+                                </a>
+                            </li>
+                            <li>
+                                <a class="ticket-hotline" href="tel:1900 1588">
+                                    <i class="fa fa-phone"></i>
+                                    Hotline: 1900 1588
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul id="w0" class="login-container">
+                            <li>
+                                <a href="#" class="login-href">
+                                    <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="#"
+                                   class="login-href">
+                                    <i class="flag-english"></i> English
+                                </a>
+                            </li>
+                            <li class="dropdown searchBox searchBoxLayout">
+                                <a href="#" class="dropdown-toggle" id="buttonSearchLayout">
+                                    <span class="searchIcon">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+        <!-- Logo-->
+        <div class="container">
+            <div class="row mt--17x">
+                <div class="col-md-3 left--30x mb--22x">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="container" id="logo" href="/"><img src="~/Content/image/logo.png"></a>
+                </div>
+                <div class="col-md-9 right-20x">
+                    <img src="~/Content/image/top_banner_img.jpg">
+                </div>
+            </div>
+        </div>
+        <!-- #logo end -->
+        <!-- dropdown options menu-->
+        <div class="container">
+            <nav class="navbar navbar-default navbar-main navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown singleDrop">
+                                <a href="#">
+                                    TRANG CHỦ
+                                </a>
+                            </li>
+                            <li class="dropdown megaDropMenu">
+                                <a href="#" class="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">
+                                    TOUR TRONG NƯỚC
+                                </a>
+                                <ul class="row dropdown-menu">
+                                    <li class="col-sm-4 col-xs-12">
+                                        <ul class="list-unstyled">
+                                            <li>Miền Bắc</li>
+                                            <li>
+                                                <a href="#">
+                                                    Hà Nội
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Hạ Long
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Sapa
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Ninh Bình
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-4 col-xs-12">
+                                        <ul class="list-unstyled">
+                                            <li>Miền Trung</li>
+                                            <li>
+                                                <a href="#">
+                                                    Phan Thiết
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Nha Trang
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Đà Lạt
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Tây Nguyên
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Tuy Hoà - Quy Nhơn - Quảng Ngãi
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Huế - Quảng Bình
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Nghệ An
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Đà Nẵng
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-4 col-xs-12">
+                                        <ul class="list-unstyled">
+                                            <li>Miền Nam</li>
+                                            <li>
+                                                <a href="#">
+                                                    Phú Quốc
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Miền Tây
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Côn Đảo
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Hồ Tràm - Vũng Tàu
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Tour Tp. Hồ Chí Minh
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown megaDropMenu">
+                                <a href="#" class="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">
+                                    TOUR NƯỚC NGOÀI
+                                </a>
+                                <ul class="row dropdown-menu">
+                                    <li class="col-sm-4 col-xs-12">
+                                        <ul class="list-unstyled">
+                                            <li>Châu Á</li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Campuchia
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Đài Loan
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Hàn Quốc
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch HongKong
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Malaysia
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Myanmar
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Nhật Bản
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Singapore
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Thái Lan
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Trung Quốc
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Tiểu vương quốc Ả Rập
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Brunei
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Lào
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Indonesia
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Triều Tiên
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Ấn Độ
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Qatar
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Maldives
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-4 col-xs-12">
+                                        <ul class="list-unstyled">
+                                            <li>Châu Âu</li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Anh
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Châu Âu
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Nga
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Scotland
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Thổ Nhĩ Kỳ
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Azerbaijan
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-4 col-xs-12">
+                                        <ul class="list-unstyled">
+                                            <li>Châu Mỹ - Châu Úc - Châu Phi</li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Úc
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Mỹ
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Nam Phi
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch New Zealand
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Ma-rốc
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    Du lịch Canada
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown singleDrop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    DỊCH VỤ DU LỊCH
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                    <li>
+                                        <a href="#">THUÊ XE</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">VÉ MÁY BAY</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            ĐẶT KHÁCH SẠN
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown singleDrop">
+                                <a href="#">
+                                    TIN TỨC
+                                </a>
+                            </li>
+                            <li class="dropdown singleDrop">
+                                <a href="#">
+                                    LIÊN HỆ
+                                </a>
+                            </li>
+                            @*<li class="dropdown searchBox searchBoxLayout">
+                                    <a href="#" class="dropdown-toggle" id="buttonSearchLayout">
+                                        <span class="searchIcon">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </li>*@
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- slideshow -->
+        <!--<div id="slide" class="w3-content w3-display-container slideshow-container">
+            <img class="mySlides" src="~/Content/image/travel02.jpg" style="width:100%; height: 496px">
+            <img class="mySlides" src="~/Content/image/travel03.jpg" style="width:100%; height: 496px">
+            <img class="mySlides" src="~/Content/image/travel04.jpg" style="width:100%">
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+            <div class="icon" style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>-->
+    </header>
+    <!-- dropdown options menu end -->
+    <!-- header end -->
+
+
+    <!-- Content -->
+    <div class="@*container body-content*@">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                        <div class="info-sgt-box">
+                            <div class="info-sgt-logo">
+                                <img class="image-info-footer" src="~/Content/image/logo.png" alt="image commitment" />
+                            </div>
+                            <div class="info-sgt-title">
+                                Lữ hành viettravel, thương hiệu lữ hành đồng hành cùng bạn <br />
+                            </div>
+                            <div class="info-sgt-image">
+                                <img class="image-info-footer" src="~/Content/image/prize.png" alt="image commitment" />
+                            </div>
+                            <div class="info-sgt-contact">
+                                <p class="contact-phone"
+                                   href="tel:1900 1588">
+                                    Tổng đài:
+                                    <span class="number-phone"> 1900 1588 </span>
+                                </p>
+                                <p class="contact-email"
+                                   href="mailto:info@viettravel.vn">
+                                    Email: info@viettravel.vn
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="footerContent info-sgt-box">
+                                    <h5>DỊCH VỤ</h5>
+
+                                    <ul>
+                                        <li><a class="link-level4-light" href="#">Tour trong nước</a></li>
+                                        <li><a class="link-level4-light" href="#">Tour nước ngoài</a></li>
+                                        <li><a class="link-level4-light" href="#">Vé máy bay</a></li>
+                                        <li><a class="link-level4-light" href="#">Khách sạn</a></li>
+                                    </ul>
+                                </div>                              
+                            </div>
+
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="footerContent info-sgt-box">
+                                    <h5>THÔNG TIN</h5>
+
+                                    <ul>
+                                        @*<li><a class="link-level4-light" href="/tuyen-diem">Tuyến điểm </a></li>*@
+                                        <li><a class="link-level4-light" href="#">Tin Lữ hành viettravel </a></li>
+                                        <li><a class="link-level4-light" href="#">Tin du lịch</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="footerContent info-sgt-box">
+                                    <h5>LIÊN HỆ</h5>
+
+                                    <ul>
+                                        <li><a class="link-level4-light" href="#">Giới thiệu</a></li>
+                                        <li><a class="link-level4-light" href="/lien-he">Liên hệ</a></li>
+                                        <li><a class="link-level4-light" href="/trang/dieu-khoan-chung">Điều khoản chung </a></li>
+                                        <li><a class="link-level4-light" href="#">Quy định thanh toán</a></li>
+                                        <li><a class="link-level4-light" href="#">Chính sách giao nhận</a></li>
+                                        <li><a class="link-level4-light" href="#">Chính sách hủy phạt</a></li>
+                                        <li><a class="link-level4-light" href="#">Chính sách bảo mật</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-footer clearfix">
+            <div class="col-sm-12 col-xs-12 copyright-style">
+                <br />
+                <p style="text-align: center;">
+                    <span style="font-size:11px;">
+                        ĐT:&nbsp;<span dir="ltr"><span dir="ltr"> (84-28) 38 279 279&nbsp;</span></span>- Fax: (84-28) 38 254 268.&nbsp;<br />
+                    </span>
+                </p>
+
+                <h3 style="text-align: center;">Tư vấn & đặt dịch vụ: 1900 1588</h3>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        <div class="copyRight clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="copyRightText">
+                            <p style="text-align: right">
+                                Copyright © 2020. All Rights Reserved by VIETTRAVEL
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/js/jquery.min.js"></script>
+    <script src="~/Scripts/js/jquery-ui.min.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Scripts/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Scripts/js/slick.js"></script>
+    <script src="~/Scripts/js/jquery.selectbox-0.1.3.min.js"></script>
+    <script src="~/Scripts/js/select2.full.js"></script>
+    <script src="~/Scripts/js/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/js/waypoints.min.js"></script>
+    <script src="~/Scripts/js/jquery.counterup.min.js"></script>
+    <script src="~/Scripts/js/isotope.min.js"></script>
+    <script src="~/Scripts/js/bootstrap-notify.min.js"></script>
+    <script src="~/Scripts/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Scripts/js/isotope-triger.js"></script>
+    <script src="~/Scripts/js/jquery.syotimer.js"></script>
+    <script src="~/Scripts/js/SmoothScroll.js"></script>
+    <script src="~/Scripts/js/custom.js"></script>
+    <script src="~/Scripts/js/jquery.form-validator.min.js"></script>
+    <script src="~/Content/lib/fontawesome-free-5.15.1-web/js/all.min.js"></script>
+    <script src="~/Content/lib/fontawesome-free-5.15.1-web/js/all.js"></script>
+    <script src="~/Scripts/js/bannerSlider.js"></script>
 </body>
 </html>
