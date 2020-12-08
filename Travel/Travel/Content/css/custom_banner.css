@@ -1356,9 +1356,9 @@ a {
 }
 
 .w3-button:hover {
-    color: #000 !important;
+    /*color: #000 !important;
     background-color: #d1d1d1 !important;
-    opacity: .75
+    opacity: .75*/
 }
 
 .w3-transparent, .w3-hover-none:hover {
@@ -1480,9 +1480,9 @@ a {
 }
 
 .w3-black, .w3-hover-black:hover {
-    color: #fff !important;
+    /*color: #fff !important;
     background-color: #000 !important;
-    opacity: .75
+    opacity: .75*/
 }
 
 .w3-grey, .w3-hover-grey:hover, .w3-gray, .w3-hover-gray:hover {

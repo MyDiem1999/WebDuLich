@@ -8,17 +8,19 @@ namespace Travel.Controllers
 {
     public class HomeController : Controller
     {
+        // Trang chủ
         public ActionResult Index()
         {
             return View();
         }
 
-        //public ActionResult About()
-        //{
-        //    ViewBag.Message = "Your application description page.";
+        // Chi tiết tour
+        public ActionResult ChiTiet_Tour()
+        {
+            //ViewBag.Message = "Your application description page.";
 
-        //    return View();
-        //}
+            return View();
+        }
 
         //public ActionResult Contact()
         //{

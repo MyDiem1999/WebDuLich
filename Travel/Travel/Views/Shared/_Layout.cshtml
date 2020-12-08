@@ -17,9 +17,9 @@
     <link href="~/Content/css/slick-theme.css" rel="stylesheet" />
     <link href="~/Content/css/settings.css" rel="stylesheet" />
     <link href="~/Content/css/select_option1.css" rel="stylesheet" />
-    <link href="~/Content/css/datepicker.css" rel="stylesheet" />
-    <link href="~/Content/css/jquery.fancybox.css" rel="stylesheet" />
-    <link href="~/Content/css/isotope.css" rel="stylesheet" />
+    @*<link href="~/Content/css/datepicker.css" rel="stylesheet" />*@
+    @*<link href="~/Content/css/jquery.fancybox.css" rel="stylesheet" />*@
+    @*<link href="~/Content/css/isotope.css" rel="stylesheet" />*@
     <link href="~/Content/lib/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet" />
 
     <!--CUSTOM CSS-->
@@ -31,8 +31,20 @@
     <link href="~/Content/css/f1d475a.css" rel="stylesheet" />
     <link href="~/Content/css/custom.css" rel="stylesheet" />
 
+    <!-- BANNER -->
     <link href="~/Content/css/custom_bannerSlider.css" rel="stylesheet" />
     <link href="~/Content/css/custom_banner.css" rel="stylesheet" />
+
+    @*<link href="~/Content/css/animate.css" rel="stylesheet" />*@
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/Content/css/featherlight.css" rel="stylesheet" />*@
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    @*<link href="~/Content/css/normalize.css" rel="stylesheet" />*@
+    <link href="~/Content/css/owl.carousel.css" rel="stylesheet" />
+    @*<link href="~/Content/css/owl.theme.css" rel="stylesheet" />*@
+    @*<link href="~/Content/css/responsive.css" rel="stylesheet" />*@
+    <link href="~/Content/css/normalize.css" rel="stylesheet" />
+    <link href="~/Content/css/owl.carousel.min.css" rel="stylesheet" />
 </head>
 
 <body class="changeHeader">
@@ -62,13 +74,21 @@
                             <li>
                                 <a href="#" class="login-href">
                                     <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
-                                    Đăng nhập
+                                   &nbsp;Đăng nhập
                                 </a>
                             </li>
                             <li>
                                 <a target="_blank" href="#"
                                    class="login-href">
-                                    <i class="flag-english"></i> English
+                                    <i class="flag-english"></i>
+                                    <img src="~/Content/image/ic-english.png" />&nbsp;English
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="#"
+                                   class="login-href">
+                                    <i class="flag-english"></i>
+                                    <img src="~/Content/image/ic-vietnamese.png" />&nbsp;VietNam
                                 </a>
                             </li>
                             <li class="dropdown searchBox searchBoxLayout">
@@ -391,7 +411,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown singleDrop">
+                            <li class="dropdown singleDrop dropdown-service ">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     DỊCH VỤ DU LỊCH
                                 </a>
@@ -451,8 +471,6 @@
     </header>
     <!-- dropdown options menu end -->
     <!-- header end -->
-
-
     <!-- Content -->
     <div class="@*container body-content*@">
         @RenderBody()
@@ -493,14 +511,13 @@
                             <div class="col-sm-4 col-xs-12">
                                 <div class="footerContent info-sgt-box">
                                     <h5>DỊCH VỤ</h5>
-
                                     <ul>
                                         <li><a class="link-level4-light" href="#">Tour trong nước</a></li>
                                         <li><a class="link-level4-light" href="#">Tour nước ngoài</a></li>
                                         <li><a class="link-level4-light" href="#">Vé máy bay</a></li>
                                         <li><a class="link-level4-light" href="#">Khách sạn</a></li>
                                     </ul>
-                                </div>                              
+                                </div>
                             </div>
 
                             <div class="col-sm-4 col-xs-12">
@@ -521,7 +538,7 @@
 
                                     <ul>
                                         <li><a class="link-level4-light" href="#">Giới thiệu</a></li>
-                                        <li><a class="link-level4-light" href="/lien-he">Liên hệ</a></li>
+                                        <li><a class="link-level4-light" href="#">Liên hệ</a></li>
                                         <li><a class="link-level4-light" href="/trang/dieu-khoan-chung">Điều khoản chung </a></li>
                                         <li><a class="link-level4-light" href="#">Quy định thanh toán</a></li>
                                         <li><a class="link-level4-light" href="#">Chính sách giao nhận</a></li>
@@ -578,19 +595,27 @@
     <script src="~/Scripts/js/slick.js"></script>
     <script src="~/Scripts/js/jquery.selectbox-0.1.3.min.js"></script>
     <script src="~/Scripts/js/select2.full.js"></script>
-    <script src="~/Scripts/js/bootstrap-datepicker.js"></script>
+    @*<script src="~/Scripts/js/bootstrap-datepicker.js"></script>*@
     <script src="~/Scripts/js/waypoints.min.js"></script>
     <script src="~/Scripts/js/jquery.counterup.min.js"></script>
-    <script src="~/Scripts/js/isotope.min.js"></script>
-    <script src="~/Scripts/js/bootstrap-notify.min.js"></script>
-    <script src="~/Scripts/js/jquery.fancybox.pack.js"></script>
-    <script src="~/Scripts/js/isotope-triger.js"></script>
+    @*<script src="~/Scripts/js/isotope.min.js"></script>*@
+    @*<script src="~/Scripts/js/bootstrap-notify.min.js"></script>*@
+    @*<script src="~/Scripts/js/jquery.fancybox.pack.js"></script>*@
+    @*<script src="~/Scripts/js/isotope-triger.js"></script>*@
     <script src="~/Scripts/js/jquery.syotimer.js"></script>
     <script src="~/Scripts/js/SmoothScroll.js"></script>
     <script src="~/Scripts/js/custom.js"></script>
     <script src="~/Scripts/js/jquery.form-validator.min.js"></script>
     <script src="~/Content/lib/fontawesome-free-5.15.1-web/js/all.min.js"></script>
-    <script src="~/Content/lib/fontawesome-free-5.15.1-web/js/all.js"></script>
     <script src="~/Scripts/js/bannerSlider.js"></script>
+
+
+    @*<script src="~/Scripts/js/featherlight.js"></script>*@
+    @*<script src="~/Scripts/js/froogaloop2.min.js"></script>*@
+    @*<script src="~/Scripts/js/jquery-1.11.3.min.js"></script>*@
+    @*<script src="~/Scripts/js/jquery.vimeo.api.min.js"></script>*@
+    <script src="~/Scripts/js/main.js"></script>
+    <script src="~/Scripts/js/modernizr-2.8.3.min.js"></script>
+    <script src="~/Scripts/js/owl.carousel.js"></script>
 </body>
 </html>

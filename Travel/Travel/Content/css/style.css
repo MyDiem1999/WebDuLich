@@ -3748,7 +3748,7 @@ header {
 
 @media (min-width: 1200px) {
     .navbar-nav > li.dropdown.megaDropMenu .dropdown-menu {
-        width: 1140px;
+        width: 1000px;
     }
 }
 
@@ -7452,7 +7452,8 @@ article.box.isotopeSelector.box-kiritm.box-tour:after {
     color: #ffffff;
     background-color: #ff891e;
     border-color: #ff891e;
-    line-height: 43px;
+    line-height: 30px;
+    border-radius: 4px
 }
 
 .promotion-code .form-group {

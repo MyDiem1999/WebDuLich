@@ -44,37 +44,37 @@ function showDivs(n) {
 }
 
 /*************************************************************************************/
-$("#region").modal('show');
+//$("#region").modal('show');
 
-function onLoginSubmit(token) {
-    document.getElementById("login-form").submit();
-}
+//function onLoginSubmit(token) {
+//    document.getElementById("login-form").submit();
+//}
 
-function onRegisterSubmit(token) {
-    document.getElementById("register-form").submit();
-}
+//function onRegisterSubmit(token) {
+//    document.getElementById("register-form").submit();
+//}
 
-function updateRegion(id) {
-    $.ajax({
-        type: "POST",
-        url: 'https://www.saigontourist.net/update-region',
-        data: { 'id': id },
-        success: function (data) {
-            $("#region").modal('hide');
-            location.reload();
-        },
-        error: function () {
-            alert('Hệ thống đang bận vui lòng thử lại sau ít phút!');
-        }
-    });
-}
+//function updateRegion(id) {
+//    $.ajax({
+//        type: "POST",
+//        url: 'https://www.saigontourist.net/update-region',
+//        data: { 'id': id },
+//        success: function (data) {
+//            $("#region").modal('hide');
+//            location.reload();
+//        },
+//        error: function () {
+//            alert('Hệ thống đang bận vui lòng thử lại sau ít phút!');
+//        }
+//    });
+//}
 
-$("#submit-recive").click(function () {
-    $("#form-recive-email").submit();
-});
-$(".navbar-right .singleDrop, .navbar-right .megaDropMenu").click(function (e) {
-    e.stopPropagation();
-});
+//$("#submit-recive").click(function () {
+//    $("#form-recive-email").submit();
+//});
+//$(".navbar-right .singleDrop, .navbar-right .megaDropMenu").click(function (e) {
+//    e.stopPropagation();
+//});
 
 // search tour kiritm
 
