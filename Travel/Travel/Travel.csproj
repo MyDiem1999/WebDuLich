@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DatTourController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,7 +192,10 @@
     <Content Include="Content\image\bullet_boxed.png" />
     <Content Include="Content\image\coloredbg.png" />
     <Content Include="Content\image\coming-bg.jpg" />
+    <Content Include="Content\image\con-dao-beach.jpg" />
+    <Content Include="Content\image\condao.jpg" />
     <Content Include="Content\image\devider.png" />
+    <Content Include="Content\image\dinhty.jpg" />
     <Content Include="Content\image\email.png" />
     <Content Include="Content\image\fancybox_sprite.png" />
     <Content Include="Content\image\flags.jpg" />
@@ -210,17 +214,27 @@
     <Content Include="Content\image\ic-vietnamese.png" />
     <Content Include="Content\image\icon_menu.png" />
     <Content Include="Content\image\icon_tour.png" />
+    <Content Include="Content\image\image.jpg" />
+    <Content Include="Content\image\img.jpg" />
     <Content Include="Content\image\large_left.png" />
     <Content Include="Content\image\large_right.png" />
     <Content Include="Content\image\light-drop.png" />
     <Content Include="Content\image\loader.gif" />
     <Content Include="Content\image\logo-dark.png" />
     <Content Include="Content\image\logo.png" />
+    <Content Include="Content\image\mientay.jpg" />
+    <Content Include="Content\image\mo-Vo-Thi-Sau.jpg" />
+    <Content Include="Content\image\mo-VTS.jpg" />
     <Content Include="Content\image\navigdots.png" />
     <Content Include="Content\image\navigdots_bgtile.png" />
     <Content Include="Content\image\newyear.jpg" />
+    <Content Include="Content\image\nghiatrangHangDuong.jpg" />
+    <Content Include="Content\image\nha-tu-con-dao.jpg" />
     <Content Include="Content\image\not-found-bg.jpg" />
     <Content Include="Content\image\page-title-bg.jpg" />
+    <Content Include="Content\image\phanrang.jpg" />
+    <Content Include="Content\image\phanthiet.jpg" />
+    <Content Include="Content\image\phuquoc.jpg" />
     <Content Include="Content\image\primary-drop.png" />
     <Content Include="Content\image\prize.png" />
     <Content Include="Content\image\shadow1.png" />
@@ -239,6 +253,7 @@
     <Content Include="Content\image\travel05.jpg" />
     <Content Include="Content\image\travel06.jpg" />
     <Content Include="Content\image\travel07.jpg" />
+    <Content Include="Content\image\vuontraicay.jpg" />
     <Content Include="Content\lib\animate.min.css" />
     <Content Include="Content\lib\bootstrap.bundle.min.js" />
     <Content Include="Content\lib\bootstrap.min.css" />
@@ -2034,6 +2049,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ChiTiet_Tour.cshtml" />
+    <Content Include="Views\Shared\_infor.cshtml" />
+    <Content Include="Views\Shared\_slidebanner.cshtml" />
+    <Content Include="Views\DatTour\DatTour.cshtml" />
+    <Content Include="Views\Shared\_ChuongtrinhTour.cshtml" />
+    <Content Include="Views\Shared\_listInforTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3417,7 +3417,7 @@ header {
         .pageTitle .titleTable .titleTableInner {
             display: table-cell;
             text-align: center;
-            vertical-align: middle;
+            vertical-align: bottom;
         }
 
             .pageTitle .titleTable .titleTableInner .pageTitleInfo {

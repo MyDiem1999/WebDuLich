@@ -80,12 +80,23 @@
 
 .img-responsive {
     transition: 1.3s;
+    cursor: pointer
 }
 
     .img-responsive:hover {
         transform: scale(1.2);
         cursor: pointer
     }
+
+.high-slider-img .img-responsive {
+    height: 250px !important
+}
+
+.isotopeSelector:hover img {
+    -webkit-transform: scale(1.2) rotate(0);
+    transform: scale(1.2) rotate(0);
+    -webkit-transition: all 0.8s ease-in-out;
+}
 
 .box-infor-tour {
     border: 0.5px solid #f4f4f4;
@@ -100,4 +111,12 @@
 
 .ml--20x {
     margin-left: -20px
+}
+
+svg.svg-inline--fa.fa-phone.fa-w-16 {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }

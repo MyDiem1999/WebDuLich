@@ -1,20 +1,20 @@
-jQuery(document).ready(function () {
-//============================== CLOSE DROPDOWN SELECT =========================
+﻿jQuery(document).ready(function () {
+    //============================== CLOSE DROPDOWN SELECT =========================
     $(".ed-datepicker input.form-control").focus(function () {
         $(".sbOptions").css("display", "none");
     });
 
 
 
-//============================== ALL DROPDOWN ON HOVER =========================
+    //============================== ALL DROPDOWN ON HOVER =========================
     $('.dropdown').hover(function () {
-            $(this).addClass('open');
-        },
+        $(this).addClass('open');
+    },
         function () {
             $(this).removeClass('open');
         });
 
-//============================== Rs-Slider =========================
+    //============================== Rs-Slider =========================
     jQuery('.fullscreenbanner').revolution({
         delay: 5000,
         startwidth: 1170,
@@ -31,7 +31,7 @@ jQuery(document).ready(function () {
     });
 
 
-//============================== show more tour in view detail tour =========================
+    //============================== show more tour in view detail tour =========================
     jQuery("#textViewMore").click(function () {
         $('#actionViewMore').addClass('hidden-action');
         $('.tour-detail-content-col .hidden-tour').each(function () {
@@ -39,13 +39,13 @@ jQuery(document).ready(function () {
         });
 
     });
-//============================== show contactSGT in view detail tour =========================
+    //============================== show contactSGT in view detail tour =========================
     jQuery("#viewContactSGT").click(function () {
         $('#viewContactSGT').addClass('contact-hidden');
         $('#contentContactSGT').removeClass('contact-hidden');
 
     });
-//============================== CHANGE HEADER ON MOUSE SCROLL =========================
+    //============================== CHANGE HEADER ON MOUSE SCROLL =========================
     var header = $(".changeHeader .navbar-fixed-top");
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
@@ -60,8 +60,111 @@ jQuery(document).ready(function () {
             header.removeClass("lightHeader");
         }
         ;
-
     });
+
+
+    $(document).ready(function () {
+        //$('.collapsed-kiritm-first').collapse();
+        //$('.collapsed-kiritm').on('shown.bs.collapse', function () {
+        //    $(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+        //}).on('hidden.bs.collapse', function () {
+        //    $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+        //});
+
+        //$('#call_back_form').submit(function (e) {
+        //    e.preventDefault();
+        //    var form = $(this);
+        //    $('#call_back_form').find(':submit').attr('disabled', true);
+        //    $.ajax({
+        //        type: 'POST',
+        //        url: 'https://saigontourist.net/call-me-back',
+        //        data: form.serialize(),
+        //        success: function (data) {
+        //            if (data.success) {
+        //                $('#callMeBackModal').modal('hide');
+        //                $.notify(data.message, "success", {
+        //                    delay: 7000,
+        //                    autoHideDelay: 10000000,
+        //                    globalPosition: 'top right'
+        //                });
+        //                $('#call_back_form').find(':submit').removeAttr('disabled');
+        //                document.getElementById("call_back_form").reset();
+        //            } else {
+        //                $.notify(data.message, "warn", {
+        //                    delay: 7000,
+        //                    autoHideDelay: 10000000,
+        //                    globalPosition: 'top right'
+        //                });
+        //                $('#call_back_form').find(':submit').removeAttr('disabled');
+        //            }
+        //        },
+        //        errors: function (err) {
+        //            $.notify(err.message, "warn", {
+        //                delay: 7000,
+        //                autoHideDelay: 10000000,
+        //                globalPosition: 'top right'
+        //            });
+        //            // $('#_message_success').html(err.message);
+        //            $('#call_back_form').find(':submit').removeAttr('disabled');
+        //        }
+        //    });
+        //});
+        //var products = [{
+        //    id: 2113,
+        //    categoryId: "",
+        //    transactionId: "4972vsi0km581nt9p66tj3sp60",
+        //    price: 7300000,
+        //    quantity: 1,
+        //    name: "Du lịch Tết Tân Sửu 2021 Côn Đảo [Mùng 4 tết]",
+        //    brandName: "saigontourist",
+        //    desc: "3 ngày 2 đêm - Đi về bằng máy bay",
+        //    imageUrl: "https://saigontourist.net/uploads/destination/TrongNuoc/Condao/Tram-PhuHai_1677214198.jpg",
+        //    link: "https://saigontourist.net/vi/tour-trong-nuoc/2113/du-lich-tet-tan-suu-2021-con-dao-mung-4-tet"
+        //}];
+        //ematics("log", "product", "browse", products);
+
+        //dataLayer.push({
+        //    "event": 'EEproductDetail', //we are using an event to send the impression data
+        //    "ecommerce": {
+        //        "currencyCode": "VND",
+        //        "detail": {
+        //            "actionField": {},     //optional list property
+        //            "products": [{
+        //                "id": 2113,
+        //                "name": "Du lịch Tết Tân Sửu 2021 Côn Đảo [Mùng 4 tết]",
+        //                "price": 7300000,
+        //                "brand": "saigontourist",
+        //                "category": ""
+        //            }]
+        //        }
+        //    }
+        //});
+
+        //scroll show cotact infor
+        //scroll
+        window.onscroll = function () {
+            myFunction()
+        };
+    });
+
+    function getOffset(el) {
+        var rect = el.getBoundingClientRect();
+        return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+        };
+    }
+
+    function myFunction() {
+        var heightMoreInfoTour = getOffset(document.getElementsByClassName('more-info-tour')[0]).top - 200;
+        var scrollTop = document.documentElement.scrollTop > document.body.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
+        if ((scrollTop > 1150) && (scrollTop < heightMoreInfoTour)) {
+            document.getElementById("boxInfoSuportSgt").className = "right-detail-tour-box fix-screen-tourdetail";
+        } else {
+            document.getElementById("boxInfoSuportSgt").className = "right-detail-tour-box";
+        }
+    }
+
     /*-----------------------------------------------------------------*/
     (function () {
 
@@ -105,16 +208,16 @@ jQuery(document).ready(function () {
             setTopPadding();
         };
     })();
-//============================== SELECT BOX =========================
+    //============================== SELECT BOX =========================
     $('.select-drop').selectbox();
 
-//============================== Date-picker =========================
-//     $('.datepicker').datepicker({
-//         startDate: "dateToday",
-//         autoclose: true
-//     });
+    //============================== Date-picker =========================
+    //     $('.datepicker').datepicker({
+    //         startDate: "dateToday",
+    //         autoclose: true
+    //     });
 
-//============================== COUNTER-UP =========================
+    //============================== COUNTER-UP =========================
     $(document).ready(function ($) {
         $('.counter').counterUp({
             delay: 10,
@@ -122,7 +225,7 @@ jQuery(document).ready(function () {
         });
     });
 
-//============================== PRICE SLIDER RANGER =========================
+    //============================== PRICE SLIDER RANGER =========================
     jQuery(document).ready(function () {
         var minimum = 20;
         var maximum = 300;
@@ -142,7 +245,7 @@ jQuery(document).ready(function () {
         $("#price-amount-2").val("$" + $("#price-range").slider("values", 1));
     });
 
-//============================== ACCORDION OR COLLAPSE ICON CHANGE =========================
+    //============================== ACCORDION OR COLLAPSE ICON CHANGE =========================
 
     var allIcons = $(".singlePackage .panel-heading i.fa");
     $('.singlePackage .panel-heading').click(function () {
@@ -174,7 +277,7 @@ jQuery(document).ready(function () {
         $(this).find('i.fa').removeClass('fa-chevron-circle-down').addClass('fa-chevron-circle-up');
     });
 
-//============================== SELECT OPEN ACCORDION ITEM TITLE ========================= 
+    //============================== SELECT OPEN ACCORDION ITEM TITLE ========================= 
     $(document).ready(function () {
         $('.accordionWrappar .panel-collapse, .accordionSolidTitle .panel-collapse, .accordionSolidBar .panel-collapse').on('show.bs.collapse', function () {
             $(this).siblings('.panel-heading').addClass('active');
@@ -187,7 +290,7 @@ jQuery(document).ready(function () {
         });
     });
 
-//============================== COUNT DOWN =========================
+    //============================== COUNT DOWN =========================
     $('#simple_timer').syotimer({
         year: 2017,
         month: 5,
@@ -195,4 +298,4 @@ jQuery(document).ready(function () {
         hour: 20,
         minute: 30,
     });
-});
+})

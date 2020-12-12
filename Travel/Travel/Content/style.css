@@ -1,4 +1,9 @@
 ﻿body {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    color: black;
+    font-weight: 400;
 }
 
 @media (min-width: 1200px) .container {
