@@ -20,3 +20,393 @@
     </div>
 </section>
 
+<!-- form đặt tour -->
+<section class="mainContentSection booking-container">
+    <div class="container">
+        <div class="row progress-wizard" style="border-bottom:0;">
+            @*<div class="col-sm-3 col-xs-12 progress-wizard-step  complete">
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <a href="javascript:void(0)" class="progress-wizard-dot">
+                        <span style="font-size: 20px">1</span>. Chọn dịch vụ
+                    </a>
+                </div>*@
+            <div class="col-sm-3 col-xs-12 progress-wizard-step active ">
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <a href="#" class="progress-wizard-dot">
+                    <span style="font-size: 20px"> 1 </span> .Nhập thông tin hành khách
+                </a>
+            </div>
+            @*<div class="col-sm-3 col-xs-12 progress-wizard-step  disabled">
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <a href="javascript:void(0)" class="progress-wizard-dot">
+                        <span style="font-size: 20px">3</span>. Thanh toán
+                    </a>
+                </div>*@
+            <div class="col-sm-3 col-xs-12 progress-wizard-step  disabled">
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <a href="#" class="progress-wizard-dot">
+                    <span style="font-size: 20px"> 2</span> .Xác nhận
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-8 col-xs-12">
+                @*<aside>
+                        <div class="infoTitle-kiritm">
+                            <span>Hỗ trợ giao dịch <strong>1900 1588</strong></span>
+                        </div>
+                        <div class="bookDetailsInfo">
+                            <img src="~/Content/image/condao.jpg" alt="image">
+                            <div class="infoArea">
+                                <h3>
+                                    <a target="" href="#">Du lịch Tết Tân Sửu 2021 Côn Đảo 2 Ngày [Mùng 5 tết]</a>
+                                </h3>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <i class="fa fa-barcode" aria-hidden="true"></i>Code:
+                                        <span> STN084-2021-00160 </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>Ngày đi:
+                                        <span>16-02-2021</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Ngày về:
+                                        <span>17-02-2021</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>Thời gian:
+                                        <span>2 ngày 1 đêm</span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-user-secret" aria-hidden="true"></i>Giá Người lớn:
+                                        <span>
+                                            <strong>6,500,000</strong> X 1
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        <span><strong style="font-size: 17px">Thanh toán bằng tiền mặt tại văn phòng Lữ hành Saigontourist</strong></span>
+                                    </li>
+                                </ul>
+                                <div class="priceTotal">
+                                    <hr>
+                                    <h2>
+                                        Tổng: <span>
+                                            6.500.000
+                                            <span class="price-label"> đồng</span>
+                                        </span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>*@
+            </div>
+
+            <!-- Chọn Số lượng -->
+            @*            <div class="col-sm-8 col-sm-pull-4 col-xs-12">
+                    <div class="payment-wrap bookingForm">
+                        <form role="form" method="post" class="form" id="info-form" novalidate="">
+                            <div class="no-padding">
+                                <div class="title">
+                                    <h3>SỐ LƯỢNG HÀNH KHÁCH</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                        <div class="form-group">
+                                            <label>Người lớn (*)</label>
+                                            <input type="number" name="adult" placeholder="" value="1" class="form-control   has-value " required="required" min="1" pattern="^\d+$">
+                                            <span class="error"></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                        <div class="form-group">
+                                            <label>Trẻ em </label>
+                                            <input type="number" name="child" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
+                                            <span class="error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-7 col-xs-12 no-padding">
+                                        <ul class="highlight-text">
+                                            <li>Tour nước ngoài: áp dụng từ 2 đến dưới 12 tuổi</li>
+                                            <li>Tour trong nước và tour Campuchia: áp dụng từ 6 đến 11 tuổi</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                        <div class="form-group">
+                                            <label>Em bé </label>
+                                            <input type="number" name="infant" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
+                                            <span class="error"></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-7 col-sm-7 col-xs-12 no-padding">
+                                        <ul class="highlight-text">
+                                            <li>Tour nước ngoài: áp dụng từ Dưới 2 tuổi</li>
+                                            <li>Tour trong nước và tour Campuchia: áp dụng từ 2 đến 5 tuổi</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>*@
+
+            <!-- Thông tin liên hệ -->
+            <div class="col-sm-8 col-sm-pull-4 col-xs-12 infor_custom">
+                <div class="payment-wrap bookingForm">
+                    <form role="form" method="post" class="form has-validation-callback" id="info-form" novalidate="">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="title">
+                                <h3>THÔNG TIN LIÊN HỆ</h3>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Tên </label> <label style="color: red"> (*) </label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control" required="required" data-validation="required" pattern="[a-z]{1,15}">
+                                        <span class="error"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Số điện thoại </label> <label style="color: red"> (*) </label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control" required="required" pattern="^(\d{8,})$" maxlength="15" data-validation="required custom length" data-validation-regexp="^(\d{8,})$" data-validation-length="max15">
+                                        <span class="error"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Email</label> <label style="color: red"> (*) </label>
+                                        <input type="email" name="@*contact[email]*@" placeholder="" value="" class="form-control" required="required" data-validation="required email">
+                                        <span class="error"></span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Địa chỉ</label> <label style="color: red"> (*) </label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control" required="required" data-validation="required">
+                                        <span class="error"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Quốc gia</label>
+                                        <div class="select ">
+                                            <select name="slct" id="slct">
+                                                <option value="0" selected> Việt Nam </option>
+                                                <option value="1"> Mỹ </option>
+                                                <option value="2"> Úc </option>
+                                                <option value="3"> Nga </option>
+                                            </select>
+                                            <span class="error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Thông tin KH -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding infor_custom">
+                            <h3 style="margin-bottom: 10px">Thông tin hành khách</h3>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Tên</label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control">
+                                        <span class="error"></span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Số điện thoại</label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control" pattern="^(\d{8,})$" data-validation="custom" data-validation-regexp="^(\d{8,})$" data-validation-optional="true">
+                                        <span class="error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Địa chỉ</label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control">
+                                        <span class="error"></span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Giới tính</label>
+                                        @*<div class="bookingDrop">
+                                                <select name="passengers[0][sex]" class="form-control select-drop" sb="72606258" style="display: none;">
+                                                    <option value="1">Nam</option>
+                                                    <option value="0">Nữ</option>
+                                                </select>
+                                            </div>
+                                            <span class="error"></span>*@
+                                        <div class="select ">
+                                            <select name="slct" id="slct">
+                                                <option value="1" selected> Nam </option>
+                                                <option value="0"> Nữ </option>
+                                            </select>
+                                            <span class="error"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Quốc gia</label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control">
+                                        <span class="error"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Passport</label>
+                                        <input type="text" name="" placeholder="" value="" class="form-control">
+                                        <span class="error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding submit_infor">
+                <div class="title">
+                    <h3> XÁC NHẬN THÔNG TIN </h3>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Tên </label> <label style="color: red"> (*) </label>
+                            <label value="SoDienThoai"></label>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Số điện thoại </label> <label style="color: red"> (*) </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Email</label> <label style="color: red"> (*) </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Địa chỉ</label> <label style="color: red"> (*) </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Quốc gia</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                <div class="buttonArea galleryBtnArea">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="@Url.Action("ChiTiet_Tour", "Home")" class="btn buttonTransparent">Trở về</a>
+                        </li>
+                        <li class="pull-right">
+                            @*<div>
+                                    <div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+                                        <div class="grecaptcha-logo">
+                                            <iframe src="#" width="256" height="60" role="presentation" name="a-sj9rsu6r6xye" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                                        </div>
+                                        <div class="grecaptcha-error"></div>
+                                        <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                                    </div>
+                                    <iframe style="display: none;"></iframe>
+                                </div>*@
+                            @*  <button type="" data-sitekey="" data-callback="" id="connectSV" class="g-recaptcha btn buttonTransparent">Tiếp tục</button>*@
+                            <a href="#" id="btnSubmit" class="btn buttonTransparent"> Tiếp tục </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<style>
+    .submit_infor {
+        display: none
+    }
+</style>
+
+@*<script type="text/javascript">
+        $.validate({ modules: 'html5', errorMessageClass: 'error', lang: 'vi' });
+    </script>*@
+
+@*<style data-jss="" data-meta="MuiButtonBase">
+        .MuiButtonBase-root {
+            color: inherit;
+            border: 0;
+            cursor: pointer;
+            margin: 0;
+            display: inline-flex;
+            outline: 0;
+            padding: 0;
+            position: relative;
+            align-items: center;
+            user-select: none;
+            border-radius: 0;
+            vertical-align: middle;
+            -moz-appearance: none;
+            justify-content: center;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+            .MuiButtonBase-root::-moz-focus-inner {
+                border-style: none;
+            }
+
+            .MuiButtonBase-root.Mui-disabled {
+                cursor: default;
+                pointer-events: none;
+            }
+    </style>*@

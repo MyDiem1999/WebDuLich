@@ -660,8 +660,8 @@ a {
     height: 45px;
     background-color: whitesmoke;
     box-shadow: none;
-    border-color: #ccc;
-    background-color: #e0e0e0;
+    border-color: #bebaf9;
+    /*background-color: #e0e0e0;*/
     color: #000;
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     font-size: 14px;
@@ -669,6 +669,7 @@ a {
 
     .form .form-group .form-control:focus, .commentsForm .form-group .form-control:focus, .modal.bookingModal .modal-dialog .modal-content .modal-body .form-group .form-control:focus {
         outline: 0;
+        border-color: red
     }
 
 .form .form-group textarea.form-control, .commentsForm .form-group textarea.form-control, .modal.bookingModal .modal-dialog .modal-content .modal-body .form-group textarea.form-control {
@@ -3417,7 +3418,7 @@ header {
         .pageTitle .titleTable .titleTableInner {
             display: table-cell;
             text-align: center;
-            vertical-align: bottom;
+            vertical-align: middle;
         }
 
             .pageTitle .titleTable .titleTableInner .pageTitleInfo {
@@ -3427,6 +3428,7 @@ header {
                 .pageTitle .titleTable .titleTableInner .pageTitleInfo h1 {
                     color: #ffffff;
                     font-size: 30px;
+                    text-shadow: 4px 2px 4px darkslategrey;
                 }
 
 .header .container .navbar-fixed-top {
@@ -7302,8 +7304,9 @@ header {
 
     .form-group-slect2-kiritm .select2-container .select2-selection--single {
         height: 45px;
-        background-color: #e0e0e0;
-        border: 1px solid #ccc;
+        background-color: whitesmoke;
+        /*border: 1px solid #ccc;*/
+        border-color: #bebaf9;
     }
 
         .form-group-slect2-kiritm .select2-container .select2-selection--single .select2-selection__rendered {

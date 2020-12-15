@@ -221,6 +221,7 @@
     <Content Include="Content\image\light-drop.png" />
     <Content Include="Content\image\loader.gif" />
     <Content Include="Content\image\logo-dark.png" />
+    <Content Include="Content\image\logo-trans.png" />
     <Content Include="Content\image\logo.png" />
     <Content Include="Content\image\mientay.jpg" />
     <Content Include="Content\image\mo-Vo-Thi-Sau.jpg" />
@@ -2054,6 +2055,7 @@
     <Content Include="Views\DatTour\DatTour.cshtml" />
     <Content Include="Views\Shared\_ChuongtrinhTour.cshtml" />
     <Content Include="Views\Shared\_listInforTour.cshtml" />
+    <Content Include="Views\DatTour\_XacnhanTTKH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

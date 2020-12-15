@@ -165,6 +165,13 @@
         }
     }
 
+    /*************************************** CLICK HIDE CONTENT INFOR CUSTOM *********************************************/
+    function connect() {
+        $(".submit_infor").show();
+        $(".infor_custom").hide();
+    }
+    $("a#btnSubmit").click(connect);
+
     /*-----------------------------------------------------------------*/
     (function () {
 
