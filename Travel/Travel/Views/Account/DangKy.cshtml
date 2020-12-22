@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="member-wrapper">
+    <div class="background register"></div>
+    <div class="member-content">
+        <div class="login clearfix register">
+            <div class="loginbox register_user">
+                <img src="~/Content/image/login.png" class="avatar">
+                <h4 class="text-center title"> Đăng Ký </h4>
+                <form id="login-form" action="#" method="post">
+                    <input type="hidden" name="_target_path" value="" />
+                    <div class="form-content">
+                        <div class="form-group label-top">
+                            <input class="label-top" type="text" name="_username" value="" id="user_name" required data-validation="required email">
+                            <label for="user_name"> Full name <label style="color:red"> (*) </label> </label>
+                            <div class="bt"></div>
+                        </div>
+                        <div class="form-group label-top">
+                            <input class="label-top" type="email" name="_email" value="" id="email" required data-validation="required email">
+                            <label for="email"> Email <label style="color:red"> (*) </label></label>
+                            <div class="bt"></div>
+                        </div>
+                        <div class="form-group label-top">
+                            <input id="login_password" class="label-top" type="password" name="_password" required data-validation="required">
+                            <label for="login_password"> Password <label style="color:red"> (*) </label></label>
+                            <div class="bt"></div>
+                        </div>
+                        <div class="form-group label-top">
+                            <input id="login_password" class="label-top" type="password" name="_confirm_password" required data-validation="required">
+                            <label for="confirm_password"> Confirm Password <label style="color:red"> (*) </label></label>
+                            <div class="bt"></div>
+                        </div>
+                        <br />
+                        <div class="form-group label-top">
+                            <input id="login_password" class="label-top" type="text" name="_phone">
+                            <label for="phone"> Phone Number </label>
+                            <div class="bt"></div>
+                        </div>
+                        <br />
+                        <div class="form-group label-top">
+                            <input id="login_password" class="label-top" type="text" name="_address">
+                            <label for="address"> Address </label>
+                            <div class="bt"></div>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <a><input type="submit" name="btn_Register" value="Register" id="login"></a>
+                        <a href="@Url.Action("Index","Home")"><input type="button" name="btn_Cancel" value="Cancel"></a>
+                    </div>
+                    <div class="text-left">
+                        <a href="@Url.Action("DangNhap","Account")"> Have an account? </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/js/effect.js"></script>
+@*<script src="~/Scripts/js/newyear.js"></script>*@
+

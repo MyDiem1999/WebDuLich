@@ -165,13 +165,75 @@
         }
     }
 
-    /*************************************** CLICK HIDE CONTENT INFOR CUSTOM *********************************************/
-    function connect() {
+    /*************************************** CLICK HIDE/SHOW CONTENT INFOR CUSTOM *********************************************/
+    /*function connect() {
         $(".submit_infor").show();
         $(".infor_custom").hide();
     }
-    $("a#btnSubmit").click(connect);
+    $("a#btnSubmit").click(connect);*/
 
+    //function connect1() {
+    //    $(".submit_infor").hide();
+    //    $(".infor_custom").show();
+    //}
+    //$("a#back_btn").click(connect1);
+
+
+    $('#back_btn').click(function () {
+        flag = 0;
+        window.history.back();
+        return false;
+    });
+
+/*    var button = document.getElementById("btnSubmit");
+    var flag = 0;
+    var url = object.attr('href');
+    button.onclick = function () {
+        if (flag == 0) {
+            flag = 1;
+            $(".submit_infor").show();
+            $(".infor_custom").hide();
+        }
+        else {
+            var result = confirm("Xác nhận đặt tour!");
+            if (result == true) {
+                alert("Đồng ý và đăng nhập!");
+                window.location.href = url;
+            }
+            else {
+                alert("Không đồng ý, quay lại!");
+            }
+        }
+        $('#back_btn').click(function () {
+            flag = 0;
+            window.history.back();
+            return false;
+        });
+    }
+*/
+
+    /*--------------------------------- BTN BACK_TO_TOP --------------------------------*/
+    if ($('#back-to-top').length) {
+        var scrollTrigger = 150, // px
+            backToTop = function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > scrollTrigger) {
+                    $('#back-to-top').show();
+                } else {
+                    $('#back-to-top').hide();
+                }
+            };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
     /*-----------------------------------------------------------------*/
     (function () {
 

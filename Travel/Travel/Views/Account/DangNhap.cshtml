@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="member-wrapper">
+    <div class="background"></div>
+    <div class="member-content">
+        <div class="login clearfix">
+            <div class="loginbox login_user">
+                <img src="~/Content/image/login.png" class="avatar">
+                <h4 class="text-center title">Đăng Nhập</h4>
+                <form id="login-form" action="@Url.Action("Index","Home")" method="post">
+                    <input type="hidden" name="_target_path" value="" />
+                    <div class="form-content">
+                        <div class="form-group label-top">
+                            <input class="label-top" type="email" name="_email" value="" id="email" required data-validation="required email">
+                            <label for="user_name">Địa chỉ email</label>
+                            <div class="bt"></div>
+                        </div>
+                        <br />
+                        <div class="form-group label-top">
+                            <input id="login_password" class="label-top" type="password" name="_password" required data-validation="required">
+                            <label for="login_password"> Mật khẩu </label>
+                            <div class="bt"></div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-footer">
+                        <a><input type="submit" name="btn_Login" value="Login" id="login"></a>
+                        <a><input type="button" name="btn_Cancel" value="Cancel"></a>
+                    </div>
+                    <div class="text-left">
+                        <a href="#">Lost your password?</a><br>
+                        <a href="@Url.Action("DangKy","Account")">Don't have an account?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function onLoginSubmit(token) {
+        document.getElementById("login-form").submit();
+    }
+
+    $(document).ready(function () {
+        $("#login").submit(function (e) {
+            if ($("#user_name").val() == "") {
+                $("#user_name").css('box-shadow', '0px 0px 7px red');
+                alert('Ban chua nhap thong tin tai o Username.');
+                e.preventDefault();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#login-form").validate({
+            rules: {
+                name: {   // đây là trường name của input
+                    required: true  // không được để trống
+                },
+                email: {
+                    required: true,
+                    email: true // bắt lỗi định dạng mail
+                },
+                confirm_email: {
+                    required: true,
+                    email: true,
+                    equalTo: "#email" // phải giống với input có id email
+                },
+                tel: {
+                    required: true,
+                    number: true, //  bắt buộc là kiểu số
+                    digits: true,  // không được tồn tại số âm
+                    maxlength: 20 // giới hạn số ký tự được nhập vào
+                }
+            },
+            messages: {
+                name: {
+                    required: "Xin vui lòng nhập tên !"
+                },
+                email: {
+                    required: "Xin vui lòng nhập email !",
+                    email: "Email sai định dạng, xin vui lòng kiểm tra lại !"
+                },
+                confirm_email: {
+                    required: "Xin vui lòng nhập email xác nhận !",
+                    email: "Email xác nhận sai định dạng, xin vui lòng kiểm tra lại !",
+                    equalTo: "Email xác nhận không khớp với Email, xin vui lòng kiểm tra lại !"
+                },
+                tel: {
+                    required: "Xin vui lòng nhập số điện thoại !",
+                    number: "Số điện thoại bắt buộc là kiểu số !",
+                    digits: "Số điện thoại không được nhập số âm !",
+                    maxlength: "Số điện thoại không được nhập quá 20 ký tự !"
+                }
+            }
+        });
+    });
+</script>
+
+<script src="~/Scripts/js/effect.js"></script>

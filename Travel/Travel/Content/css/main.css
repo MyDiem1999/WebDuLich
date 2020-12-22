@@ -497,10 +497,10 @@ a, .btn {
     transition: all .5s ease;
 }
 
-    .btn:hover {
+    /*.btn:hover {
         color: #000;
         outline: unset
-    }
+    }*/
 
     .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
         outline: unset

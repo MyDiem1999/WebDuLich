@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "XN_DatTour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="pageTitle" style="background-image:url(../../Content/image/img.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="titleTable">
+                    <div class="titleTableInner">
+                        <div class="pageTitleInfo">
+                            <h1>Đặt Tour</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="col-sm-4 col-sm-push-8 col-xs-12">
+    @*<aside>
+            <div class="infoTitle-kiritm">
+                <span>Hỗ trợ giao dịch <strong>1900 1588</strong></span>
+            </div>
+            <div class="bookDetailsInfo">
+                <img src="~/Content/image/condao.jpg" alt="image">
+                <div class="infoArea">
+                    <h3>
+                        <a target="" href="#">Du lịch Tết Tân Sửu 2021 Côn Đảo 2 Ngày [Mùng 5 tết]</a>
+                    </h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fa fa-barcode" aria-hidden="true"></i>Code:
+                            <span> STN084-2021-00160 </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-calendar-minus-o" aria-hidden="true"></i>Ngày đi:
+                            <span>16-02-2021</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Ngày về:
+                            <span>17-02-2021</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>Thời gian:
+                            <span>2 ngày 1 đêm</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-user-secret" aria-hidden="true"></i>Giá Người lớn:
+                            <span>
+                                <strong>6,500,000</strong> X 1
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-usd" aria-hidden="true"></i>
+                            <span><strong style="font-size: 17px">Thanh toán bằng tiền mặt tại văn phòng Lữ hành Saigontourist</strong></span>
+                        </li>
+                    </ul>
+                    <div class="priceTotal">
+                        <hr>
+                        <h2>
+                            Tổng: <span>
+                                6.500.000
+                                <span class="price-label"> đồng</span>
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </aside>*@
+</div>
+
+<section class="mainContentSection booking-container">
+    <div class="container">
+        <div class="row progress-wizard" style="border-bottom:0;">
+            <div class="col-sm-3 col-xs-12 progress-wizard-step active ">
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <a href="#" class="progress-wizard-dot">
+                    <span style="font-size: 20px"> 1 </span> .Nhập thông tin hành khách
+                </a>
+            </div>
+            <div class="col-sm-3 col-xs-12 progress-wizard-step  disabled">
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+                <a href="#" class="progress-wizard-dot">
+                    <span style="font-size: 20px"> 2</span> .Xác nhận
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding submit_infor">
+            <!-- Thông tin về tour -->
+            <div class="title">
+                <h3> XÁC NHẬN THÔNG TIN TOUR  </h3>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="time">Thời gian: </label>
+                        <label value=""></label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="transport">Phương tiện: </label>
+                        <label value=""></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="start">Điểm xuất phát: </label>
+                        <label value=""></label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="end">Điểm đến: </label>
+                        <label value=""></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding submit_infor">
+            <!-- Thông tin về KH -->
+            <div class="title">
+                <h3> XÁC NHẬN THÔNG TIN </h3>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="user">Tên: </label>
+                        <label id="user" value=""></label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="phone">Số điện thoại: </label>
+                        <label id="phone" value=""></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="email">Email: </label>
+                        <label id="email" value=""></label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="address">Địa chỉ: </label>
+                        <label id="address"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="nation">Quốc gia: </label>
+                        <label id="nation" value=""></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-pull-4 col-xs-12">
+            <div class="col-xs-12">
+                <div class="buttonArea galleryBtnArea">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#" id="back_btn" class="btn buttonTransparent" name="action">Trở về</a>
+                        </li>
+                        <li class="pull-right">
+                            <a href="" id="btnSubmit" class="btn buttonTransparent" data-toggle="modal" data-target="#myModal"> Tiếp tục </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Partial("_Confirm","DatTour")

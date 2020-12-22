@@ -61,7 +61,7 @@
     </section>*@
 <!--search end -->
 <!-- Tour introduce -->
-<section class="highlights no-margin">
+<section class="highlights no-margin" data-target="#Modal_Buy" data-toggle="m">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -89,10 +89,8 @@
                                     Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
                                 </a>
                             </div>
-                            <a href="@Url.Action("DatTour", "DatTour")">
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
+                            <a href="#" id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                Đặt Tour
                             </a>
                         </div>
                         <div class="box-tour-price">
@@ -123,10 +121,8 @@
                                     Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
                                 </a>
                             </div>
-                            <a href="@Url.Action("DatTour", "DatTour")">
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
+                            <a href="#" id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                Đặt Tour
                             </a>
                         </div>
                         <div class="box-tour-price">
@@ -157,10 +153,8 @@
                                     Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
                                 </a>
                             </div>
-                            <a href="@Url.Action("DatTour", "DatTour")">
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
+                            <a href="#" id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                Đặt Tour
                             </a>
                         </div>
                         <div class="box-tour-price">
@@ -194,12 +188,10 @@
                                     Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
                                 </a>
                             </div>
-                            <a href="@Url.Action("DatTour", "DatTour")">
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
+                            <a href="#" id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                Đặt Tour
                             </a>
-                            
+
                         </div>
                         <div class="box-tour-price">
                             <p class="text"> Giá từ </p>
@@ -228,10 +220,8 @@
                                     Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
                                 </a>
                             </div>
-                            <a href="@Url.Action("DatTour", "DatTour")">
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
+                            <a href="#" id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                Đặt Tour
                             </a>
                         </div>
                         <div class="box-tour-price">
@@ -261,10 +251,8 @@
                                     Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
                                 </a>
                             </div>
-                            <a href="@Url.Action("DatTour", "DatTour")">
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
+                            <a href="#" id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                Đặt Tour
                             </a>
                         </div>
                         <div class="box-tour-price">
@@ -507,7 +495,6 @@
 <!--</div>
 </section>-->
 <!-- home-banner -->
-
 <section class="home-banner" style="margin-top: 30px">
     <div class="container">
         <div class="row">
@@ -522,3 +509,26 @@
         </div>
     </div>
 </section>
+
+@****************************** Thông báo xác nhận Mua Tour *********************************@
+<!-- Modal -->
+<div class="modal fade" id="Modal_Buy" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> THÔNG BÁO! </h4>
+            </div>
+            <div class="modal-body">
+                <p> Đăng nhập để tiếp tục? </p>
+            </div>
+            <div class="modal-footer">
+                <a href="@Url.Action("DangNhap", "Account")" class="btn b-btn-primary"> Đồng ý </a>
+                <a class="btn b-btn-default" data-dismiss="modal"> Hủy </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@************************************************************************@

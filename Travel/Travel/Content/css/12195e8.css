@@ -487,16 +487,25 @@
 
 /*---------------------------------------------------*/
 .member-wrapper {
-    height: 800px;
+    height: 900px;
     position: relative;
 }
 
     .member-wrapper .background {
-        background-image: url(../image/slide3.jpg);
+        background-image: url(../image/bg_DN.jpg);
         background-size: cover;
         height: 100%;
         width: 100%;
+        opacity: .5
     }
+
+        .member-wrapper .background.register {
+            background-image: url(../image/bg_DN.jpg);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            opacity: .5
+        }
 
 .member-content {
     position: absolute;
@@ -505,16 +514,25 @@
     width: 100%;
 }
 
-    .member-content .login, .member-content .register {
+    .member-content .login, member-content {
         width: 770px;
         height: auto;
         margin: 200px auto;
-        background: #fff;
-        padding: 20px;
+        /* background: #fff;*/
+        padding: 240px;
+    }
+
+    .member-content .register {
+        width: 770px;
+        height: auto;
+        margin: 200px auto;
+        /* background: #fff;*/
+        padding: 290px;
     }
 
     .member-content .form-content, .member-content .form-footer {
-        padding-right: 10px;
+        /*padding-right: 10px;*/
+        margin-bottom: 20px
     }
 
     .member-content .register .form-footer {
@@ -555,9 +573,10 @@
 }
 
 .login h4.title, .register h4.title {
-    font-size: 20px;
-    margin: 5px 0 15px;
     text-transform: uppercase;
+    /* margin: 0 0 20px 0;*/
+    font-size: 30px;
+    padding-bottom: 15px
 }
 
 .member-content .social-title {
@@ -2723,29 +2742,29 @@
                     opacity: 1;
                 }
 
-                    .right-detail-tour-box .list-rows .items .item-line:hover > i {
-                        color: #333;
-                    }
+        .right-detail-tour-box .list-rows .items .item-line:hover > i {
+            color: #333;
+        }
 
-                    .right-detail-tour-box .list-rows .item > .item-line:hover > .text {
-                        color: #333;
-                    }
+        .right-detail-tour-box .list-rows .item > .item-line:hover > .text {
+            color: #333;
+        }
 
-                .right-detail-tour-box .list-rows .item > .item-line > i {
-                    color: #333;
-                    margin-right: 8px;
-                    font-size: 16px;
-                    float: left;
-                    line-height: 24px;
-                }
+        .right-detail-tour-box .list-rows .item > .item-line > i {
+            color: #333;
+            margin-right: 8px;
+            font-size: 16px;
+            float: left;
+            line-height: 24px;
+        }
 
-                .right-detail-tour-box .list-rows .item > .item-line > .text {
-                    flex: 1;
-                    color: #333;
-                    font-size: 13px;
-                  /*  float: left;
+        .right-detail-tour-box .list-rows .item > .item-line > .text {
+            flex: 1;
+            color: #333;
+            font-size: 13px;
+            /*  float: left;
                     line-height: 24px;*/
-                }
+        }
 
     .right-detail-tour-box .callback-sgt {
         float: left;
@@ -3584,10 +3603,18 @@ form input, form textarea {
     border-radius: 0;
 }
 
-    form input:focus, form select:focus, form textarea:focus {
+/*form input:focus, form select:focus, form textarea:focus {
         outline: none;
-        border-color: #66afe9;
-    }
+        border-color: #66afe9 !important;*/
+/*position: absolute;*/
+/*top: 18px;*/
+/*left: 0;
+        font-size: 14px;
+        font-weight: normal;
+        transition: all .2s ease-out;*/
+/*color: #7b6b6b;*/
+/*pointer-events: none;*/
+/*}*/
 
 form select {
     border: none;
@@ -3640,7 +3667,7 @@ form div.label-top {
 
     form div.label-top input.label-top ~ label, form div.label-top textarea.label-top ~ label {
         position: absolute;
-        top: 18px;
+        /*top: 18px;*/
         left: 0;
         font-size: 14px;
         font-weight: normal;

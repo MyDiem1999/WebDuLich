@@ -669,7 +669,7 @@ a {
 
     .form .form-group .form-control:focus, .commentsForm .form-group .form-control:focus, .modal.bookingModal .modal-dialog .modal-content .modal-body .form-group .form-control:focus {
         outline: 0;
-        border-color: red
+        border-color: #6291e4 !important
     }
 
 .form .form-group textarea.form-control, .commentsForm .form-group textarea.form-control, .modal.bookingModal .modal-dialog .modal-content .modal-body .form-group textarea.form-control {
@@ -1578,8 +1578,11 @@ a {
 }
 
 .buttonArea.galleryBtnArea {
-    text-align: left;
-    padding: 60px 0;
+    /* text-align: left;
+    padding: 60px 0;*/
+    text-align: center;
+    padding: 20px 0;
+    padding-right: 86px;
 }
 
     .buttonArea.galleryBtnArea .buttonTransparent, .buttonArea.galleryBtnArea .paginationCenter .pagination li:first-child a, .paginationCenter .pagination li:first-child .buttonArea.galleryBtnArea a, .buttonArea.galleryBtnArea .paginationCenter .pagination li:last-child a, .paginationCenter .pagination li:last-child .buttonArea.galleryBtnArea a, .buttonArea.galleryBtnArea .isotopeFilters ul.filter > li a, .isotopeFilters ul.filter > li .buttonArea.galleryBtnArea a {
@@ -2540,10 +2543,10 @@ header {
     /*background-color: #fff !important*/
 }
 
-    .lightHeader .navbar-nav > li > a:hover {
-        color: #ff891e !important;
-        border-color: #ff891e;
-    }
+.lightHeader .navbar-nav > li > a:hover {
+    color: #ff891e !important;
+    border-color: #ff891e;
+}
 
 @media (max-width: 767px) {
     .lightHeader .navbar-nav > li > a {
@@ -7458,6 +7461,12 @@ article.box.isotopeSelector.box-kiritm.box-tour:after {
     line-height: 30px;
     border-radius: 4px
 }
+
+    .btn.btn-orange:hover {
+        opacity: .8;
+        outline: 0;
+        color: #fff !important
+    }
 
 .promotion-code .form-group {
     display: inline-block;

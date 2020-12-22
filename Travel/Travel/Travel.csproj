@@ -120,11 +120,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DatTourController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Infor_Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +184,7 @@
     <Content Include="Content\image\arrow_left2.png" />
     <Content Include="Content\image\arrow_right.png" />
     <Content Include="Content\image\arrow_right2.png" />
+    <Content Include="Content\image\bg_DN.jpg" />
     <Content Include="Content\image\binhminh.jpg" />
     <Content Include="Content\image\blog-single-02.png" />
     <Content Include="Content\image\booking-drop.png" />
@@ -190,6 +193,8 @@
     <Content Include="Content\image\bullets.png" />
     <Content Include="Content\image\bullets2.png" />
     <Content Include="Content\image\bullet_boxed.png" />
+    <Content Include="Content\image\cd-top-arrow.svg" />
+    <Content Include="Content\image\Chopper.png" />
     <Content Include="Content\image\coloredbg.png" />
     <Content Include="Content\image\coming-bg.jpg" />
     <Content Include="Content\image\con-dao-beach.jpg" />
@@ -208,6 +213,7 @@
     <Content Include="Content\image\halong.jpg" />
     <Content Include="Content\image\ho-hoan-kiem.jpg" />
     <Content Include="Content\image\hoaanhdao.jpg" />
+    <Content Include="Content\image\hoamai.png" />
     <Content Include="Content\image\hoatamgiacmach.jpg" />
     <Content Include="Content\image\hoian.jpg" />
     <Content Include="Content\image\ic-english.png" />
@@ -220,6 +226,7 @@
     <Content Include="Content\image\large_right.png" />
     <Content Include="Content\image\light-drop.png" />
     <Content Include="Content\image\loader.gif" />
+    <Content Include="Content\image\login.png" />
     <Content Include="Content\image\logo-dark.png" />
     <Content Include="Content\image\logo-trans.png" />
     <Content Include="Content\image\logo.png" />
@@ -254,6 +261,7 @@
     <Content Include="Content\image\travel05.jpg" />
     <Content Include="Content\image\travel06.jpg" />
     <Content Include="Content\image\travel07.jpg" />
+    <Content Include="Content\image\User.jpeg" />
     <Content Include="Content\image\vuontraicay.jpg" />
     <Content Include="Content\lib\animate.min.css" />
     <Content Include="Content\lib\bootstrap.bundle.min.js" />
@@ -2004,6 +2012,7 @@
     <Content Include="Scripts\js\bootstrap.min.js" />
     <Content Include="Scripts\js\c242b5cdbb2eb27c3bd9b7ff63ca4988_1.js" />
     <Content Include="Scripts\js\custom.js" />
+    <Content Include="Scripts\js\effect.js" />
     <Content Include="Scripts\js\featherlight.js" />
     <Content Include="Scripts\js\froogaloop2.min.js" />
     <Content Include="Scripts\js\html5shiv.min.js" />
@@ -2022,18 +2031,21 @@
     <Content Include="Scripts\js\jquery.themepunch.revolution.min.js" />
     <Content Include="Scripts\js\jquery.themepunch.tools.min.js" />
     <Content Include="Scripts\js\jquery.ui.datepicker-vi.js" />
+    <Content Include="Scripts\js\jquery.validate.min.js" />
     <Content Include="Scripts\js\jquery.vimeo.api.min.js" />
     <Content Include="Scripts\js\js.js" />
     <Content Include="Scripts\js\jssor.slider.min.js" />
     <Content Include="Scripts\js\loader.js" />
     <Content Include="Scripts\js\main.js" />
     <Content Include="Scripts\js\modernizr-2.8.3.min.js" />
+    <Content Include="Scripts\js\newyear.js" />
     <Content Include="Scripts\js\owl.carousel.js" />
     <Content Include="Scripts\js\plugins.js" />
     <Content Include="Scripts\js\respond.min.js" />
     <Content Include="Scripts\js\select2.full.js" />
     <Content Include="Scripts\js\slick.js" />
     <Content Include="Scripts\js\SmoothScroll.js" />
+    <Content Include="Scripts\js\util.js" />
     <Content Include="Scripts\js\waypoints.min.js" />
     <Content Include="Scripts\js\wow.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -2056,10 +2068,14 @@
     <Content Include="Views\Shared\_ChuongtrinhTour.cshtml" />
     <Content Include="Views\Shared\_listInforTour.cshtml" />
     <Content Include="Views\DatTour\_XacnhanTTKH.cshtml" />
+    <Content Include="Views\Account\DangNhap.cshtml" />
+    <Content Include="Views\Account\DangKy.cshtml" />
+    <Content Include="Views\DatTour\XN_DatTour.cshtml" />
+    <Content Include="Views\DatTour\_Confirm.cshtml" />
+    <Content Include="Views\DatTour\_BuyTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

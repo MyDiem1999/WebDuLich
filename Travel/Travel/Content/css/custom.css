@@ -23,7 +23,7 @@
 
 #logo img {
     height: 80px !important;
-    margin-top: -14px;
+    margin-top: -18px;
     position: absolute;
     width: 85%;
 }
@@ -169,8 +169,190 @@ svg.svg-inline--fa.fa-phone.fa-w-16 {
         height: 32px
     }
 
-@media print {
-    .MuiButtonBase-root {
-        -webkit-print-color-adjust: exact;
+/*.submit_infor {
+    display: none
+}*/
+
+/******************************************CUSTOM LOGIN/REGISTER *******************************************************************/
+.loginbox.login_user {
+    width: 40%;
+    height: 500px;
+    /*background: #000;*/
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    /*padding: 70px 30px 70px 130px;*/
+    background: rgb(191 255 255 / 30%);
+    padding: 90px;
+    padding-top: 110px
+}
+
+.avatar {
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px)
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginbox p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input {
+    width: 100%;
+    /*margin-bottom: 20px*/
+}
+
+    .loginbox input[type="email"], .loginbox input[type="password"], .loginbox input[type="text"], .loginbox input[type="number"], .loginbox input[type="button"] {
+        border: none;
+        /*border-bottom: 1px solid #fff;*/
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #333;
+        font-size: 16px;
     }
+
+    .loginbox input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 35px;
+        background: #fb2525;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        width: 48%;
+        margin-right: 8px;
+    }
+
+        .loginbox input[type="submit"]:hover {
+            cursor: pointer;
+            background: #c91e1e;
+        }
+
+    .loginbox input[type="button"] {
+        border: none;
+        outline: none;
+        height: 35px;
+        background: #fb2525;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        width: 48%;
+    }
+
+        .loginbox input[type="button"]:hover {
+            cursor: pointer;
+            background: #c91e1e;
+        }
+
+.loginbox a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+    .loginbox a:hover {
+        color: #ffc107
+    }
+
+form .has-error .form-control {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+    form .has-error .form-control:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+.loginbox.register_user {
+    width: 40%;
+    height: 660px;
+    /*background: #000;*/
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 90px;
+    background: rgb(191 255 255 / 30%);
+}
+
+.bt {
+    border-bottom: 1px solid #fff;
+}
+
+
+/********************************************************** BTN TOP ***************************************************/
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    /* width: 32px;
+    height: 32px;*/
+    text-align: center;
+    line-height: 30px;
+    /* background: #f5f5f5;*/
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    /*opacity: 0;*/
+}
+
+    #back-to-top:hover {
+        /*background: #e9ebec;*/
+    }
+
+    #back-to-top.show {
+        opacity: 1;
+    }
+
+.fas.fa-arrow-circle-up {
+    color: #ff891ee0;
+    font-size: 40px;
+}
+
+/********************************************************* CUSTOM POPUP **************************************************************/
+#myModal .modal-content {
+    top: 175px !important;
+    margin: 0 110px
+}
+
+#error, #error1, #error2, #error3 {
+    font-size: 12px;
+    color: red;
+    display: block;
+    margin-top: 5px;
+}
+
+.b-btn-primary {
+    background-color: #fb2525;
+    border-radius: 4px !important;
+    color: #fff !important;
+}
+
+.b-btn-default {
+    background-color: #dfdfdf;
+    color: #333 !important;
+    border-radius: 4px !important;
 }
