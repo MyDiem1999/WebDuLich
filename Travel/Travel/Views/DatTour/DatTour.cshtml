@@ -102,64 +102,111 @@
             </div>
 
             <!-- Chọn Số lượng -->
-            @*            <div class="col-sm-8 col-sm-pull-4 col-xs-12">
-                    <div class="payment-wrap bookingForm">
-                        <form role="form" method="post" class="form" id="info-form" novalidate="">
-                            <div class="no-padding">
-                                <div class="title">
-                                    <h3>SỐ LƯỢNG HÀNH KHÁCH</h3>
+           @* <div class="col-sm-8 col-sm-pull-4 col-xs-12">
+                <div class="payment-wrap bookingForm">
+                    <form role="form" method="post" class="form" id="info-form" novalidate="">
+                        <div class="no-padding">
+                            <div class="title">
+                                <h3>SỐ LƯỢNG HÀNH KHÁCH</h3>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Người lớn </label><label style="color: red"> (*) </label>
+                                        <input type="number" name="adult" placeholder="" value="1" class="form-control   has-value " required="required" min="1" pattern="^\d+$">
+                                        <span class="error"></span>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
-                                        <div class="form-group">
-                                            <label>Người lớn (*)</label>
-                                            <input type="number" name="adult" placeholder="" value="1" class="form-control   has-value " required="required" min="1" pattern="^\d+$">
-                                            <span class="error"></span>
-                                        </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                </div>
+                            </div>
 
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Trẻ em </label>
+                                        <input type="number" name="child" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
+                                        <span class="error"></span>
                                     </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
-                                        <div class="form-group">
-                                            <label>Trẻ em </label>
-                                            <input type="number" name="child" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
-                                            <span class="error"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-sm-7 col-xs-12 no-padding">
+                                    <div class="form-group col-sm-6 col-xs-12">
                                         <ul class="highlight-text">
                                             <li>Tour nước ngoài: áp dụng từ 2 đến dưới 12 tuổi</li>
                                             <li>Tour trong nước và tour Campuchia: áp dụng từ 6 đến 11 tuổi</li>
                                         </ul>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
-                                        <div class="form-group">
-                                            <label>Em bé </label>
-                                            <input type="number" name="infant" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
-                                            <span class="error"></span>
-                                        </div>
-
+                                </div>                               
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Em bé </label>
+                                        <input type="number" name="infant" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
+                                        <span class="error"></span>
                                     </div>
-                                    <div class="col-md-7 col-sm-7 col-xs-12 no-padding">
+                                    <div class="form-group col-sm-6 col-xs-12">
                                         <ul class="highlight-text">
                                             <li>Tour nước ngoài: áp dụng từ Dưới 2 tuổi</li>
                                             <li>Tour trong nước và tour Campuchia: áp dụng từ 2 đến 5 tuổi</li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div>                               
                             </div>
-                        </form>
-                    </div>
-                </div>*@
+                        </div>
+                    </form>
+                </div>
+            </div>*@
 
-            <!-- Thông tin liên hệ -->
+            
             <div class="col-sm-8 col-sm-pull-4 col-xs-12 infor_custom">
                 <div class="payment-wrap bookingForm">
+                    <!-- Chọn Số lượng -->
+                    <form role="form" method="post" class="form" id="info-form" novalidate="">
+                        <div class="no-padding">
+                            <div class="title">
+                                <h3>SỐ LƯỢNG HÀNH KHÁCH</h3>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Người lớn </label> <label style="color: red"> (*) </label>
+                                        <input type="number" name="adult" placeholder="" value="1" class="form-control   has-value " required="required" min="1" pattern="^\d+$">
+                                        <span class="error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Trẻ em </label>
+                                        <input type="number" name="child" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <ul class="highlight-text">
+                                        <li>Tour nước ngoài: áp dụng từ 2 đến dưới 12 tuổi</li>
+                                        <li>Tour trong nước và tour Campuchia: áp dụng từ 6 đến 11 tuổi</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Em bé </label>
+                                        <input type="number" name="infant" placeholder="" value="" class="form-control  " min="0" pattern="^\d+$">
+                                        <span class="error"></span>
+                                    </div>                               
+                                </div>
+                                <div class="form-group col-sm-6 col-xs-12">
+                                    <ul class="highlight-text">
+                                        <li>Tour nước ngoài: áp dụng từ Dưới 2 tuổi</li>
+                                        <li>Tour trong nước và tour Campuchia: áp dụng từ 2 đến 5 tuổi</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Thông tin liên hệ -->
                     <form method="post" action="" class="form has-validation-callback" id="info-form" name="infor">
                         <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
                             <div class="title">

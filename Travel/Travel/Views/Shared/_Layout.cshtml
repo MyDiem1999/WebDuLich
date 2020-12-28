@@ -56,13 +56,13 @@
                 <div class="row">
                     <div class="col-md-6 no-padding">
                         <ul>
-                            <li>
+                            <li title="info@viettravel.vn">
                                 <a href="#">
                                     <i class="fa fa-envelope"></i>
                                     info@viettravel.vn
                                 </a>
                             </li>
-                            <li>
+                            <li title="Hotline: 1900 1588">
                                 <a class="ticket-hotline" href="tel:1900 1588">
                                     <i class="fa fa-phone"></i>
                                     Hotline: 1900 1588
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul id="w0" class="login-container">
-                            <li>
+                            <li title="Đăng nhập">
                                 <a href="@Url.Action("DangNhap","Account")" class="login-href">
                                     <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
                                     &nbsp;Đăng nhập
@@ -93,26 +93,21 @@
                                         <a href="@Url.Action("LogOut","KhachHang")" class="btn btn-outline-light mr-sm-2">Đăng xuất</a>
                                     }*@
                             </li>
-                            <li>
-                                <a target="_blank" href="#"
-                                   class="login-href">
+                            <li title="English">
+                                <a target="" href="#" class="login-href">
                                     <i class="flag-english"></i>
                                     <img src="~/Content/image/ic-english.png" />&nbsp;English
                                 </a>
                             </li>
-                            <li>
-                                <a target="_blank" href="#"
-                                   class="login-href">
+                            <li title="VietNam">
+                                <a target="" href="#" class="login-href">
                                     <i class="flag-english"></i>
                                     <img src="~/Content/image/ic-vietnamese.png" />&nbsp;VietNam
                                 </a>
                             </li>
-                            <li class="dropdown searchBox searchBoxLayout">
-                                <a href="#" class="dropdown-toggle" id="buttonSearchLayout">
-                                    <span class="searchIcon">
-                                        @*<input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm theo yêu cầu" name="search" style="width:300px" />*@
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </span>
+                            <li title="Tour đã đặt">
+                                <a target="" href="#" class="">
+                                    <i class="fas fa-wallet"></i>
                                 </a>
                             </li>
                         </ul>
@@ -457,22 +452,21 @@
                                     LIÊN HỆ
                                 </a>
                             </li>
-                            @*<li class="dropdown searchBox searchBoxLayout">
-                                    <a href="#" class="dropdown-toggle" id="buttonSearchLayout">
-                                        <span class="searchIcon">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </span>
-                                    </a>
-                                </li>*@
+                            <li class="search-wrapper" title="Tìm kiếm">
+                                <div class="input-holder">
+                                    <input type="text" class="search-input" placeholder="Nhập tìm kiếm..." />
+                                    <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                                </div>
+                                <span class="close" onclick="searchToggle(this, event);"></span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-
         <!-- slideshow -->
-
     </header>
+
     <!-- dropdown options menu end -->
     <!-- header end -->
     <!-- Content -->
@@ -483,7 +477,6 @@
     <!-- scroll back to top -->
     <a href="#" id="back-to-top" title="Back to top">@*&uarr;*@<i class="fas fa-arrow-circle-up" style="color: #ff891ee0; font-size: 40px"></i></a>
     <!-- end scroll back to top-->
-
     <!-- footer -->
     <footer>
         <div class="footer clearfix">
@@ -530,7 +523,6 @@
                             <div class="col-sm-4 col-xs-12">
                                 <div class="footerContent info-sgt-box">
                                     <h5>THÔNG TIN</h5>
-
                                     <ul>
                                         @*<li><a class="link-level4-light" href="/tuyen-diem">Tuyến điểm </a></li>*@
                                         <li><a class="link-level4-light" href="#">Tin Lữ hành viettravel </a></li>
@@ -588,6 +580,24 @@
         </div>
     </footer>
     <!-- footer end -->
+
+    <script type="text/javascript">
+        /*------------------------------------------------------- SEARCH ----------------------------------------*/
+        function searchToggle(obj, evt) {
+            var container = $(obj).closest('.search-wrapper');
+            if (!container.hasClass('active')) {
+                container.addClass('active');
+                evt.preventDefault();
+            }
+            else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+                container.removeClass('active');
+                // clear input
+                container.find('.search-input').val('');
+            }
+        }
+    </script>
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
