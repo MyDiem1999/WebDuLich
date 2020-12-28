@@ -166,11 +166,11 @@
     }
 
     /*************************************** CLICK HIDE/SHOW CONTENT INFOR CUSTOM *********************************************/
-    /*function connect() {
+    function connect() {
         $(".submit_infor").show();
         $(".infor_custom").hide();
     }
-    $("a#btnSubmit").click(connect);*/
+    $("a#btnSubmit").click(connect);
 
     //function connect1() {
     //    $(".submit_infor").hide();
@@ -185,7 +185,7 @@
         return false;
     });
 
-/*    var button = document.getElementById("btnSubmit");
+    /*var button = document.getElementById("btnSubmit");
     var flag = 0;
     var url = object.attr('href');
     button.onclick = function () {
@@ -209,8 +209,8 @@
             window.history.back();
             return false;
         });
-    }
-*/
+    }*/
+
 
     /*--------------------------------- BTN BACK_TO_TOP --------------------------------*/
     if ($('#back-to-top').length) {

@@ -63,3 +63,20 @@
 <script src="~/Scripts/js/effect.js"></script>
 @*<script src="~/Scripts/js/newyear.js"></script>*@
 
+@*<label> password :</label>
+    <input name="password" id="password" type="password" />
+    <span id="message"></span>
+    <label> confirm password: </label>
+    <input type="password" name="confirm_password" id="confirm_password" />
+    <span id="message"></span>
+    <input type="submit" onclick="check()" />
+
+    <script>
+        function check() {
+            if ((document.getElementById('password').value == null) || (document.getElementById('confirm_password').value == null)) {
+                document.getElementById('message').innerHTML = "match";
+            } else {
+                document.getElementById('message').innerHTML = "no match";
+            }
+        }
+    </script>*@

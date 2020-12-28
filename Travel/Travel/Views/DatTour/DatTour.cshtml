@@ -3,7 +3,8 @@
     ViewBag.Title = "DatTour";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@*@using (Html.BeginForm())
+    {*@
 <section class="pageTitle" style="background-image:url(../../Content/image/img.jpg)">
     <div class="container">
         <div class="row">
@@ -19,6 +20,10 @@
         </div>
     </div>
 </section>
+
+
+
+
 
 <!-- form đặt tour -->
 <section class="mainContentSection booking-container">
@@ -155,7 +160,7 @@
             <!-- Thông tin liên hệ -->
             <div class="col-sm-8 col-sm-pull-4 col-xs-12 infor_custom">
                 <div class="payment-wrap bookingForm">
-                    <form method="post" action="" class="form has-validation-callback" id="info-form">
+                    <form method="post" action="" class="form has-validation-callback" id="info-form" name="infor">
                         <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
                             <div class="title">
                                 <h3>THÔNG TIN LIÊN HỆ</h3>
@@ -164,7 +169,7 @@
                                 <div class="form-group col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <label>Tên </label> <label style="color: red"> (*) </label>
-                                        <input type="text" id="username" name="user" placeholder="" class="form-control input" required data-validation="required" pattern="[a-z]{1,15}">
+                                        <input type="text" id="username" name="user" placeholder="" class="form-control input" required data-validation="required" pattern="[a-z]{1,15}" />
                                         <span id="error"></span>
                                     </div>
                                 </div>
@@ -284,9 +289,9 @@
         </div>
     </div>
 </section>
-
-
-@******** kiểm tra trường bắt buộc ********@
+@*}
+*@
+@******** kiểm tra trường bắt buộc và lấy DL qua trang xác nhận ********@
 <script>
     function myFunction() {
         var text = "giá trị này không được phép rỗng!!";
@@ -306,82 +311,28 @@
 
         var nearby = new Array("error","error1","error2","error3");
 
-            for (i in data) {
-                var error = myerror[i];
-                var span = nearby[i];
+        for (i in data) {
+            var error = myerror[i];
+            var span = nearby[i];
 
-                if (data[i] == "") {
-                    document.getElementById(span).innerHTML = error;
-                    $(".input").css('border-color', 'red');
-                } else {
-                    document.getElementById(span).innerHTML = "";
-                    $(".input").css('border-color', '#bebaf9');
-                    window.location.href = url;
-                }
-        };
-
- @*       if ($(".input").val().trim() == '')
-            $(".input").css('border-color', 'red');
-        else
-            $(".input").css('border-color', '#bebaf9');
-*@
-    }
-
-</script>
-
-<style>
-    .bordrer {
-        border-color: red
-    }
-</style>
-@**********************@
-@*<label> password :</label>
-    <input name="password" id="password" type="password" />
-    <span id="message"></span>
-    <label> confirm password: </label>
-    <input type="password" name="confirm_password" id="confirm_password" />
-    <span id="message"></span>
-    <input type="submit" onclick="check()" />
-
-    <script>
-        function check() {
-            if ((document.getElementById('password').value == null) || (document.getElementById('confirm_password').value == null)) {
-                document.getElementById('message').innerHTML = "match";
+            if (data[i] == "") {
+                document.getElementById(span).innerHTML = error;
+                $(".input").css('border-color', 'red');
             } else {
-                document.getElementById('message').innerHTML = "no match";
+                document.getElementById(span).innerHTML = "";
+                $(".input").css('border-color', '#bebaf9');
+
+                var username = document.getElementById('username').value;
+                var phone = document.getElementById('numberphone').value;
+                var Email = document.getElementById('email').value;
+                var Address = document.getElementById('address').value;
+                var e = document.getElementById('slct');
+                var nation = e.options[e.selectedIndex].text;
+                window.location.href = url + "?user=" + username + "&phone=" + phone + "&email=" + Email + "&address=" + Address + "&nation=" + nation;
             }
         }
-    </script>*@
-@******************@
-@*<form id="form" name="form" method="post" action="">
-        <label>
-            username :
-            <input name="username" id="username" type="text" />
-        </label> <br>
-        <label>
-            password :
-            <input name="password" id="password" type="password" id="password" />
-        </label>      <br>
-        <label>
-            confirm password:
-            <input type="password" name="confirm_password" id="confirm_password" /><span id="indicator"></span> <br>
-        </label>
-        <label>
-            <input type="submit" name="submit" id="regbtn" value="registration" />
-        </label>
-    </form>
+        };
+</script>
 
-    <script>
-        $('#confirm_password').keyup(function () {
-            var pass = $('#password').val();
-            var cpass = $('#confirm_password').val();
-            if (pass != cpass) {
-                $('#indicator').attr({ class: 'red' });
-                $('#regbtn').attr({ disabled: true });
-            }
-            else {
-                $('#indicator').attr({ class: 'green' });
-                $('#regbtn').attr({ disabled: false });
-            }
-        });
-    </script>*@
+
+@************************************************************8*@

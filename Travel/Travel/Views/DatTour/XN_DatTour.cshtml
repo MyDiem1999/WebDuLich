@@ -3,6 +3,9 @@
     ViewBag.Title = "XN_DatTour";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using Travel.Models;
+@model Infor_Customer
+
 <section class="pageTitle" style="background-image:url(../../Content/image/img.jpg)">
     <div class="container">
         <div class="row">
@@ -72,6 +75,7 @@
         </aside>*@
 </div>
 
+
 <section class="mainContentSection booking-container">
     <div class="container">
         <div class="row progress-wizard" style="border-bottom:0;">
@@ -136,36 +140,31 @@
             <div class="row">
                 <div class="form-group col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label name="user">Tên: </label>
-                        <label id="user" value=""></label>
+                        <label>Tên: @Model.username </label>
                     </div>
                 </div>
                 <div class="form-group col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label name="phone">Số điện thoại: </label>
-                        <label id="phone" value=""></label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label name="email">Email: </label>
-                        <label id="email" value=""></label>
-                    </div>
-                </div>
-                <div class="form-group col-sm-6 col-xs-12">
-                    <div class="form-group">
-                        <label name="address">Địa chỉ: </label>
-                        <label id="address"></label>
+                        <label name="phone">Số điện thoại: @Model.numberphone </label>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label name="nation">Quốc gia: </label>
-                        <label id="nation" value=""></label>
+                        <label name="email">Email: @Model.Email </label>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="address">Địa chỉ: @Model.Address </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label name="nation">Quốc gia: @Model.SelectNation </label>
                     </div>
                 </div>
             </div>
@@ -188,4 +187,4 @@
     </div>
 </section>
 
-@Html.Partial("_Confirm","DatTour")
+@Html.Partial("_Confirm", "DatTour")

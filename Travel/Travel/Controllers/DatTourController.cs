@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Travel.Models;
 
 namespace Travel.Controllers
 {
@@ -14,36 +15,32 @@ namespace Travel.Controllers
             return View();
         }
 
-       /* [HttpPost]
-        public ActionResult XL_DatTour(FormCollection coll, ht)
+        //gửi DL đi và chuyển qua Xác nhận
+        [HttpPost]
+        public ActionResult DatTour(string user, string phone, string email, string address, string nation)
         {
-            // lay text
-            var user = coll["txt_user"];
-            var phone = coll["txt_numberphone"];
-            var email = coll["txt_mail"];
-            var address = coll["txt_address"];
+            Infor_Customer cs = new Infor_Customer();
+            cs.username = user;
+            cs.numberphone = phone;
+            cs.Email = email;
+            cs.Address = address;
+            cs.SelectNation = nation;
 
-            // lay dropdown
-            var nation = selectValue.tostring();
-            
-
-            Information sv = new Information();
-            sv.Fullname = ten;
-            sv.IdStudent = ms;
-            sv.Email = email;
-            sv.Note = note;
-            sv.Check = chk;
-            //sv.FileImage = tenfile;
-
-            sv.ChooseWorkTime = Choose;
-
-            return RedirectToAction("XNThongTin", sv);
-        }*/
-        public ActionResult XN_DatTour()
-        {
-            return View();
-
-          /*  return View(sv);*/
+            return RedirectToAction("XN_DatTour", cs);
         }
+
+        public ActionResult XN_DatTour(string user, string phone, string email, string address, string nation)
+        {
+            Infor_Customer cs = new Infor_Customer();
+            cs.username = user;
+            cs.numberphone = phone;
+            cs.Email = email;
+            cs.Address = address;
+            cs.SelectNation = nation;
+
+            return View(cs);
+        }
+
+
     }
 }
