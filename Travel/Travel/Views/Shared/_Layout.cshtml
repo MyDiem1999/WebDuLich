@@ -48,6 +48,8 @@
     <link href="~/Content/css/owl.carousel.min.css" rel="stylesheet" />
 </head>
 
+@using Travel.Models;
+
 <body class="changeHeader">
     <!-- header -->
     <header id="header" class="header" style="background-color: rgb(255, 255, 255);">
@@ -73,25 +75,31 @@
                     <div class="col-md-6">
                         <ul id="w0" class="login-container">
                             <li title="Đăng nhập">
-                                <a href="@Url.Action("DangNhap","Account")" class="login-href">
+@*                                <a href="@Url.Action("DangNhap","Account")" class="login-href">
                                     <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
                                     &nbsp;Đăng nhập
-                                </a>
+                                </a>*@
 
                                 <!-- Lấy ID Khách hàng -->
-                                @*                                @if (Session["KH"] == null)
-                                    {
-                                        <<a target="_blank" href="@Url.Action("DangNhap","Account")" class="login-href">
-                                            <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
-                                            &nbsp;Đăng nhập
+                                @if (Session["KH"] == null)
+                                {
+                                    <a href="@Url.Action("DangNhap","Account")" class="login-href" title="Đăng nhập">
+                                        <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
+                                        &nbsp;Đăng nhập
+                                    </a>
+                                }
+                                else
+                                {
+
+                                    KHACH_HANG i = (KHACH_HANG)Session["KH"];
+                                    <div class="style-name">
+                                        <a class="welcome"> Xin chào @i.TEN_KH</a>
+                                        <a href="@Url.Action("LogOut","Account")" class="login-href" title="Đăng xuất">
+                                            <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                                            &nbsp;Đăng xuất
                                         </a>
-                                    }
-                                    else
-                                    {
-                                        tbl_KhachHang i = (tbl_KhachHang)Session["KH"];
-                                        <a class="nav-item mr-sm-2 text-warning" href="@Url.Action("TTKH","KhachHang", new { ma=@i.MaKhachHang})" style="width:100px">Xin chào @i.TenKhachHang</a>
-                                        <a href="@Url.Action("LogOut","KhachHang")" class="btn btn-outline-light mr-sm-2">Đăng xuất</a>
-                                    }*@
+                                    </div>
+                                }
                             </li>
                             <li title="English">
                                 <a target="" href="#" class="login-href">
@@ -106,8 +114,8 @@
                                 </a>
                             </li>
                             <li title="Tour đã đặt">
-                                <a target="" href="#" class="">
-                                    <i class="fas fa-wallet"></i>
+                                <a target="" href="#" class="buy-tour">
+                                    <i class="fas fa-suitcase-rolling"></i>
                                 </a>
                             </li>
                         </ul>

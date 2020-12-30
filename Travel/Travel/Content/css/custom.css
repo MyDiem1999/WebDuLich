@@ -282,7 +282,7 @@ form .has-error .form-control {
 
 .loginbox.register_user {
     width: 40%;
-    height: 660px;
+    height: 690px;
     /*background: #000;*/
     color: #fff;
     top: 50%;
@@ -522,3 +522,42 @@ form .has-error .form-control {
 
 
 /***********************************************************/
+.welcome {
+    text-transform: uppercase;
+    padding: 0 30px !important;
+}
+
+    .welcome:hover {
+        color: #fff !important;
+        opacity: 1 !important;
+    }
+
+.style-name {
+    display: flex;
+}
+
+.card-product {
+    width: 250px;
+    height: 350px;
+}
+
+.card-img-top {
+    width: 250px;
+    height: 200px;
+}
+
+.card {
+    width: 250px;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+.card-body {
+    width: 250px;
+    height: 100px;
+}
+
+.buy-tour {
+    font-size: 26px !important;
+    margin-top: 3px !important;
+}

@@ -535,7 +535,7 @@ a {
 
 @media (min-width: 768px) {
     .sectionTitle {
-        margin-bottom: 48px;
+        margin: 25px 0;
     }
 }
 

@@ -3,13 +3,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using Travel.Models;
+@model List<CHUONG_TRINH_TOUR>
+
 @Html.Partial("_slidebanner")
 
 <!-- Tour introduce -->
 <section class="highlights no-margin" data-target="#Modal_Buy" data-toggle="m">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 content-title" style="top: 4px; left: 10px">
                 <h4 class="title text-uppercase white text-bold"> TOUR TẾT </h4>
             </div>
         </div>
@@ -110,6 +113,23 @@
                         <div class="promotion-tour">
                             <div class="text-promotion-tour" title="Tour Tết">Tour Tết</div>
                         </div>
+
+                        @*                    @foreach (var tour in Model)
+                            {
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="card card-product mb-4 border-dark rounded">
+                                        <div class="card1">
+                                            <img class="card-img-top" src="~/Content/image/@tour.HINH_ANH" alt="Card image cap" />
+                                        </div>
+                                        <div class="card-body">
+                                            <p>@tour.TEN_TOUR</p>
+                                            <a href="@Url.Action("ThemGH","GioHang", new { Ma = @sp.MaSanPham}) " class="btn btn-info mua" style="width:90px">Mua</a>
+                                            <a href="@Url.Action("ChiTietSP", new { ma = @sp.MaSanPham}) " class="btn btn-info ct" style="width:90px">Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }*@
+
                     </div>
                 </div>
             </div>
@@ -211,115 +231,55 @@
                     </div>
                 </div>
             </div>
-
-            @*<div class="item">
-                    <div class="row">
-                        <div class="col-sm-4 text-center mt-40">
-                            <div class="high-slider-img">
-                                <a href="@Url.Action("ChiTiet_Tour")">
-                                    <img src="~/Content/image/adwards.jpg" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="box-infor-tour">
-                                <div class="top-details">
-                                    <a class="tour-tag" href="#">
-                                        <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
-                                        <span class="number-detail">có 12 tour</span>
-                                    </a>
-                                </div>
-                                <div class="name-tour-detail">
-                                    <a href="#">
-                                        Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
-                                    </a>
-                                </div>
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
-                            </div>
-                            <div class="box-tour-price">
-                                <p class="text"> Giá từ </p>
-                                <p class="price"> 8.629.000 </p>
-                                <p class="info"> 3 ngày 2 đêm </p>
-                            </div>
-                            <div class="promotion-tour">
-                                <div class="text-promotion-tour" title="Tour Tết">Tour Tết</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center mt-40">
-                            <div class="high-slider-img">
-                                <a href="@Url.Action("ChiTiet_Tour")">
-                                    <img src="~/Content/image/adwards.jpg" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="box-infor-tour">
-                                <div class="top-details">
-                                    <a class="tour-tag" href="#">
-                                        <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
-                                        <span class="number-detail">có 12 tour</span>
-                                    </a>
-                                </div>
-                                <div class="name-tour-detail">
-                                    <a href="#">
-                                        Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
-                                    </a>
-                                </div>
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
-                            </div>
-                            <div class="box-tour-price">
-                                <p class="text"> Giá từ </p>
-                                <p class="price"> 8.629.000 </p>
-                                <p class="info"> 3 ngày 2 đêm </p>
-                            </div>
-                            <div class="promotion-tour">
-                                <div class="text-promotion-tour" title="Tour Tết">Tour Tết</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 text-center mt-40">
-                            <div class="high-slider-img">
-                                <a href="@Url.Action("ChiTiet_Tour")">
-                                    <img src="~/Content/image/adwards.jpg" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="box-infor-tour">
-                                <div class="top-details">
-                                    <a class="tour-tag" href="#">
-                                        <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
-                                        <span class="number-detail">có 12 tour</span>
-                                    </a>
-                                </div>
-                                <div class="name-tour-detail">
-                                    <a href="#">
-                                        Du lịch Tết Tân Sửu 2021 Phú Quốc [Mùng 2, 3, 4 Tết] khởi hành từ Cần Thơ
-                                    </a>
-                                </div>
-                                <div class="btn-buy-tour">
-                                    <button class="btn btn-orange"> Đặt tour </button>
-                                </div>
-                            </div>
-                            <div class="box-tour-price">
-                                <p class="text"> Giá từ </p>
-                                <p class="price"> 8.629.000 </p>
-                                <p class="info"> 3 ngày 2 đêm </p>
-                            </div>
-                            <div class="promotion-tour">
-                                <div class="text-promotion-tour" title="Tour Tết">Tour Tết</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
         </div>
     </div>
 </section>
 
-
-<!--<section class="products-main">
+<!-- ds tour -->
+<section class="products-main">
     <div class="container">
         <div class="row">
-            <div class="row mb-10" style="background-color: black;">
-                <div class="col-md-12">
-                    <h4 class="title text-uppercase white text-bold"> tour hay </h4>
+            <div class="row mb-3 mt-10">
+                <div class="col-md-3 col-sm-6 col-12">
+                    <div class="card">
+                        <img class="card-img-top" src="#" alt="Card image cap" />
+                    </div>
+                    <div class="card-body">
+                        @*            <p>@sp.TenSP @sp.MaSanPham</p>
+                        *@@*            <a href="@Url.Action("ThemGH","GioHang", new { Ma = @sp.MaSanPham}) " class="btn btn-outline-danger mua" style="width:90px">Mua</a>
+                            <a href="@Url.Action("ChiTietSP","Home", new { ma = @sp.MaSanPham}) " class="btn btn-outline-success ct" style="width:90px">Chi tiết</a>
+                        *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- home-banner -->
+<section class="home-banner" style="margin-top: 30px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12" style="margin-bottom: 18px">
+                <div class="box-shadow adbanner-image image-box-relative image-box-16x9">
+                    <a href="#">
+                        <img class="img-responsive" src="~/Content/image/image.jpg" style="height: 100% !important">
+                        <div class="overlay"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hot tour -->
+<section class="products-main">
+    <div class="container">
+        <div class="row">
+            <div class="sectionTitle">
+                <div class="content-title">
+                    <span class="title"> ĐIỂM ĐẾN ĐANG HOT </span>
+                    <i class="icon-hot"></i>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 mt-20">
@@ -362,117 +322,42 @@
                 </div>
             </div>
         </div>
-
-        <div class="row mb-10" style="background-color: black;">
-            <div class="col-md-12">
-                <h4 class="title text-uppercase white text-bold"> Tour hot </h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="product-p-img">
-                    <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                    <div class="product-p-content text-center white-bg">
-                        <a href="#" class="btn btn-orange-t text-uppercase"> ĐẶt TOUR </a>
-                        <h5 class="title text-uppercase d-black text-bold mt-10"> TÊN TOUR </h5>
-                        <p class="mt-20 mb-20"> Mô tả về tour </p>
-                        <span class="add v-light-gray text-uppercase">
-                            Giá Tour
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="product-p-img">
-                    <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                    <div class="product-p-content text-center white-bg">
-                        <a href="#" class="btn btn-pink text-uppercase"> ĐẶT TOUR </a>
-                        <h5 class="title text-uppercase d-black text-bold mt-10"> TÊN </h5>
-                        <p class="mt-20 mb-20"> MÔ TẢ </p>
-                        <span class="add v-light-gray text-uppercase">
-                            GIÁ
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-@*<div class="row">
-        <div class="col-md-4 col-sm-6 mt-20">
-            <div class="product-p-img">
-                <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                <div class="product-p-content product-p-content-small text-center white-bg">
-                    <a href="#" class="btn btn-green text-uppercase"> ĐẶT TOUR </a>
-                    <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
-                    <p class="mt-20 mb-20"> MÔ TẢ </p>
-                    <span class="add v-light-gray text-uppercase">
-                        GIÁ
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mt-20">
-            <div class="product-p-img">
-                <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                <div class="product-p-content product-p-content-small text-center white-bg">
-                    <a href="#" class="btn btn-orange-t text-uppercase"> ĐẶT TOUR </a>
-                    <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
-                    <p class="mt-20 mb-20"> MÔ TẢ </p>
-                    <span class="add v-light-gray text-uppercase">
-                        GIÁ
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mt-20">
-            <div class="product-p-img">
-                <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                <div class="product-p-content product-p-content-small text-center white-bg">
-                    <a href="#" class="btn btn-violet-t text-uppercase"> ĐẶT TOUR </a>
-                    <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
-                    <p class="mt-20 mb-20"> MÔ TẢ </p>
-                    <span class="add v-light-gray text-uppercase">
-                        GIÁ
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>*@
-<!--</div>
-</section>-->
-<!-- home-banner -->
-<section class="home-banner" style="margin-top: 30px">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-sm-8 col-xs-12" style="margin-bottom: 18px">
-                <div class="box-shadow adbanner-image image-box-relative image-box-16x9">
-                    <a href="#">
-                        <img class="img-responsive" src="~/Content/image/image.jpg" style="height: 100% !important">
-                        <div class="overlay"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
-
 @****************************** Thông báo xác nhận Mua Tour *********************************@
 <!-- Modal -->
+
 <div class="modal fade" id="Modal_Buy" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"> THÔNG BÁO! </h4>
+        @if (Session["KH"] == null)
+        {
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> THÔNG BÁO! </h4>
+                </div>
+                <div class="modal-body">
+                    <p> Đăng nhập để tiếp tục? </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="@Url.Action("DangNhap", "Account")" class="btn b-btn-primary"> Đồng ý </a>
+                    <a class="btn b-btn-default" data-dismiss="modal"> Hủy </a>
+                </div>
             </div>
-            <div class="modal-body">
-                <p> Đăng nhập để tiếp tục? </p>
+        }
+        else
+        {
+            KHACH_HANG i = (KHACH_HANG)Session["KH"];
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p> TIẾP TỤC ĐẶT TOUR! </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="@Url.Action("DatTour", "DatTour")" class="btn b-btn-primary"> OK! </a>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="@Url.Action("DangNhap", "Account")" class="btn b-btn-primary"> Đồng ý </a>
-                <a class="btn b-btn-default" data-dismiss="modal"> Hủy </a>
-            </div>
-        </div>
+        }
     </div>
 </div>
 

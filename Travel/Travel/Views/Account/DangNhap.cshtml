@@ -11,21 +11,23 @@
             <div class="loginbox login_user">
                 <img src="~/Content/image/login.png" class="avatar">
                 <h4 class="text-center title">Đăng Nhập</h4>
-                <form id="login-form" action="@Url.Action("Index","Home")" method="post">
+                <form id="login-form" action="@Url.Action("XL_DangNhap","Account")" method="post">
                     <input type="hidden" name="_target_path" value="" />
                     <div class="form-content">
                         <div class="form-group label-top">
                             <input class="label-top" type="text" name="_account" value="" id="account" required data-validation="required email">
                             <label for="user_name"> Tài khoản </label>
+                            <span style="color:red">@ViewData["ID"]</span>
                             <div class="bt"></div>
                         </div>
                         <br />
                         <div class="form-group label-top">
                             <input id="login_password" class="label-top" type="password" name="_password" required data-validation="required">
                             <label for="login_password"> Mật khẩu </label>
+                            <span style="color:red">@ViewData["MK"]</span>
                             <div class="bt"></div>
                         </div>
-                    </div>
+                    </div>                   
                     <br />
                     <div class="form-footer">
                         <a><input type="submit" name="btn_Login" value="Login" id="login"></a>

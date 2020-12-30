@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using Travel.Models;
+@model User
+
 <div class="member-wrapper">
     <div class="background register"></div>
     <div class="member-content">
@@ -11,12 +14,19 @@
             <div class="loginbox register_user">
                 <img src="~/Content/image/login.png" class="avatar">
                 <h4 class="text-center title"> Đăng Ký </h4>
-                <form id="login-form" action="#" method="post">
+                <form id="login-form" action="@Url.Action("XL_DangKy","Account")" method="post">
                     <input type="hidden" name="_target_path" value="" />
                     <div class="form-content">
                         <div class="form-group label-top">
                             <input class="label-top" type="text" name="_username" value="" id="user_name" required data-validation="required email">
+                            @Model.Taikhoan
                             <label for="user_name"> Full name <label style="color:red"> (*) </label> </label>
+                            <div class="bt"></div>
+                        </div>
+                        <div class="form-group label-top">
+                            <input class="label-top" type="text" name="_userID" value="" id="_userID" required data-validation="required email">
+                            <label for="user_name"> user ID <label style="color:red"> (*) </label> </label>
+
                             <div class="bt"></div>
                         </div>
                         <div class="form-group label-top">
@@ -46,6 +56,7 @@
                             <label for="address"> Address </label>
                             <div class="bt"></div>
                         </div>
+                        <span style="color:red">@ViewData["TB_DK"]</span>
                     </div>
                     <div class="form-footer">
                         <a><input type="submit" name="btn_Register" value="Register" id="login"></a>

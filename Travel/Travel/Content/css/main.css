@@ -1193,12 +1193,13 @@ ul.nav.navbar-nav:before {
 /*highlights*/
 .highlights {
     position: relative;
-    top: -60px;
+    top: -45px;
     z-index: 3;
 }
 
     .highlights h4.title {
         margin-left: 80px;
+        font-size: 26px;
     }
 
 .high-slider-img > img {

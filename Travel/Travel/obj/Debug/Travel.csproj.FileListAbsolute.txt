@@ -54,3 +54,7 @@ E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csproj.CoreCompi
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csproj.CopyComplete
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.pdb
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.dll
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.SqlServer.dll
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.xml
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.SqlServer.xml
