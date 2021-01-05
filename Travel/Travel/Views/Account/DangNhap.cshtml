@@ -15,17 +15,17 @@
                     <input type="hidden" name="_target_path" value="" />
                     <div class="form-content">
                         <div class="form-group label-top">
-                            <input class="label-top" type="text" name="_account" value="" id="account" required data-validation="required email">
+                            <input class="label-top" type="text" name="_userID" value="" id="account" required data-validation="required email">
                             <label for="user_name"> Tài khoản </label>
-                            <span style="color:red">@ViewData["ID"]</span>
                             <div class="bt"></div>
+                            <span class="msg">@ViewData["ID"]</span>
                         </div>
                         <br />
                         <div class="form-group label-top">
                             <input id="login_password" class="label-top" type="password" name="_password" required data-validation="required">
                             <label for="login_password"> Mật khẩu </label>
-                            <span style="color:red">@ViewData["MK"]</span>
                             <div class="bt"></div>
+                            <span class="msg">@ViewData["MK"]</span>
                         </div>
                     </div>                   
                     <br />

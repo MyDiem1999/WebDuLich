@@ -28,6 +28,8 @@ E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\roslyn\vbc.rsp
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\roslyn\VBCSCompiler.exe
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\roslyn\VBCSCompiler.exe.config
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Antlr3.Runtime.dll
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.dll
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.SqlServer.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Microsoft.Web.Infrastructure.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Newtonsoft.Json.dll
@@ -39,6 +41,8 @@ E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\System.Web.WebPages.Deploymen
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\System.Web.WebPages.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\System.Web.WebPages.Razor.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\WebGrease.dll
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.xml
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.SqlServer.xml
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\System.Web.Helpers.xml
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\System.Web.Mvc.xml
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\System.Web.Optimization.xml
@@ -54,7 +58,3 @@ E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csproj.CoreCompi
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csproj.CopyComplete
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.pdb
-E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.dll
-E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.SqlServer.dll
-E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.xml
-E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\EntityFramework.SqlServer.xml

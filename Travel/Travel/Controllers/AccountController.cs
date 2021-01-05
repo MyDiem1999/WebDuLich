@@ -22,10 +22,10 @@ namespace Travel.Controllers
         [HttpPost]
         public ActionResult XL_DangNhap(FormCollection col, KHACH_HANG kh)
         {
-            var kh1 = dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == col["_account"] && x.MAT_KHAU_KH == col["_password"]);
-            if (kh1 == null)
+            kh = dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == col["_userID"] && x.MAT_KHAU_KH == col["_password"]);
+            if (kh == null)
             {
-                if (dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == col["_account"]) == null)
+                if (dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == col["_userID"]) == null)
                     ViewData["ID"] = "Sai tài khoản đăng nhập!";
                 if (dl.KHACH_HANGs.FirstOrDefault(x => x.MAT_KHAU_KH == col["_password"]) == null)
                     ViewData["MK"] = "Sai mật khẩu";
@@ -49,23 +49,21 @@ namespace Travel.Controllers
         [HttpGet]
         public ActionResult DangKy(string taikhoan)
         {
-            if (taikhoan != null)
-            {
-                if (dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == taikhoan) != null)
-                {
-                    ViewData["TB_DK"] = "Tài khoản này đã được sử dụng!";
-                    User u = new User();
-                    u.Taikhoan = taikhoan;
-                    /*u.Id = id;
-                    u.Email = email;
-                    u.Pass = pass;
-                    u.Sdt = sdt;
-                    u.Dc = dc;*/
-                    return RedirectToAction("DangKy", u);
-                }
-            }
-            else
+            if (taikhoan == null)
                 return View();
+            else if (dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == taikhoan) != null)
+            {
+                ViewData["TB_DK"] = "Tài khoản này đã được sử dụng!";
+                /* User u = new User();
+                 u.Taikhoan = taikhoan;*/
+                /*u.Id = id;
+                u.Email = email;
+                u.Pass = pass;
+                u.Sdt = sdt;
+                u.Dc = dc;*/
+                /* return RedirectToAction("DangKy", u);*/
+            }
+            return View();
         }
 
         [HttpPost]
@@ -83,7 +81,7 @@ namespace Travel.Controllers
                 kh.DIA_CHI = col["_address"];
                 dl.KHACH_HANGs.InsertOnSubmit(kh);
                 dl.SubmitChanges();
-                return RedirectToAction("DangNhap", new { kh=kh1 });
+                return RedirectToAction("DangNhap", new { kh = kh1 });
             }
             else
                 return RedirectToAction("DangKy", new { taikhoan = col["_userID"].ToString() });

@@ -19,15 +19,14 @@
                     <div class="form-content">
                         <div class="form-group label-top">
                             <input class="label-top" type="text" name="_username" value="" id="user_name" required data-validation="required email">
-                            @Model.Taikhoan
                             <label for="user_name"> Full name <label style="color:red"> (*) </label> </label>
                             <div class="bt"></div>
                         </div>
                         <div class="form-group label-top">
                             <input class="label-top" type="text" name="_userID" value="" id="_userID" required data-validation="required email">
                             <label for="user_name"> user ID <label style="color:red"> (*) </label> </label>
-
                             <div class="bt"></div>
+                            <span class="msg">@ViewData["TB_DK"]</span>
                         </div>
                         <div class="form-group label-top">
                             <input class="label-top" type="email" name="_email" value="" id="email" required data-validation="required email">
@@ -35,14 +34,15 @@
                             <div class="bt"></div>
                         </div>
                         <div class="form-group label-top">
-                            <input id="login_password" class="label-top" type="password" name="_password" required data-validation="required">
+                            <input id="_password" class="label-top" type="password" name="_password" required data-validation="required">
                             <label for="login_password"> Password <label style="color:red"> (*) </label></label>
                             <div class="bt"></div>
                         </div>
                         <div class="form-group label-top">
-                            <input id="login_password" class="label-top" type="password" name="_confirm_password" required data-validation="required">
+                            <input id="_confirmpassword" class="label-top" type="password" name="_confirmpassword" required data-validation="required" onkeypress="check()">
                             <label for="confirm_password"> Confirm Password <label style="color:red"> (*) </label></label>
                             <div class="bt"></div>
+                            <span id="message"></span>
                         </div>
                         <br />
                         <div class="form-group label-top">
@@ -56,10 +56,9 @@
                             <label for="address"> Address </label>
                             <div class="bt"></div>
                         </div>
-                        <span style="color:red">@ViewData["TB_DK"]</span>
                     </div>
                     <div class="form-footer">
-                        <a><input type="submit" name="btn_Register" value="Register" id="login"></a>
+                        <a><input type="submit" name="btn_Register" value="Register" id="login" onkeyup="check()"></a>
                         <a href="@Url.Action("Index","Home")"><input type="button" name="btn_Cancel" value="Cancel"></a>
                     </div>
                     <div class="text-left">
@@ -74,20 +73,13 @@
 <script src="~/Scripts/js/effect.js"></script>
 @*<script src="~/Scripts/js/newyear.js"></script>*@
 
-@*<label> password :</label>
-    <input name="password" id="password" type="password" />
-    <span id="message"></span>
-    <label> confirm password: </label>
-    <input type="password" name="confirm_password" id="confirm_password" />
-    <span id="message"></span>
-    <input type="submit" onclick="check()" />
-
-    <script>
-        function check() {
-            if ((document.getElementById('password').value == null) || (document.getElementById('confirm_password').value == null)) {
-                document.getElementById('message').innerHTML = "match";
-            } else {
-                document.getElementById('message').innerHTML = "no match";
-            }
+<!-- KT trùng MK -->
+<script>
+@**@    function check() {
+        if ((document.getElementById('_password').value == null) || (document.getElementById('_confirmpassword').value == null)) {
+            document.getElementById('message').innerHTML = "hợp lệ!";
+        } else {
+            document.getElementById('message').innerHTML = "giá trị không hợp lệ!";
         }
-    </script>*@
+    }
+</script>

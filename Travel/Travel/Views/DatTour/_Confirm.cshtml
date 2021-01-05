@@ -1,4 +1,7 @@
 ﻿@****************************** Thông báo xác nhận *********************************@
+@using Travel.Models
+@model CHUONG_TRINH_TOUR
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -13,7 +16,8 @@
             </div>
             <div class="modal-footer">
                 @*chuyển vào giỏ hàng và về index *@
-                <a href="" class="btn b-btn-primary"> OK </a>
+                @*<a href="@Url.Action("TourDat", "TourDaDat")" class="btn b-btn-primary"> OK </a>*@
+                <a href="@Url.Action("ThemGH","TourDat", new { matour = @Model.MA_TOUR}) " class="btn b-btn-primary" style="width:200px;font-size:x-large"> OK </a>
             </div>
         </div>
     </div>

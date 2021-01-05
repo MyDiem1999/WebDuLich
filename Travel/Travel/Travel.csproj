@@ -131,10 +131,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DatTourController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TourDaDatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Mien_Chauluc.cs" />
     <Compile Include="Models\Infor_Customer.cs" />
+    <Compile Include="Models\TourDat.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\WEB_DULICH.designer.cs">
       <AutoGen>True</AutoGen>
@@ -187,23 +190,16 @@
     <Content Include="Content\css\custom.css" />
     <Content Include="Content\image\adwards.jpg" />
     <Content Include="Content\image\ajax-loader.gif" />
-    <Content Include="Content\image\alert-check.png" />
-    <Content Include="Content\image\arrow-down-1.png" />
-    <Content Include="Content\image\arrow-down-2.png" />
     <Content Include="Content\image\ArrowheadLeft-WF.png" />
     <Content Include="Content\image\ArrowHeadRight-WF.png" />
-    <Content Include="Content\image\arrowleft.png" />
-    <Content Include="Content\image\arrowright.png" />
-    <Content Include="Content\image\arrow_left.png" />
-    <Content Include="Content\image\arrow_left2.png" />
-    <Content Include="Content\image\arrow_right.png" />
-    <Content Include="Content\image\arrow_right2.png" />
     <Content Include="Content\image\bg_DN.jpg" />
     <Content Include="Content\image\binhminh.jpg" />
     <Content Include="Content\image\cd-top-arrow.svg" />
+    <Content Include="Content\image\Chonoicairang.jpg" />
     <Content Include="Content\image\Chopper.png" />
     <Content Include="Content\image\con-dao-beach.jpg" />
     <Content Include="Content\image\condao.jpg" />
+    <Content Include="Content\image\danang.jpg" />
     <Content Include="Content\image\dinhty.jpg" />
     <Content Include="Content\image\email.png" />
     <Content Include="Content\image\gridtile.png" />
@@ -229,9 +225,12 @@
     <Content Include="Content\image\mientay.jpg" />
     <Content Include="Content\image\mo-Vo-Thi-Sau.jpg" />
     <Content Include="Content\image\mo-VTS.jpg" />
+    <Content Include="Content\image\mocchau.jpg" />
     <Content Include="Content\image\newyear.jpg" />
     <Content Include="Content\image\nghiatrangHangDuong.jpg" />
     <Content Include="Content\image\nha-tu-con-dao.jpg" />
+    <Content Include="Content\image\ninhbinh.jpg" />
+    <Content Include="Content\image\ninhchudalat.jpg" />
     <Content Include="Content\image\not-found-bg.jpg" />
     <Content Include="Content\image\phanrang.jpg" />
     <Content Include="Content\image\phanthiet.jpg" />
@@ -2068,6 +2067,10 @@
     <Content Include="Views\Account\DangKy.cshtml" />
     <Content Include="Views\DatTour\XN_DatTour.cshtml" />
     <Content Include="Views\DatTour\_Confirm.cshtml" />
+    <Content Include="Views\Home\Tours.cshtml" />
+    <Content Include="Views\Home\_dsMien.cshtml" />
+    <Content Include="Views\Home\ChiTietTour.cshtml" />
+    <Content Include="Views\TourDaDat\TourDat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

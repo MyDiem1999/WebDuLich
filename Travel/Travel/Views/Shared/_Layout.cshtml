@@ -75,10 +75,6 @@
                     <div class="col-md-6">
                         <ul id="w0" class="login-container">
                             <li title="Đăng nhập">
-@*                                <a href="@Url.Action("DangNhap","Account")" class="login-href">
-                                    <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
-                                    &nbsp;Đăng nhập
-                                </a>*@
 
                                 <!-- Lấy ID Khách hàng -->
                                 @if (Session["KH"] == null)
@@ -90,10 +86,9 @@
                                 }
                                 else
                                 {
-
-                                    KHACH_HANG i = (KHACH_HANG)Session["KH"];
+                                    KHACH_HANG kh = (KHACH_HANG)Session["KH"];
                                     <div class="style-name">
-                                        <a class="welcome"> Xin chào @i.TEN_KH</a>
+                                        <a class="welcome"> Xin chào @kh.TEN_KH </a>
                                         <a href="@Url.Action("LogOut","Account")" class="login-href" title="Đăng xuất">
                                             <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
                                             &nbsp;Đăng xuất
@@ -114,7 +109,7 @@
                                 </a>
                             </li>
                             <li title="Tour đã đặt">
-                                <a target="" href="#" class="buy-tour">
+                                <a href="@Url.Action("TourDat", "TourDaDat")" class="buy-tour">
                                     <i class="fas fa-suitcase-rolling"></i>
                                 </a>
                             </li>
@@ -123,6 +118,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Logo-->
         <div class="container">
             <div class="row mt--17x">
@@ -542,11 +538,10 @@
                             <div class="col-sm-4 col-xs-12">
                                 <div class="footerContent info-sgt-box">
                                     <h5>LIÊN HỆ</h5>
-
                                     <ul>
                                         <li><a class="link-level4-light" href="#">Giới thiệu</a></li>
                                         <li><a class="link-level4-light" href="#">Liên hệ</a></li>
-                                        <li><a class="link-level4-light" href="/trang/dieu-khoan-chung">Điều khoản chung </a></li>
+                                        <li><a class="link-level4-light" href="#">Điều khoản chung </a></li>
                                         <li><a class="link-level4-light" href="#">Quy định thanh toán</a></li>
                                         <li><a class="link-level4-light" href="#">Chính sách giao nhận</a></li>
                                         <li><a class="link-level4-light" href="#">Chính sách hủy phạt</a></li>

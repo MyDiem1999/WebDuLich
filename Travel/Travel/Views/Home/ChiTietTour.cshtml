@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietTour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Travel.Models;
+@model CHUONG_TRINH_TOUR
+
+<!-- bg Tour -->
+<section>
+    <div id="Title" class="pageTitle page-image-tour-tag" style="background-image:url(../../Content/image/phuquoc.jpg)"></div>
+</section>
+
+<!--Title Des Tour-->
+<section>
+    <div class="container" style="position: relative">
+        <div class="background-description">
+            <h1 class="tour-banner-title"> @Model.TEN_TOUR </h1>
+        </div>
+    </div>
+</section>
+
+<!--Tour detail-->
+<section class="mainContentSection singlePackage">
+    <div class="container detail-tour-kiritm">
+        <div class="row">
+            <div class=" col-md-9 col-sm-12 col-xs-12 ml--20x">
+                <div class="info-tour">
+                    <div class="promotion-tour">
+                        <div class="text-promotion-tour" title="Tour Tết">Tour Tết</div>
+                    </div>
+                    <div class="row-info">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <span class="text-uppercase">Thời gian:</span>
+                                <span class="text-strong">3 ngày 2 đêm</span>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <span class="text-uppercase">Phương tiện:</span>
+                                <span class="text-strong">
+                                    Đi về bằng máy bay
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <span class="text-uppercase">Điểm xuất phát:</span>
+                                <span class="text-strong">TP. Hồ Chí Minh </span>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <span class="text-uppercase">Điểm đến:</span>
+                                <span class="text-strong">Côn Đảo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- list infor -->
+                @Html.Partial("_listInforTour")
+
+                <!-- des tour -->
+                <div class="row-description">
+                    <div class="title-description">Tour này có gì hay</div>
+                    <div class="content-description">
+                        <div>
+                            @*                            - Đến với Côn Đảo (hay với các tên khác như Côn Sơn, Côn Lôn) đã gợi cho người nghe hình ảnh mịt mù của một khu vực xa xôi, mờ mịt, có lúc được ví như địa ngục trần gian nổi tiếng từ thời Pháp thuộc đến giữa năm 1975.
+                                - Tham quan Cầu tàu 914, Trại Phú Hải, Chuồng Cọp Pháp - Mỹ, Mũi Cá Mập, Đỉnh Tình Yêu.
+                            *@
+                            @Model.NOI_DUNG
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-image-box isdesktop">
+                    <div class="col-md-4 col-sm-6 col-xs-12 isotopeSelector " style="margin-bottom: 25px">
+                        <img width="100%" height="65.9%" alt="image tour" src="~/Content/image/con-dao-beach.jpg">
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 isotopeSelector " style="margin-bottom: 25px">
+                        <img width="100%" height="65.9%" alt="image tour" src="~/Content/image/nha-tu-con-dao.jpg">
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 isotopeSelector " style="margin-bottom: 25px">
+                        <img width="100%" height="65.9%" alt="image tour" src="~/Content/image/mo-VTS.jpg">
+                    </div>
+                </div>
+
+                <!-- CT Tour -->
+                <div class="row-info-tour">
+                    <div role="tabpanel" class="" style="margin-top: 20px">
+                        <!-- list tab choose detail -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tour-program" role="tab" data-toggle="tab" aria-expanded="true">
+                                    Chương trình Tour
+                                </a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#tour-term" role="tab" data-toggle="tab" aria-expanded="false">
+                                    Chính sách Tour
+                                </a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#tour-question" role="tab" data-toggle="tab" aria-expanded="false">
+                                    Câu hỏi thường gặp
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="tour-program">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="commonInfo">
+                                            <p style="text-align: justify; white-space: pre-line">
+                                                @Model.LICH_TRINH
+                                            </p>
+                                            @*<p style="text-align: center;">
+                                                    <img alt="" src="~/Content/image/dinhty.jpg" style="width: 100%; margin-bottom: 15px;">
+                                                </p>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="tour-term">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="commonInfo">
+                                            <p style="text-align: justify; white-space: pre-line">
+                                                @Model.CHINH_SACH
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="tour-question">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="commonInfo">
+                                            <p style="text-align: justify; white-space: pre-line">
+                                                @Model.CAU_HOI_THUONG_GAP
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("_infor")
+        </div>
+    </div>
+</section>
+
+
+

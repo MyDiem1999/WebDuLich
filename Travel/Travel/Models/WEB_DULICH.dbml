@@ -1,24 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DU_LICH" Class="WEB_DULICHDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-JRLFG0U\SQLEXPRESS;Initial Catalog=DU_LICH;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DU_LICHConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.KHACH_HANG" Member="KHACH_HANGs">
-    <Type Name="KHACH_HANG">
-      <Column Name="MA_KH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TEN_KH" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="NGAY_SINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="GIOI_TINH" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="CMND" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="PASSPORT" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="MA_QUOC_GIA" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="DIA_CHI" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
-      <Column Name="TAI_KHOAN_KH" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
-      <Column Name="MAT_KHAU_KH" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="DIEN_THOAI" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Association Name="KHACH_HANG_DAT_TOUR" Member="DAT_TOURs" ThisKey="MA_KH" OtherKey="MA_TOUR" Type="DAT_TOUR" />
-      <Association Name="QUOC_GIA_KHACH_HANG" Member="QUOC_GIA" ThisKey="MA_QUOC_GIA" OtherKey="MA_QUOC_GIA" Type="QUOC_GIA" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CHI_TIET_TOUR" Member="CHI_TIET_TOURs">
     <Type Name="CHI_TIET_TOUR">
       <Column Name="MA_TOUR" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -46,10 +27,11 @@
       <Column Name="NGAY_KET_THUC" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="SO_CHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="NOI_DUNG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="LICH_TRINH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOI_DUNG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CHINH_SACH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CAU_HOI_THUONG_GAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="KHUYEN_MAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="CHUONG_TRINH_TOUR_CHI_TIET_TOUR" Member="CHI_TIET_TOURs" ThisKey="MA_TOUR" OtherKey="MA_TOUR" Type="CHI_TIET_TOUR" />
       <Association Name="CHUONG_TRINH_TOUR_DAT_TOUR" Member="DAT_TOURs" ThisKey="MA_TOUR" OtherKey="MA_TOUR" Type="DAT_TOUR" />
     </Type>
@@ -89,6 +71,25 @@
       <Column Name="LINK_HINH_ANH" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
       <Column Name="MA_DIEM_DL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="DIEM_DU_LICH_HINH_ANH" Member="DIEM_DU_LICH" ThisKey="MA_DIEM_DL" OtherKey="MA_DIEM_DL" Type="DIEM_DU_LICH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACH_HANG" Member="KHACH_HANGs">
+    <Type Name="KHACH_HANG">
+      <Column Name="MA_KH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEN_KH" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NGAY_SINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GIOI_TINH" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="PASSPORT" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="MA_QUOC_GIA" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DIA_CHI" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
+      <Column Name="TAI_KHOAN_KH" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
+      <Column Name="MAT_KHAU_KH" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="DIEN_THOAI" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="KHACH_HANG_DAT_TOUR" Member="DAT_TOURs" ThisKey="MA_KH" OtherKey="MA_TOUR" Type="DAT_TOUR" />
+      <Association Name="QUOC_GIA_KHACH_HANG" Member="QUOC_GIA" ThisKey="MA_QUOC_GIA" OtherKey="MA_QUOC_GIA" Type="QUOC_GIA" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.MIEN" Member="MIENs">
