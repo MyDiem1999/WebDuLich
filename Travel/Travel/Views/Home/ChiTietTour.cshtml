@@ -5,18 +5,18 @@
 }
 
 @using Travel.Models;
-@model CHUONG_TRINH_TOUR
+@model ChuongTrinhTours
 
 <!-- bg Tour -->
 <section>
-    <div id="Title" class="pageTitle page-image-tour-tag" style="background-image:url(../../Content/image/phuquoc.jpg)"></div>
+    <div id="Title" class="pageTitle page-image-tour-tag" style="background-image:url(../../Content/image/@Model.Hinhanh)"></div>
 </section>
 
 <!--Title Des Tour-->
 <section>
     <div class="container" style="position: relative">
         <div class="background-description">
-            <h1 class="tour-banner-title"> @Model.TEN_TOUR </h1>
+            <h1 class="tour-banner-title"> @Model.Tentour </h1>
         </div>
     </div>
 </section>
@@ -64,7 +64,7 @@
                     <div class="title-description">Tour này có gì hay</div>
                     <div class="content-description">
                         <div>
-                            @Model.NOI_DUNG
+                            @Model.Noidung
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                                     <div class="col-xs-12">
                                         <div class="commonInfo">
                                             <p style="text-align: justify; white-space: pre-line">
-                                                @Model.LICH_TRINH
+                                                @Model.Lichtrinh
                                             </p>
                                             @*<p style="text-align: center;">
                                                     <img alt="" src="~/Content/image/dinhty.jpg" style="width: 100%; margin-bottom: 15px;">
@@ -125,7 +125,7 @@
                                     <div class="col-xs-12">
                                         <div class="commonInfo">
                                             <p style="text-align: justify; white-space: pre-line">
-                                                @Model.CHINH_SACH
+                                                @Model.Chinhsach
                                             </p>
                                         </div>
                                     </div>
@@ -137,7 +137,7 @@
                                     <div class="col-xs-12">
                                         <div class="commonInfo">
                                             <p style="text-align: justify; white-space: pre-line">
-                                                @Model.CAU_HOI_THUONG_GAP
+                                                @Model.Cauhoi
                                             </p>
                                         </div>
                                     </div>
@@ -151,6 +151,3 @@
         </div>
     </div>
 </section>
-
-
-

@@ -75,7 +75,6 @@
                     <div class="col-md-6">
                         <ul id="w0" class="login-container">
                             <li title="Đăng nhập">
-
                                 <!-- Lấy ID Khách hàng -->
                                 @if (Session["KH"] == null)
                                 {
@@ -88,7 +87,7 @@
                                 {
                                     KHACH_HANG kh = (KHACH_HANG)Session["KH"];
                                     <div class="style-name">
-                                        <a class="welcome"> Xin chào @kh.TEN_KH </a>
+                                        <a class="welcome" href="@Url.Action("Xem_TTKH", "Account", new { maKH = kh.MA_KH})" title="xem thông tin cá nhân"> Xin chào @kh.TEN_KH </a>
                                         <a href="@Url.Action("LogOut","Account")" class="login-href" title="Đăng xuất">
                                             <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
                                             &nbsp;Đăng xuất
@@ -109,7 +108,7 @@
                                 </a>
                             </li>
                             <li title="Tour đã đặt">
-                                <a href="@Url.Action("TourDat", "TourDaDat")" class="buy-tour">
+                                <a href="" class="buy-tour">
                                     <i class="fas fa-suitcase-rolling"></i>
                                 </a>
                             </li>
@@ -458,8 +457,10 @@
                             </li>
                             <li class="search-wrapper" title="Tìm kiếm">
                                 <div class="input-holder">
-                                    <input type="text" class="search-input" placeholder="Nhập tìm kiếm..." />
-                                    <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                                    <form action="@Url.Action("XLTK", "Home")" method="post">
+                                        <input type="search" name="search" class="search-input" placeholder="Nhập tìm kiếm..." />
+                                        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                                    </form>                           
                                 </div>
                                 <span class="close" onclick="searchToggle(this, event);"></span>
                             </li>
@@ -528,7 +529,6 @@
                                 <div class="footerContent info-sgt-box">
                                     <h5>THÔNG TIN</h5>
                                     <ul>
-                                        @*<li><a class="link-level4-light" href="/tuyen-diem">Tuyến điểm </a></li>*@
                                         <li><a class="link-level4-light" href="#">Tin Lữ hành viettravel </a></li>
                                         <li><a class="link-level4-light" href="#">Tin du lịch</a></li>
                                     </ul>
@@ -616,29 +616,17 @@
     <script src="~/Scripts/js/slick.js"></script>
     <script src="~/Scripts/js/jquery.selectbox-0.1.3.min.js"></script>
     <script src="~/Scripts/js/select2.full.js"></script>
-    @*<script src="~/Scripts/js/bootstrap-datepicker.js"></script>*@
     <script src="~/Scripts/js/waypoints.min.js"></script>
     <script src="~/Scripts/js/jquery.counterup.min.js"></script>
-    @*<script src="~/Scripts/js/isotope.min.js"></script>*@
-    @*<script src="~/Scripts/js/bootstrap-notify.min.js"></script>*@
-    @*<script src="~/Scripts/js/jquery.fancybox.pack.js"></script>*@
-    @*<script src="~/Scripts/js/isotope-triger.js"></script>*@
     <script src="~/Scripts/js/jquery.syotimer.js"></script>
     <script src="~/Scripts/js/SmoothScroll.js"></script>
     <script src="~/Scripts/js/custom.js"></script>
     <script src="~/Scripts/js/jquery.form-validator.min.js"></script>
     <script src="~/Content/lib/fontawesome-free-5.15.1-web/js/all.min.js"></script>
     <script src="~/Scripts/js/bannerSlider.js"></script>
-
-
-    @*<script src="~/Scripts/js/featherlight.js"></script>*@
-    @*<script src="~/Scripts/js/froogaloop2.min.js"></script>*@
-    @*<script src="~/Scripts/js/jquery-1.11.3.min.js"></script>*@
-    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
-    @*<script src="~/Scripts/js/jquery.vimeo.api.min.js"></script>*@
     <script src="~/Scripts/js/main.js"></script>
     <script src="~/Scripts/js/modernizr-2.8.3.min.js"></script>
-    <script src="~/Scripts/js/owl.carousel.js"></script>
+    @*<script src="~/Scripts/js/owl.carousel.js"></script>*@
     <script src="~/Scripts/js/jquery.validate.min.js"></script>
 </body>
 </html>

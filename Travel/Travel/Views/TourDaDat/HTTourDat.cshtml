@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "HTTourDat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Travel.Models;
+@model List<TourDat>
+
+<section class="pageTitle" style="background-image:url(../../Content/image/bg_tour.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="titleTable">
+                    <div class="titleTableInner">
+                        <div class="pageTitleInfo">
+                            <h1> THÔNG TIN ĐẶT TOUR CỦA BẠN </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mainContentSection booking-container" style="padding: 100px; text-align: center">
+    <div class="row">
+        <div class="col-md-2">
+            <label> Mã Tour </label>
+        </div>
+        <div class="col-md-4">
+            <label> Tên Tour </label>
+        </div>
+        <div class="col-md-2">
+            <label> Số lượng </label>
+        </div>
+        <div class="col-md-2">
+            <label> Thành tiền </label>
+        </div>
+        <div class="col-md-2">
+            <label> Hủy tour </label>
+        </div>
+    </div>
+
+    @foreach (var tourdat in Model)
+    {
+        <div class="row custom">
+            <div class="col-md-2" title="Xem chi tiết tour">
+                <a href="@Url.Action("ChiTietTour","Home", new { Ma = @tourdat.MaTour })"> @tourdat.MaTour </a>
+            </div>
+            <div class="col-md-4" style="text-align: justify">
+                <label> @tourdat.tenTour </label>
+            </div>
+            <div class="col-md-2">
+                @*lỗi update*@
+                <form action="@Url.Action("UpdateSoTourDat",new {Ma = tourdat.maTour })" method="post">
+                    <input class="soluong" type="text" name="Txt_SL" value="@tourdat.SL" />
+                </form>
+            </div>
+            <div class="col-md-2">
+                <label> @tourdat.GiaNguoiLon </label>
+            </div>
+            <div class="col-md-2" title="Hủy tour">
+                <a href="@Url.Action("DeleteTourDat", new  { Ma = @tourdat.maTour })"> Hủy tour </a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-2" style="float: left"><label> Tổng số tour: </label> @ViewBag.SoluongTong</div>
+            <div class="col-md-2" style="float: right"><label> Thành Tiền: </label> @ViewBag.TongTien </div>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-success" href="@Url.Action("UpdateGioHang")"> Câp nhật số lượng tour </a>
+        </div>
+    }
+</section>
+@*<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+        </tr>
+    </tbody>
+</table>
+*@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Xem_TTKH";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Travel.Models;
+@model KHACH_HANG
+
+<section class="pageTitle" style="background-image:url(../../Content/image/bg_tour.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="titleTable">
+                    <div class="titleTableInner">
+                        <div class="pageTitleInfo">
+                            <h1> THÔNG TIN CÁ NHÂN </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mainContentSection booking-container" style="padding: 100px; text-align: center">
+    <div class="row">
+        <div class="col-md-6">
+            <label> Xin chào: </label><div style="font-size: x-large; color: red"> @Model.TEN_KH </div>
+        </div>
+        <div class="col-md-6">
+            <label> Giới tính: </label> @Model.GIOI_TINH
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label> Địa chỉ: </label> @Model.DIA_CHI
+        </div>
+        <div class="col-md-6">
+            <label> Số điện thoại: </label> @Model.DIEN_THOAI
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label> Email: </label> @Model.EMAIL
+        </div>
+        <div class="col-md-6">
+            <label> Tài khoản: </label> @Model.TAI_KHOAN_KH
+        </div>
+    </div>
+</section>

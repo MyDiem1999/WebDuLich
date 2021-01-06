@@ -54,14 +54,6 @@ namespace Travel.Controllers
             else if (dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == taikhoan) != null)
             {
                 ViewData["TB_DK"] = "Tài khoản này đã được sử dụng!";
-                /* User u = new User();
-                 u.Taikhoan = taikhoan;*/
-                /*u.Id = id;
-                u.Email = email;
-                u.Pass = pass;
-                u.Sdt = sdt;
-                u.Dc = dc;*/
-                /* return RedirectToAction("DangKy", u);*/
             }
             return View();
         }
@@ -85,6 +77,13 @@ namespace Travel.Controllers
             }
             else
                 return RedirectToAction("DangKy", new { taikhoan = col["_userID"].ToString() });
+        }
+
+        //xem thong tin KH
+        public ActionResult Xem_TTKH(int maKH)
+        {
+            KHACH_HANG kh = dl.KHACH_HANGs.FirstOrDefault(x => x.MA_KH == maKH);
+            return View(kh);
         }
     }
 

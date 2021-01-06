@@ -10,11 +10,12 @@ namespace Travel.Controllers
     public class TourDaDatController : Controller
     {
         WEB_DULICHDataContext dl = new WEB_DULICHDataContext();
+        List<TourDat> lstTourDaDat;
 
         // GET: TourDaDat
-        public List<TourDat> LaySoTour()
+        public List<TourDat> LaySoTourDat()
         {
-            List<TourDat> lstTourDaDat = Session["TourDat"] as List<TourDat>;
+            lstTourDaDat = Session["TourDat"] as List<TourDat>;
             if (lstTourDaDat == null)
             {
                 lstTourDaDat = new List<TourDat>();
@@ -23,105 +24,119 @@ namespace Travel.Controllers
             return lstTourDaDat;
         }
 
-        public ActionResult ThemTour(int matour)
+        public ActionResult ThemTourDat(int maTour)
         {
-            List<TourDat> lstTourDaDat = LaySoTour();
-            TourDat sotour = lstTourDaDat.Find(n => n.MaTour == matour);
+            // lấy session ra
+            lstTourDaDat = LaySoTourDat();
+
+            //kt tồn tại trong session chưa
+            TourDat sotour = lstTourDaDat.FirstOrDefault(n => n.MaTour == maTour);
             if (sotour == null)
             {
-                sotour = new TourDat(matour);
-                lstTourDaDat.Add(sotour);
-                return Redirect("TourDat");
+                TourDat tours = new TourDat(maTour);
+                lstTourDaDat.Add(tours);
+                Session["TourDat"] = lstTourDaDat;
             }
             else
             {
                 sotour.SL++;
-                return Redirect("TourDat");
             }
+            return RedirectToAction("HTTourDat");
         }
 
-        public ActionResult TourDat()
+        public ActionResult HTTourDat()
         {
-            List<TourDat> lstTourDaDat = LaySoTour();
+            lstTourDaDat = LaySoTourDat();
             if (lstTourDaDat.Count == 0)
+            {
                 return RedirectToAction("Index", "Home");
-            ViewBag.SoluongTong = SoluongTong();
+            }
+            ViewBag.SoluongTong = TongSoLuong();
             ViewBag.TongTien = TongTien();
             return View(lstTourDaDat);
         }
 
-        public ActionResult DeleteSoTourDat(int Ma)
+        public ActionResult DeleteTourDat(int Ma)
         {
-            List<TourDat> tours = LaySoTour();
-            tours.RemoveAll(x => x.MaTour == Ma);
-            return Redirect("TourDat");
+            lstTourDaDat = LaySoTourDat();
+            TourDat tours = lstTourDaDat.SingleOrDefault(t => t.maTour == Ma);
+            if (tours != null)
+            {
+                lstTourDaDat.RemoveAll(x => x.MaTour == Ma);
+            }
+            Session["TourDat"] = null;
+            return RedirectToAction("HTTourDat");
         }
 
         public ActionResult UpdateSoTourDat(FormCollection col, int Ma)
         {
-            List<TourDat> tours = LaySoTour();
-            foreach (var i in tours)
+            lstTourDaDat = LaySoTourDat();
+            foreach (var tours in lstTourDaDat)
             {
-                if (i.MaTour == Ma)
-                    i.SL = int.Parse(col["Txt_SL"]);
+                if (tours.MaTour == Ma)
+                    tours.SL = int.Parse(col["Txt_SL"]);
+                Session["TourDat"] = lstTourDaDat;
             }
-            return Redirect("TourDat");
+            return Redirect("HTTourDat");
         }
 
-        public int SoluongTong()
+        public int TongSoLuong()
         {
             int tong = 0;
-            List<TourDat> tours = Session["TourDat"] as List<TourDat>;
-            if (tours != null)
-                tong = tours.Sum(n => n.SL);
+            lstTourDaDat = Session["TourDat"] as List<TourDat>;
+            if (lstTourDaDat != null)
+            {
+                tong = lstTourDaDat.Sum(n => n.SL);
+            }
             return tong;
         }
 
-        public double TongTien()
+        public decimal TongTien()
         {
-            double tong = 0;
-            List<TourDat> tours = LaySoTour();
-            if (tours != null)
-                tong += tours.Sum(n => n.ThanhTien);
-            return tong;
+            decimal tongTien = 0;
+            lstTourDaDat = LaySoTourDat();
+            if (lstTourDaDat != null)
+                tongTien += lstTourDaDat.Sum(n => n.ThanhTien);
+            return tongTien;
         }
 
         public ActionResult HienThi()
         {
-            List<TourDat> lst = LaySoTour();
-            int sltong = SoluongTong();
+            lstTourDaDat = LaySoTourDat();
+            int sltong = TongSoLuong();
             return ViewBag.SoluongTong = sltong;
         }
 
-        //xu ly thanh toan
-     /*   public ActionResult XLTT()
-        {
-            if (Session["KH"] == null)
-            {
-                return RedirectToAction("DangNhap", "KhachHang");
-            }
-            else
-            {
-                tbl_HoaDon hd = new tbl_HoaDon();
-                hd.NgayTao = DateTime.Now;
-                tbl_KhachHang kh = (tbl_KhachHang)Session["KH"];
-                hd.MaKH = kh.MaKhachHang;
-                mk.tbl_HoaDons.InsertOnSubmit(hd);
-                mk.SubmitChanges();
+        //xu ly thanh toan - dat tour
+        /* public ActionResult XLTT()
+         {
+             if (Session["KH"] == null)
+             {
+                 return RedirectToAction("DangNhap", "KhachHang");
+             }
+             else
+             {
+                 tbl_HoaDon hd = new tbl_HoaDon();
+                 hd.NgayTao = DateTime.Now;
+                 tbl_KhachHang kh = (tbl_KhachHang)Session["KH"];
+                 hd.MaKH = kh.MaKhachHang;
+                 mk.tbl_HoaDons.InsertOnSubmit(hd);
+                 mk.SubmitChanges();
 
-                tbl_ChiTietHD ct;
-                List<GioHang> GH = LayGioHang();
-                foreach (var i in GH)
-                {
-                    ct = new tbl_ChiTietHD();
-                    ct.MaHD = hd.MaHoaDon;
-                    ct.MaSP = i.Masp;
-                    ct.SoLuong = i.SL;
-                    mk.tbl_ChiTietHDs.InsertOnSubmit(ct);
-                    mk.SubmitChanges();
-                }
-            }
-            return RedirectToAction("Index", "Home");
-        }*/
+                 tbl_ChiTietHD ct;
+                 List<GioHang> GH = LayGioHang();
+                 foreach (var i in GH)
+                 {
+                     ct = new tbl_ChiTietHD();
+                     ct.MaHD = hd.MaHoaDon;
+                     ct.MaSP = i.Masp;
+                     ct.SoLuong = i.SL;
+                     mk.tbl_ChiTietHDs.InsertOnSubmit(ct);
+                     mk.SubmitChanges();
+                 }
+             }
+             return RedirectToAction("Index", "Home");
+         }*/
+
     }
 }

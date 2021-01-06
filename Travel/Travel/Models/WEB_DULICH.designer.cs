@@ -51,6 +51,9 @@ namespace Travel.Models
     partial void InsertKHACH_HANG(KHACH_HANG instance);
     partial void UpdateKHACH_HANG(KHACH_HANG instance);
     partial void DeleteKHACH_HANG(KHACH_HANG instance);
+    partial void InsertLOAI_TOUR(LOAI_TOUR instance);
+    partial void UpdateLOAI_TOUR(LOAI_TOUR instance);
+    partial void DeleteLOAI_TOUR(LOAI_TOUR instance);
     partial void InsertMIEN(MIEN instance);
     partial void UpdateMIEN(MIEN instance);
     partial void DeleteMIEN(MIEN instance);
@@ -145,6 +148,14 @@ namespace Travel.Models
 			get
 			{
 				return this.GetTable<KHACH_HANG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LOAI_TOUR> LOAI_TOURs
+		{
+			get
+			{
+				return this.GetTable<LOAI_TOUR>();
 			}
 		}
 		
@@ -532,7 +543,11 @@ namespace Travel.Models
 		
 		private string _TEN_TOUR;
 		
-		private System.Nullable<decimal> _GIA_TOUR;
+		private System.Nullable<int> _MA_LOAI_TOUR;
+		
+		private System.Nullable<decimal> _GIA_NGUOI_LON;
+		
+		private System.Nullable<decimal> _GIA_TRE_EM;
 		
 		private System.Nullable<System.DateTime> _NGAY_KHOI_HANH;
 		
@@ -550,11 +565,11 @@ namespace Travel.Models
 		
 		private string _CAU_HOI_THUONG_GAP;
 		
-		private System.Nullable<bool> _KHUYEN_MAI;
-		
 		private EntitySet<CHI_TIET_TOUR> _CHI_TIET_TOURs;
 		
 		private EntitySet<DAT_TOUR> _DAT_TOURs;
+		
+		private EntityRef<LOAI_TOUR> _LOAI_TOUR;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -566,8 +581,12 @@ namespace Travel.Models
     partial void OnHINH_ANHChanged();
     partial void OnTEN_TOURChanging(string value);
     partial void OnTEN_TOURChanged();
-    partial void OnGIA_TOURChanging(System.Nullable<decimal> value);
-    partial void OnGIA_TOURChanged();
+    partial void OnMA_LOAI_TOURChanging(System.Nullable<int> value);
+    partial void OnMA_LOAI_TOURChanged();
+    partial void OnGIA_NGUOI_LONChanging(System.Nullable<decimal> value);
+    partial void OnGIA_NGUOI_LONChanged();
+    partial void OnGIA_TRE_EMChanging(System.Nullable<decimal> value);
+    partial void OnGIA_TRE_EMChanged();
     partial void OnNGAY_KHOI_HANHChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAY_KHOI_HANHChanged();
     partial void OnNGAY_KET_THUCChanging(System.Nullable<System.DateTime> value);
@@ -584,14 +603,13 @@ namespace Travel.Models
     partial void OnCHINH_SACHChanged();
     partial void OnCAU_HOI_THUONG_GAPChanging(string value);
     partial void OnCAU_HOI_THUONG_GAPChanged();
-    partial void OnKHUYEN_MAIChanging(System.Nullable<bool> value);
-    partial void OnKHUYEN_MAIChanged();
     #endregion
 		
 		public CHUONG_TRINH_TOUR()
 		{
 			this._CHI_TIET_TOURs = new EntitySet<CHI_TIET_TOUR>(new Action<CHI_TIET_TOUR>(this.attach_CHI_TIET_TOURs), new Action<CHI_TIET_TOUR>(this.detach_CHI_TIET_TOURs));
 			this._DAT_TOURs = new EntitySet<DAT_TOUR>(new Action<DAT_TOUR>(this.attach_DAT_TOURs), new Action<DAT_TOUR>(this.detach_DAT_TOURs));
+			this._LOAI_TOUR = default(EntityRef<LOAI_TOUR>);
 			OnCreated();
 		}
 		
@@ -655,27 +673,71 @@ namespace Travel.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIA_TOUR", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> GIA_TOUR
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_LOAI_TOUR", DbType="Int")]
+		public System.Nullable<int> MA_LOAI_TOUR
 		{
 			get
 			{
-				return this._GIA_TOUR;
+				return this._MA_LOAI_TOUR;
 			}
 			set
 			{
-				if ((this._GIA_TOUR != value))
+				if ((this._MA_LOAI_TOUR != value))
 				{
-					this.OnGIA_TOURChanging(value);
+					if (this._LOAI_TOUR.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMA_LOAI_TOURChanging(value);
 					this.SendPropertyChanging();
-					this._GIA_TOUR = value;
-					this.SendPropertyChanged("GIA_TOUR");
-					this.OnGIA_TOURChanged();
+					this._MA_LOAI_TOUR = value;
+					this.SendPropertyChanged("MA_LOAI_TOUR");
+					this.OnMA_LOAI_TOURChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY_KHOI_HANH", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIA_NGUOI_LON", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> GIA_NGUOI_LON
+		{
+			get
+			{
+				return this._GIA_NGUOI_LON;
+			}
+			set
+			{
+				if ((this._GIA_NGUOI_LON != value))
+				{
+					this.OnGIA_NGUOI_LONChanging(value);
+					this.SendPropertyChanging();
+					this._GIA_NGUOI_LON = value;
+					this.SendPropertyChanged("GIA_NGUOI_LON");
+					this.OnGIA_NGUOI_LONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIA_TRE_EM", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> GIA_TRE_EM
+		{
+			get
+			{
+				return this._GIA_TRE_EM;
+			}
+			set
+			{
+				if ((this._GIA_TRE_EM != value))
+				{
+					this.OnGIA_TRE_EMChanging(value);
+					this.SendPropertyChanging();
+					this._GIA_TRE_EM = value;
+					this.SendPropertyChanged("GIA_TRE_EM");
+					this.OnGIA_TRE_EMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY_KHOI_HANH", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NGAY_KHOI_HANH
 		{
 			get
@@ -695,7 +757,7 @@ namespace Travel.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY_KET_THUC", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY_KET_THUC", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NGAY_KET_THUC
 		{
 			get
@@ -735,7 +797,7 @@ namespace Travel.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHI_CHU", DbType="NVarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHI_CHU", DbType="NVarChar(MAX)")]
 		public string GHI_CHU
 		{
 			get
@@ -835,26 +897,6 @@ namespace Travel.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHUYEN_MAI", DbType="Bit")]
-		public System.Nullable<bool> KHUYEN_MAI
-		{
-			get
-			{
-				return this._KHUYEN_MAI;
-			}
-			set
-			{
-				if ((this._KHUYEN_MAI != value))
-				{
-					this.OnKHUYEN_MAIChanging(value);
-					this.SendPropertyChanging();
-					this._KHUYEN_MAI = value;
-					this.SendPropertyChanged("KHUYEN_MAI");
-					this.OnKHUYEN_MAIChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUONG_TRINH_TOUR_CHI_TIET_TOUR", Storage="_CHI_TIET_TOURs", ThisKey="MA_TOUR", OtherKey="MA_TOUR")]
 		public EntitySet<CHI_TIET_TOUR> CHI_TIET_TOURs
 		{
@@ -878,6 +920,40 @@ namespace Travel.Models
 			set
 			{
 				this._DAT_TOURs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAI_TOUR_CHUONG_TRINH_TOUR", Storage="_LOAI_TOUR", ThisKey="MA_LOAI_TOUR", OtherKey="MA_LOAI_TOUR", IsForeignKey=true)]
+		public LOAI_TOUR LOAI_TOUR
+		{
+			get
+			{
+				return this._LOAI_TOUR.Entity;
+			}
+			set
+			{
+				LOAI_TOUR previousValue = this._LOAI_TOUR.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAI_TOUR.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAI_TOUR.Entity = null;
+						previousValue.CHUONG_TRINH_TOURs.Remove(this);
+					}
+					this._LOAI_TOUR.Entity = value;
+					if ((value != null))
+					{
+						value.CHUONG_TRINH_TOURs.Add(this);
+						this._MA_LOAI_TOUR = value.MA_LOAI_TOUR;
+					}
+					else
+					{
+						this._MA_LOAI_TOUR = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("LOAI_TOUR");
+				}
 			}
 		}
 		
@@ -944,7 +1020,9 @@ namespace Travel.Models
 		
 		private System.Nullable<int> _SO_NGAY;
 		
-		private System.Nullable<int> _SO_CHO_DAT;
+		private System.Nullable<int> _SO_CHO_NGUOI_LON;
+		
+		private System.Nullable<int> _SO_CHO_TRE_EM;
 		
 		private System.Nullable<System.DateTime> _NGAY_DAT;
 		
@@ -972,8 +1050,10 @@ namespace Travel.Models
     partial void OnGIA_TRE_EMChanged();
     partial void OnSO_NGAYChanging(System.Nullable<int> value);
     partial void OnSO_NGAYChanged();
-    partial void OnSO_CHO_DATChanging(System.Nullable<int> value);
-    partial void OnSO_CHO_DATChanged();
+    partial void OnSO_CHO_NGUOI_LONChanging(System.Nullable<int> value);
+    partial void OnSO_CHO_NGUOI_LONChanged();
+    partial void OnSO_CHO_TRE_EMChanging(System.Nullable<int> value);
+    partial void OnSO_CHO_TRE_EMChanged();
     partial void OnNGAY_DATChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAY_DATChanged();
     partial void OnPHU_THUChanging(System.Nullable<decimal> value);
@@ -989,7 +1069,7 @@ namespace Travel.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_DAT_TOUR", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_DAT_TOUR", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int MA_DAT_TOUR
 		{
 			get
@@ -1113,27 +1193,47 @@ namespace Travel.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SO_CHO_DAT", DbType="Int")]
-		public System.Nullable<int> SO_CHO_DAT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SO_CHO_NGUOI_LON", DbType="Int")]
+		public System.Nullable<int> SO_CHO_NGUOI_LON
 		{
 			get
 			{
-				return this._SO_CHO_DAT;
+				return this._SO_CHO_NGUOI_LON;
 			}
 			set
 			{
-				if ((this._SO_CHO_DAT != value))
+				if ((this._SO_CHO_NGUOI_LON != value))
 				{
-					this.OnSO_CHO_DATChanging(value);
+					this.OnSO_CHO_NGUOI_LONChanging(value);
 					this.SendPropertyChanging();
-					this._SO_CHO_DAT = value;
-					this.SendPropertyChanged("SO_CHO_DAT");
-					this.OnSO_CHO_DATChanged();
+					this._SO_CHO_NGUOI_LON = value;
+					this.SendPropertyChanged("SO_CHO_NGUOI_LON");
+					this.OnSO_CHO_NGUOI_LONChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY_DAT", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SO_CHO_TRE_EM", DbType="Int")]
+		public System.Nullable<int> SO_CHO_TRE_EM
+		{
+			get
+			{
+				return this._SO_CHO_TRE_EM;
+			}
+			set
+			{
+				if ((this._SO_CHO_TRE_EM != value))
+				{
+					this.OnSO_CHO_TRE_EMChanging(value);
+					this.SendPropertyChanging();
+					this._SO_CHO_TRE_EM = value;
+					this.SendPropertyChanged("SO_CHO_TRE_EM");
+					this.OnSO_CHO_TRE_EMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAY_DAT", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NGAY_DAT
 		{
 			get
@@ -2128,6 +2228,120 @@ namespace Travel.Models
 		{
 			this.SendPropertyChanging();
 			entity.KHACH_HANG = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAI_TOUR")]
+	public partial class LOAI_TOUR : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MA_LOAI_TOUR;
+		
+		private string _TEN_LOAI;
+		
+		private EntitySet<CHUONG_TRINH_TOUR> _CHUONG_TRINH_TOURs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMA_LOAI_TOURChanging(int value);
+    partial void OnMA_LOAI_TOURChanged();
+    partial void OnTEN_LOAIChanging(string value);
+    partial void OnTEN_LOAIChanged();
+    #endregion
+		
+		public LOAI_TOUR()
+		{
+			this._CHUONG_TRINH_TOURs = new EntitySet<CHUONG_TRINH_TOUR>(new Action<CHUONG_TRINH_TOUR>(this.attach_CHUONG_TRINH_TOURs), new Action<CHUONG_TRINH_TOUR>(this.detach_CHUONG_TRINH_TOURs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_LOAI_TOUR", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MA_LOAI_TOUR
+		{
+			get
+			{
+				return this._MA_LOAI_TOUR;
+			}
+			set
+			{
+				if ((this._MA_LOAI_TOUR != value))
+				{
+					this.OnMA_LOAI_TOURChanging(value);
+					this.SendPropertyChanging();
+					this._MA_LOAI_TOUR = value;
+					this.SendPropertyChanged("MA_LOAI_TOUR");
+					this.OnMA_LOAI_TOURChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEN_LOAI", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string TEN_LOAI
+		{
+			get
+			{
+				return this._TEN_LOAI;
+			}
+			set
+			{
+				if ((this._TEN_LOAI != value))
+				{
+					this.OnTEN_LOAIChanging(value);
+					this.SendPropertyChanging();
+					this._TEN_LOAI = value;
+					this.SendPropertyChanged("TEN_LOAI");
+					this.OnTEN_LOAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAI_TOUR_CHUONG_TRINH_TOUR", Storage="_CHUONG_TRINH_TOURs", ThisKey="MA_LOAI_TOUR", OtherKey="MA_LOAI_TOUR")]
+		public EntitySet<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOURs
+		{
+			get
+			{
+				return this._CHUONG_TRINH_TOURs;
+			}
+			set
+			{
+				this._CHUONG_TRINH_TOURs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CHUONG_TRINH_TOURs(CHUONG_TRINH_TOUR entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAI_TOUR = this;
+		}
+		
+		private void detach_CHUONG_TRINH_TOURs(CHUONG_TRINH_TOUR entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAI_TOUR = null;
 		}
 	}
 	

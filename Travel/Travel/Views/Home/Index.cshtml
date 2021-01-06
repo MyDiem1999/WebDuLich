@@ -4,7 +4,7 @@
 }
 
 @using Travel.Models;
-@model List<CHUONG_TRINH_TOUR>
+@model List<ChuongTrinhTours>
 
 @Html.Partial("_slidebanner")
 
@@ -16,61 +16,71 @@
                 <h4 class="title text-uppercase white text-bold"> TOUR TẾT </h4>
             </div>
         </div>
+
         <div class="high-slider">
             @foreach (var t in Model)
             {
-                @*<div class="item">
-                    <div class="row">*@
-                <div class="col-sm-4 text-center mt-40">
-                    <div class="high-slider-img">
-                        <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.MA_TOUR})">
-                            <img src="~/Content/image/@t.HINH_ANH" alt="" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="box-infor-tour">
-                        <div class="top-details">
-                            <a class="tour-tag" href="#">
-                                <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
-                                <span class="number-detail">có 12 tour</span>
-                            </a>
-                        </div>
-                        <div class="name-tour-detail">
-                            <a href="#">
-                                @t.TEN_TOUR
-                            </a>
-                        </div>
-                        <a href="#" id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
-                            Đặt Tour
-                        </a>
+                <div class="item">
+                    <div class="row">
+                        <div class="col-sm-4 text-center mt-40">
+                            <div class="high-slider-img">
+                                <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.Matour})">
+                                    <img src="~/Content/image/@t.Hinhanh" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="box-infor-tour">
+                                <div class="top-details">
+                                    <a class="tour-tag" href="#">
+                                        <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
+                                        <span class="number-detail">có 12 tour</span>
+                                    </a>
+                                </div>
+                                <div class="name-tour-detail">
+                                    <a href="#">
+                                        @t.Tentour
+                                    </a>
+                                </div>
+                                @*Dat session kiem tra dang nhap o day*@
+                                @if (Session["KH"] != null)
+                                {
+                                    <a href="@Url.Action("ThemTourDat", "TourDaDat",  new { maTour = @t.Matour})" class="btn btn-buy-tour btn-orange" data-toggle="modal">
+                                        Đặt Tour
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                        Đặt Tour
+                                    </a>
+                                }
+                            </div>
 
-                    </div>
-                    <div class="box-tour-price">
-                        <p class="text"> Giá từ </p>
-                        <p class="price"> 8.629.000 </p>
-                        <p class="info"> 3 ngày 2 đêm </p>
-                    </div>
-                    <div class="promotion-tour">
-                        <div class="text-promotion-tour" title="Tour Tết"> @t.GHI_CHU </div>
+                            <div class="box-tour-price">
+                                <p class="text"> Giá từ </p>
+                                <p class="price"> 8.629.000 </p>
+                                <p class="info"> 3 ngày 2 đêm </p>
+                            </div>
+                            <div class="promotion-tour">
+                                <div class="text-promotion-tour" title="Tour Tết">@t.Tenloai</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                @*     </div>
-                    </div>*@
             }
         </div>
     </div>
 </section>
 
 <!-- ds tour -->
-@*@Html.Action("Tours", "Home")*@
+@*@Html.Partial("Tours")*@
 
-<!-- home-banner -->
+<!-- home-banner -- tin tức tour -->
 <section class="home-banner" style="margin-top: 30px">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12" style="margin-bottom: 18px">
                 <div class="box-shadow adbanner-image image-box-relative image-box-16x9">
-                    <a href="@Url.Action("Tours", "Home")">
+                    <a href="#">
                         <img class="img-responsive" src="~/Content/image/image.jpg" style="height: 100% !important">
                         <div class="overlay"></div>
                     </a>
@@ -81,7 +91,7 @@
 </section>
 
 <!-- Hot tour -->
-<section class="products-main">
+<!--<section class="products-main">
     <div class="container">
         <div class="row">
             <div class="sectionTitle">
@@ -91,82 +101,67 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 mt-20">
-                <div class="product-p-img">
-                    <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                    <div class="product-p-content product-p-content-small text-center white-bg">
-                        <a href="#" class="btn btn-violet-t text-uppercase"> ĐẶT TOUR </a>
-                        <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
-                        <p class="mt-20 mb-20"> MÔ TẢ </p>
-                        <span class="add v-light-gray text-uppercase">
-                            GIÁ
-                        </span>
+                    <div class="product-p-img">
+                        <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
+                        <div class="product-p-content product-p-content-small text-center white-bg">
+                            <a href="#" class="btn btn-violet-t text-uppercase"> ĐẶT TOUR </a>
+                            <h5 class="title text-uppercase d-black text-bold"> Tenloai </h5>
+                            <p class="mt-20 mb-20"> MÔ TẢ </p>
+                            <span class="add v-light-gray text-uppercase">
+                                GIÁ
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mt-20">
-                <div class="product-p-img">
-                    <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                    <div class="product-p-content product-p-content-small text-center white-bg">
-                        <a href="#" class="btn btn-pink text-uppercase"> ĐẶT TOUR </a>
-                        <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
-                        <p class="mt-20 mb-20"> MÔ TẢ </p>
-                        <span class="add v-light-gray text-uppercase">
-                            GIÁ
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mt-20">
-                <div class="product-p-img">
-                    <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
-                    <div class="product-p-content product-p-content-small text-center white-bg">
-                        <a href="#" class="btn btn-green text-uppercase"> ĐẶT TOUR </a>
-                        <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
-                        <p class="mt-20 mb-20"> MÔ TẢ </p>
-                        <span class="add v-light-gray text-uppercase">
-                            GIÁ
-                        </span>
-                    </div>
-                </div>
+            </div>-->
+@*         <div class="col-md-4 col-sm-6 mt-20">
+        <div class="product-p-img">
+            <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
+            <div class="product-p-content product-p-content-small text-center white-bg">
+                <a href="#" class="btn btn-pink text-uppercase"> ĐẶT TOUR </a>
+                <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
+                <p class="mt-20 mb-20"> MÔ TẢ </p>
+                <span class="add v-light-gray text-uppercase">
+                    GIÁ
+                </span>
             </div>
         </div>
     </div>
-</section>
+    <div class="col-md-4 col-sm-6 mt-20">
+        <div class="product-p-img">
+            <img class="img-responsive" src="~/Content/image/ho-hoan-kiem.jpg" alt="">
+            <div class="product-p-content product-p-content-small text-center white-bg">
+                <a href="#" class="btn btn-green text-uppercase"> ĐẶT TOUR </a>
+                <h5 class="title text-uppercase d-black text-bold"> TÊN </h5>
+                <p class="mt-20 mb-20"> MÔ TẢ </p>
+                <span class="add v-light-gray text-uppercase">
+                    GIÁ
+                </span>
+            </div>
+        </div>
+    </div>*@
+<!--</div>
+    </div>
+</section>-->
 @****************************** Thông báo xác nhận Mua Tour *********************************@
 <!-- Modal -->
-
 <div class="modal fade" id="Modal_Buy" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        @if (Session["KH"] == null)
-        {
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"> THÔNG BÁO! </h4>
-                </div>
-                <div class="modal-body">
-                    <p> Đăng nhập để tiếp tục? </p>
-                </div>
-                <div class="modal-footer">
-                    <a href="@Url.Action("DangNhap", "Account")" class="btn b-btn-primary"> Đồng ý </a>
-                    <a class="btn b-btn-default" data-dismiss="modal"> Hủy </a>
-                </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"> THÔNG BÁO! </h4>
             </div>
-        }
-        else
-        {
-            KHACH_HANG i = (KHACH_HANG)Session["KH"];
-            <div class="modal-content">
-                <div class="modal-body">
-                    <p> TIẾP TỤC ĐẶT TOUR! </p>
-                </div>
-                <div class="modal-footer">
-                    <a href="@Url.Action("DatTour", "DatTour")" class="btn b-btn-primary"> OK! </a>
-                </div>
+            <div class="modal-body">
+                <p> Đăng nhập để tiếp tục? </p>
             </div>
-        }
+            <div class="modal-footer">
+                <a href="@Url.Action("DangNhap", "Account")" class="btn b-btn-primary"> Đồng ý </a>
+                <a class="btn b-btn-default" data-dismiss="modal"> Hủy </a>
+            </div>
+        </div>
     </div>
 </div>
+
 
 @************************************************************************@

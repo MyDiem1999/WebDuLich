@@ -22,30 +22,33 @@
       <Column Name="MA_TOUR" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="HINH_ANH" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
       <Column Name="TEN_TOUR" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="GIA_TOUR" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_KHOI_HANH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NGAY_KET_THUC" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MA_LOAI_TOUR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GIA_NGUOI_LON" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GIA_TRE_EM" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_KHOI_HANH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAY_KET_THUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="SO_CHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="LICH_TRINH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="NOI_DUNG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CHINH_SACH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="CAU_HOI_THUONG_GAP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="KHUYEN_MAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="CHUONG_TRINH_TOUR_CHI_TIET_TOUR" Member="CHI_TIET_TOURs" ThisKey="MA_TOUR" OtherKey="MA_TOUR" Type="CHI_TIET_TOUR" />
       <Association Name="CHUONG_TRINH_TOUR_DAT_TOUR" Member="DAT_TOURs" ThisKey="MA_TOUR" OtherKey="MA_TOUR" Type="DAT_TOUR" />
+      <Association Name="LOAI_TOUR_CHUONG_TRINH_TOUR" Member="LOAI_TOUR" ThisKey="MA_LOAI_TOUR" OtherKey="MA_LOAI_TOUR" Type="LOAI_TOUR" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DAT_TOUR" Member="DAT_TOURs">
     <Type Name="DAT_TOUR">
-      <Column Name="MA_DAT_TOUR" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MA_DAT_TOUR" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MA_TOUR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MA_KH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="GIA_NGUOI_LON" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="GIA_TRE_EM" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="SO_NGAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SO_CHO_DAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NGAY_DAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SO_CHO_NGUOI_LON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SO_CHO_TRE_EM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAY_DAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="PHU_THU" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="THANH_TIEN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Association Name="CHUONG_TRINH_TOUR_DAT_TOUR" Member="CHUONG_TRINH_TOUR" ThisKey="MA_TOUR" OtherKey="MA_TOUR" Type="CHUONG_TRINH_TOUR" IsForeignKey="true" />
@@ -90,6 +93,13 @@
       <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Association Name="KHACH_HANG_DAT_TOUR" Member="DAT_TOURs" ThisKey="MA_KH" OtherKey="MA_TOUR" Type="DAT_TOUR" />
       <Association Name="QUOC_GIA_KHACH_HANG" Member="QUOC_GIA" ThisKey="MA_QUOC_GIA" OtherKey="MA_QUOC_GIA" Type="QUOC_GIA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAI_TOUR" Member="LOAI_TOURs">
+    <Type Name="LOAI_TOUR">
+      <Column Name="MA_LOAI_TOUR" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TEN_LOAI" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="LOAI_TOUR_CHUONG_TRINH_TOUR" Member="CHUONG_TRINH_TOURs" ThisKey="MA_LOAI_TOUR" OtherKey="MA_LOAI_TOUR" Type="CHUONG_TRINH_TOUR" />
     </Type>
   </Table>
   <Table Name="dbo.MIEN" Member="MIENs">

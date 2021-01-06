@@ -129,14 +129,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DatTourController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TourDaDatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChuongTrinhTours.cs" />
     <Compile Include="Models\Mien_Chauluc.cs" />
-    <Compile Include="Models\Infor_Customer.cs" />
     <Compile Include="Models\TourDat.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\WEB_DULICH.designer.cs">
@@ -193,6 +192,7 @@
     <Content Include="Content\image\ArrowheadLeft-WF.png" />
     <Content Include="Content\image\ArrowHeadRight-WF.png" />
     <Content Include="Content\image\bg_DN.jpg" />
+    <Content Include="Content\image\bg_tour.jpg" />
     <Content Include="Content\image\binhminh.jpg" />
     <Content Include="Content\image\cd-top-arrow.svg" />
     <Content Include="Content\image\Chonoicairang.jpg" />
@@ -2056,21 +2056,16 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\ChiTiet_Tour.cshtml" />
     <Content Include="Views\Shared\_infor.cshtml" />
     <Content Include="Views\Shared\_slidebanner.cshtml" />
-    <Content Include="Views\DatTour\DatTour.cshtml" />
     <Content Include="Views\Shared\_ChuongtrinhTour.cshtml" />
     <Content Include="Views\Shared\_listInforTour.cshtml" />
-    <Content Include="Views\DatTour\_XacnhanTTKH.cshtml" />
     <Content Include="Views\Account\DangNhap.cshtml" />
     <Content Include="Views\Account\DangKy.cshtml" />
-    <Content Include="Views\DatTour\XN_DatTour.cshtml" />
-    <Content Include="Views\DatTour\_Confirm.cshtml" />
     <Content Include="Views\Home\Tours.cshtml" />
-    <Content Include="Views\Home\_dsMien.cshtml" />
     <Content Include="Views\Home\ChiTietTour.cshtml" />
-    <Content Include="Views\TourDaDat\TourDat.cshtml" />
+    <Content Include="Views\TourDaDat\HTTourDat.cshtml" />
+    <Content Include="Views\Account\Xem_TTKH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

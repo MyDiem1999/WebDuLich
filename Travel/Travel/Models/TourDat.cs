@@ -9,17 +9,17 @@ namespace Travel.Models
     {
         WEB_DULICHDataContext dl = new WEB_DULICHDataContext();
 
-        private int maTour;
-        private string tenTour;
-        private string hinhAnh;
-        private decimal giaTour;
-        private int sL;
+        public int maTour;
+        public string tenTour;
+        public string hinhAnh;
+        public decimal giaNguoiLon;
+        public int sL;
 
         public int MaTour { get => maTour; set => maTour = value; }
         public string TenTour { get => tenTour; set => tenTour = value; }
         public string HinhAnh { get => hinhAnh; set => hinhAnh = value; }
+        public decimal GiaNguoiLon { get => giaNguoiLon; set => giaNguoiLon = value; }
         public int SL { get => sL; set => sL = value; }
-        public decimal GiaTour { get => giaTour; set => giaTour = value; }
 
         public TourDat(int matour)
         {
@@ -27,14 +27,13 @@ namespace Travel.Models
             CHUONG_TRINH_TOUR ct = dl.CHUONG_TRINH_TOURs.Single(n => n.MA_TOUR == maTour);
             TenTour = ct.TEN_TOUR;
             hinhAnh = ct.HINH_ANH;
-            GiaTour = decimal.Parse(ct.GIA_TOUR.ToString());
+            giaNguoiLon = decimal.Parse(ct.GIA_NGUOI_LON.ToString());
             SL = 1;
         }
 
-        public double ThanhTien
+        public decimal ThanhTien
         {
-            get { return SL * GiaTour; }
+            get { return SL * giaNguoiLon; }
         }
-
     }
 }
