@@ -28,36 +28,14 @@
             <div class=" col-md-9 col-sm-12 col-xs-12 ml--20x">
                 <div class="info-tour">
                     <div class="promotion-tour">
-                        <div class="text-promotion-tour" title="Tour Tết">Tour Tết</div>
+                        <div class="text-promotion-tour" title="Tour Tết"> Tour Tết </div>
                     </div>
-                    <div class="row-info">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <span class="text-uppercase">Thời gian:</span>
-                                <span class="text-strong">3 ngày 2 đêm</span>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <span class="text-uppercase">Phương tiện:</span>
-                                <span class="text-strong">
-                                    Đi về bằng máy bay
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <span class="text-uppercase">Điểm xuất phát:</span>
-                                <span class="text-strong">TP. Hồ Chí Minh </span>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <span class="text-uppercase">Điểm đến:</span>
-                                <span class="text-strong">Côn Đảo</span>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
 
                 <!-- list infor -->
-                @Html.Partial("_listInforTour")
+                @*  @Html.Partial("_listInforTour")*@
 
                 <!-- des tour -->
                 <div class="row-description">
@@ -113,8 +91,8 @@
                                                 @Model.Lichtrinh
                                             </p>
                                             @*<p style="text-align: center;">
-                                                    <img alt="" src="~/Content/image/dinhty.jpg" style="width: 100%; margin-bottom: 15px;">
-                                                </p>*@
+                                        <img alt="" src="~/Content/image/dinhty.jpg" style="width: 100%; margin-bottom: 15px;">
+                                    </p>*@
                                         </div>
                                     </div>
                                 </div>
@@ -126,6 +104,9 @@
                                         <div class="commonInfo">
                                             <p style="text-align: justify; white-space: pre-line">
                                                 @Model.Chinhsach
+                                            </p>
+                                            <p style="text-align: justify; white-space: pre-line">
+                                                @Model.Ghichu
                                             </p>
                                         </div>
                                     </div>
@@ -146,6 +127,8 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row comeback"><a href="@Url.Action("Index","Home")"> Trở về để đặt tour <i class="fa" style="padding-top: 2px"> &#xf101;</i></a> </div> 
             </div>
             @Html.Partial("_infor")
         </div>

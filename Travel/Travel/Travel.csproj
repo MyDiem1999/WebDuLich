@@ -2058,14 +2058,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_infor.cshtml" />
     <Content Include="Views\Shared\_slidebanner.cshtml" />
-    <Content Include="Views\Shared\_ChuongtrinhTour.cshtml" />
     <Content Include="Views\Shared\_listInforTour.cshtml" />
     <Content Include="Views\Account\DangNhap.cshtml" />
     <Content Include="Views\Account\DangKy.cshtml" />
-    <Content Include="Views\Home\Tours.cshtml" />
     <Content Include="Views\Home\ChiTietTour.cshtml" />
     <Content Include="Views\TourDaDat\HTTourDat.cshtml" />
     <Content Include="Views\Account\Xem_TTKH.cshtml" />
+    <Content Include="Views\Home\lstTour.cshtml" />
+    <Content Include="Views\Home\HotTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

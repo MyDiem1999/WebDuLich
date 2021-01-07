@@ -39,7 +39,8 @@ namespace Travel.Controllers
             }
             else
             {
-                sotour.SL++;
+                sotour.Sochonguoilon++;
+                sotour.Sochotreem++;
             }
             return RedirectToAction("HTTourDat");
         }
@@ -62,21 +63,28 @@ namespace Travel.Controllers
             TourDat tours = lstTourDaDat.SingleOrDefault(t => t.maTour == Ma);
             if (tours != null)
             {
-                lstTourDaDat.RemoveAll(x => x.MaTour == Ma);
+                int index = lstTourDaDat.FindIndex(x => x.MaTour == Ma);
+                lstTourDaDat.RemoveAt(index);
             }
             Session["TourDat"] = null;
             return RedirectToAction("HTTourDat");
         }
 
+        // chưa update đc
         public ActionResult UpdateSoTourDat(FormCollection col, int Ma)
         {
             lstTourDaDat = LaySoTourDat();
+
             foreach (var tours in lstTourDaDat)
             {
                 if (tours.MaTour == Ma)
-                    tours.SL = int.Parse(col["Txt_SL"]);
-                Session["TourDat"] = lstTourDaDat;
+                {
+                    tours.Sochonguoilon = int.Parse(col["Txt_SLNL"]);
+                    /*tours.Sochotreem = int.Parse(col["Txt_SLTE"]);*/
+                    Session["TourDat"] = lstTourDaDat;
+                }
             }
+
             return Redirect("HTTourDat");
         }
 
@@ -86,7 +94,7 @@ namespace Travel.Controllers
             lstTourDaDat = Session["TourDat"] as List<TourDat>;
             if (lstTourDaDat != null)
             {
-                tong = lstTourDaDat.Sum(n => n.SL);
+                tong = lstTourDaDat.Sum(n => (n.Sochonguoilon + n.Sochotreem));
             }
             return tong;
         }
@@ -108,35 +116,32 @@ namespace Travel.Controllers
         }
 
         //xu ly thanh toan - dat tour
-        /* public ActionResult XLTT()
-         {
-             if (Session["KH"] == null)
-             {
-                 return RedirectToAction("DangNhap", "KhachHang");
-             }
-             else
-             {
-                 tbl_HoaDon hd = new tbl_HoaDon();
-                 hd.NgayTao = DateTime.Now;
-                 tbl_KhachHang kh = (tbl_KhachHang)Session["KH"];
-                 hd.MaKH = kh.MaKhachHang;
-                 mk.tbl_HoaDons.InsertOnSubmit(hd);
-                 mk.SubmitChanges();
+        public ActionResult XL_DatTour()
+        {
+            DAT_TOUR dat = new DAT_TOUR();
 
-                 tbl_ChiTietHD ct;
-                 List<GioHang> GH = LayGioHang();
-                 foreach (var i in GH)
-                 {
-                     ct = new tbl_ChiTietHD();
-                     ct.MaHD = hd.MaHoaDon;
-                     ct.MaSP = i.Masp;
-                     ct.SoLuong = i.SL;
-                     mk.tbl_ChiTietHDs.InsertOnSubmit(ct);
-                     mk.SubmitChanges();
-                 }
-             }
-             return RedirectToAction("Index", "Home");
-         }*/
+            // kt session KH và lưu vào đặt tour
+            KHACH_HANG kh = (KHACH_HANG)Session["KH"];
+            dat.MA_KH = kh.MA_KH;
 
+            lstTourDaDat = LaySoTourDat();
+            foreach (var tour in lstTourDaDat)
+            {
+                dat.NGAY_DAT = DateTime.Now;
+                dat.MA_TOUR = tour.MaTour;
+                dat.GIA_NGUOI_LON = tour.GiaNguoiLon;
+                dat.GIA_TRE_EM = tour.GiaTreEm;
+                dat.SO_CHO_NGUOI_LON = tour.Sochonguoilon;
+                dat.SO_CHO_TRE_EM = tour.Sochotreem;
+                dat.THANH_TIEN = tour.ThanhTien;
+
+                dl.DAT_TOURs.InsertOnSubmit(dat);
+
+            }
+            dl.SubmitChanges();
+            Session["TourDat"] = null;
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

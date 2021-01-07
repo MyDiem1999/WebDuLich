@@ -568,9 +568,9 @@ form .has-error .form-control {
 
 /*.owl-item {
     margin-right: -759px !important;
-}
+}*/
 
-    .owl-item:after {
+    /*.owl-item:after {
         margin-right: -759px !important;
     }
 
@@ -586,4 +586,42 @@ form .has-error .form-control {
         margin-right: -759px !important;
     }*/
 
+
+
+
 /*-------------------------------------------------------------*/
+a.del:hover {
+    text-decoration: underline !important;
+}
+
+input.soluong {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    width: 80px;
+}
+
+.name-tour {
+    text-align: left
+}
+
+.thead-dark tr th {
+    text-align: center !important
+}
+
+tbody tr td {
+    text-align: center !important
+}
+
+.pd-16px {
+    padding: 16px !important;
+}
+
+.comeback {
+    float: right;
+}
+
+    .comeback:hover {
+        text-decoration: underline !important;
+    }

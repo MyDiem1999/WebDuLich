@@ -17,9 +17,6 @@
     <link href="~/Content/css/slick-theme.css" rel="stylesheet" />
     <link href="~/Content/css/settings.css" rel="stylesheet" />
     <link href="~/Content/css/select_option1.css" rel="stylesheet" />
-    @*<link href="~/Content/css/datepicker.css" rel="stylesheet" />*@
-    @*<link href="~/Content/css/jquery.fancybox.css" rel="stylesheet" />*@
-    @*<link href="~/Content/css/isotope.css" rel="stylesheet" />*@
     <link href="~/Content/lib/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet" />
     <link href="~/Content/lib/fontawesome-free-5.15.1-web/css/fontawesome.min.css" rel="stylesheet" />
 
@@ -35,15 +32,9 @@
     <!-- BANNER -->
     <link href="~/Content/css/custom_bannerSlider.css" rel="stylesheet" />
     <link href="~/Content/css/custom_banner.css" rel="stylesheet" />
-
-    @*<link href="~/Content/css/animate.css" rel="stylesheet" />*@
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
-    @*<link href="~/Content/css/featherlight.css" rel="stylesheet" />*@
     <link href="~/Content/css/main.css" rel="stylesheet" />
-    @*<link href="~/Content/css/normalize.css" rel="stylesheet" />*@
     <link href="~/Content/css/owl.carousel.css" rel="stylesheet" />
-    @*<link href="~/Content/css/owl.theme.css" rel="stylesheet" />*@
-    @*<link href="~/Content/css/responsive.css" rel="stylesheet" />*@
     <link href="~/Content/css/normalize.css" rel="stylesheet" />
     <link href="~/Content/css/owl.carousel.min.css" rel="stylesheet" />
 </head>
@@ -108,7 +99,7 @@
                                 </a>
                             </li>
                             <li title="Tour đã đặt">
-                                <a href="" class="buy-tour">
+                                <a href="@Url.Action("HTTourDat", "TourDaDat")" class="buy-tour">
                                     <i class="fas fa-suitcase-rolling"></i>
                                 </a>
                             </li>
@@ -460,7 +451,7 @@
                                     <form action="@Url.Action("XLTK", "Home")" method="post">
                                         <input type="search" name="search" class="search-input" placeholder="Nhập tìm kiếm..." />
                                         <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-                                    </form>                           
+                                    </form>
                                 </div>
                                 <span class="close" onclick="searchToggle(this, event);"></span>
                             </li>
@@ -471,16 +462,15 @@
         </div>
         <!-- slideshow -->
     </header>
-
     <!-- dropdown options menu end -->
     <!-- header end -->
     <!-- Content -->
-    <div class="@*container body-content*@">
+    <div class="">
         @RenderBody()
     </div>
 
     <!-- scroll back to top -->
-    <a href="#" id="back-to-top" title="Back to top">@*&uarr;*@<i class="fas fa-arrow-circle-up" style="color: #ff891ee0; font-size: 40px"></i></a>
+    <a href="#" id="back-to-top" title="Back to top"><i class="fas fa-arrow-circle-up" style="color: #ff891ee0; font-size: 40px"></i></a>
     <!-- end scroll back to top-->
     <!-- footer -->
     <footer>
@@ -529,8 +519,8 @@
                                 <div class="footerContent info-sgt-box">
                                     <h5>THÔNG TIN</h5>
                                     <ul>
-                                        <li><a class="link-level4-light" href="#">Tin Lữ hành viettravel </a></li>
-                                        <li><a class="link-level4-light" href="#">Tin du lịch</a></li>
+                                        <li><a class="link-level4-light" href="#"> Tin Lữ hành viettravel </a></li>
+                                        <li><a class="link-level4-light" href="#"> Tin du lịch </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -607,7 +597,6 @@
     @RenderSection("scripts", required: false)
 
     <script src="~/Scripts/js/util.js"></script>
-
     <script src="~/Scripts/js/jquery.min.js"></script>
     <script src="~/Scripts/js/jquery-ui.min.js"></script>
     <script src="~/Scripts/js/bootstrap.min.js"></script>
@@ -626,7 +615,8 @@
     <script src="~/Scripts/js/bannerSlider.js"></script>
     <script src="~/Scripts/js/main.js"></script>
     <script src="~/Scripts/js/modernizr-2.8.3.min.js"></script>
-    @*<script src="~/Scripts/js/owl.carousel.js"></script>*@
+    <script src="~/Scripts/js/owl.carousel.js"></script>
     <script src="~/Scripts/js/jquery.validate.min.js"></script>
+    <script src="~/Scripts/js/featherlight.js"></script>
 </body>
 </html>

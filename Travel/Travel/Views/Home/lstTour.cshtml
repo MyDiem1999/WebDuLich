@@ -1,0 +1,26 @@
+﻿
+@using Travel.Models;
+@model List<ChuongTrinhTours>
+
+<section class="products-main">
+    <div class="container">
+        <div class="row">
+            @foreach (var t in Model)
+            {
+                <div class="mb-3 mt-10">
+                    <div class="col-md-3 col-sm-6 col-12 row">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Content/image/@t.Hinhanh" alt="Card image cap" />
+                        </div>
+                        <div class="card-body">
+                            <p> @t.Tentour </p>
+                            @*                            <a href="@Url.Action("ThemGH","GioHang", new { Ma = @sp.MaSanPham}) " class="btn btn-outline-danger mua" style="width:90px">Mua</a>
+                                <a href="@Url.Action("ChiTietSP","Home", new { ma = @sp.MaSanPham}) " class="btn btn-outline-success ct" style="width:90px">Chi tiết</a>
+                            *@
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

@@ -24,108 +24,62 @@
 </section>
 
 <section class="mainContentSection booking-container" style="padding: 100px; text-align: center">
-    <div class="row">
-        <div class="col-md-2">
-            <label> Mã Tour </label>
-        </div>
-        <div class="col-md-4">
-            <label> Tên Tour </label>
-        </div>
-        <div class="col-md-2">
-            <label> Số lượng </label>
-        </div>
-        <div class="col-md-2">
-            <label> Thành tiền </label>
-        </div>
-        <div class="col-md-2">
-            <label> Hủy tour </label>
-        </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="col-md-1"> Mã tour </th>
+                <th scope="col" class="col-md-4"> Tên Tour </th>
+                <th scope="col" class="col-md-1"> Số chỗ người lớn </th>
+                <th scope="col" class="col-md-1"> Số chỗ trẻ em </th>
+                <th scope="col" class="col-md-2"> Giá người lớn </th>
+                <th scope="col" class="col-md-2"> Giá người trẻ em </th>
+                <th scope="col" class="col-md-1"> Xóa </th>
+            </tr>
+        </thead>
+
+        @foreach (var tourdat in Model)
+        {
+            <tbody>
+                <tr>
+                    <td class="col-md-1 pd-16px"><a href="@Url.Action("ChiTietTour","Home", new { Ma = @tourdat.MaTour })" title="Xem chi tiết tour"> @tourdat.MaTour </a></td>
+                    <td class="col-md-4"><label class="name-tour"> @tourdat.TenTour </label></td>
+                    <td class="col-md-1">
+                        <form action="@Url.Action("UpdateSoTourDat",new {Ma = @tourdat.MaTour })" method="post">
+                            <input class="soluong" type="text" name="Txt_SLNL" value="@tourdat.Sochonguoilon" />
+                        </form>
+                    </td>
+                    <td class="col-md-1">
+                        <form action="@Url.Action("UpdateSoTourDat",new {Ma = @tourdat.MaTour })" method="post">
+                            <input class="soluong" type="text" name="Txt_SLTE" value="@tourdat.Sochotreem" />
+                        </form>
+                    </td>
+                    <td class="col-md-2 pd-16px">
+                        <label> @tourdat.GiaNguoiLon </label>
+                    </td>
+                    <td class="col-md-2 pd-16px">
+                        <label> @tourdat.GiaTreEm </label>
+                    </td>
+                    <td class="col-md-1 pd-16px">
+                        <a href="@Url.Action("DeleteTourDat", new  { Ma = @tourdat.MaTour })" class="del" title="Xóa tour"> xóa </a>
+                    </td>
+                </tr>
+            </tbody>
+        }
+    </table>
+
+    <div class="row mt-3">
+        <div class="col-md-2" style="float: left"><label> Tổng số tour: </label> @ViewBag.SoluongTong</div>
+        <div class="col-md-2" style="float: right"><label> Thành Tiền: </label> @ViewBag.TongTien </div>
     </div>
 
-    @foreach (var tourdat in Model)
-    {
-        <div class="row custom">
-            <div class="col-md-2" title="Xem chi tiết tour">
-                <a href="@Url.Action("ChiTietTour","Home", new { Ma = @tourdat.MaTour })"> @tourdat.MaTour </a>
-            </div>
-            <div class="col-md-4" style="text-align: justify">
-                <label> @tourdat.tenTour </label>
-            </div>
-            <div class="col-md-2">
-                @*lỗi update*@
-                <form action="@Url.Action("UpdateSoTourDat",new {Ma = tourdat.maTour })" method="post">
-                    <input class="soluong" type="text" name="Txt_SL" value="@tourdat.SL" />
-                </form>
-            </div>
-            <div class="col-md-2">
-                <label> @tourdat.GiaNguoiLon </label>
-            </div>
-            <div class="col-md-2" title="Hủy tour">
-                <a href="@Url.Action("DeleteTourDat", new  { Ma = @tourdat.maTour })"> Hủy tour </a>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-md-2" style="float: left"><label> Tổng số tour: </label> @ViewBag.SoluongTong</div>
-            <div class="col-md-2" style="float: right"><label> Thành Tiền: </label> @ViewBag.TongTien </div>
-        </div>
+    <div class="row">
+        <a class="btn btn-buy-tour btn-orange" href="@Url.Action("XL_DatTour")" onclick="myFunction()"> Đặt tour </a>
+    </div>
 
-        <div class="row">
-            <a class="btn btn-success" href="@Url.Action("UpdateGioHang")"> Câp nhật số lượng tour </a>
-        </div>
-    }
-</section>
-@*<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-        </tr>
-    </tbody>
-</table>
-*@
-<table class="table">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-        </tr>
-    </tbody>
-</table>
+
+    <!---------------------------- thông báo thành công ---------------------------------->
+    <script>
+        function myFunction() {
+            alert("Đặt thành công!", 5000);
+        }
+    </script>

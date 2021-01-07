@@ -1,0 +1,30 @@
+﻿@using Travel.Models;
+@model List<ChuongTrinhTours>
+
+@foreach (var t in Model)
+{
+    <div class="col-md-4 col-sm-4 col-xs-12" style="margin-bottom: 18px">
+        <div class="sectionTitle">
+            <div class="content-title">
+                <span class="title"> ĐIỂM ĐẾN ĐANG HOT </span>
+                <i class="icon-hot"></i>
+            </div>
+        </div>
+        <div class="product-p-img">
+            <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.Matour})" title="xem chi tiết tour">
+                <img src="~/Content/image/@t.Hinhanh" alt="" class="img-responsive">
+            </a>
+
+        </div>
+        <div class="product-p-content product-p-content-small text-center white-bg">
+            <a href="#" class="btn btn-violet-t text-uppercase"> ĐẶT TOUR </a>
+            <h5 class="title text-uppercase d-black text-bold"> Tenloai </h5>
+            <p class="mt-20 mb-20"> MÔ TẢ </p>
+            <span class="add v-light-gray text-uppercase">
+                GIÁ
+            </span>
+        </div>
+    </div>
+}
+
+
