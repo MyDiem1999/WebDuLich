@@ -97,7 +97,7 @@ namespace Travel.Controllers
         // Hiển thị danh sách các tour hiện có
         public ActionResult lstTour()
         {
-            var lsttour = (from ctt in dl.CHUONG_TRINH_TOURs
+            /*var lsttour = (from ctt in dl.CHUONG_TRINH_TOURs
                            select new
                            {
                                ctt.MA_TOUR,
@@ -112,11 +112,11 @@ namespace Travel.Controllers
                                ctt.NGAY_KET_THUC,
                                ctt.NGAY_KHOI_HANH,
                                ctt.NOI_DUNG
-                           }).ToList();
+                           }).ToList();*/
 
             List<ChuongTrinhTours> lst = new List<ChuongTrinhTours>();
             ChuongTrinhTours ct;
-            foreach (var item in lsttour)
+            foreach (var item in dl.CHUONG_TRINH_TOURs.Select(t => t))
             {
                 ct = new ChuongTrinhTours();
                 ct.Matour = item.MA_TOUR;
@@ -130,7 +130,7 @@ namespace Travel.Controllers
                 ct.Maloaitour = (int)item.MA_LOAI_TOUR;
                 lst.Add(ct);
             }
-            return View(lst);
+            return PartialView(lst);
         }
 
         //chi tiet 1 tour
