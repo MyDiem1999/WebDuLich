@@ -137,7 +137,6 @@
     <Compile Include="Models\ChuongTrinhTours.cs" />
     <Compile Include="Models\Mien_Chauluc.cs" />
     <Compile Include="Models\TourDat.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Models\WEB_DULICH.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

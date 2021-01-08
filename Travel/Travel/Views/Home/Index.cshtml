@@ -174,34 +174,7 @@
 </section>
 
 
-<!--<div class="flexslider carousel">
-    <ul class="slides">
-        <li>
-            <img src="~/Content/image/adwards.jpg" />
-        </li>
-        <li>
-            <img src="~/Content/image/adwards.jpg" />
-        </li>
-        <li>
-            <img src="~/Content/image/adwards.jpg" />
-        </li>
-        <li>
-            <img src="~/Content/image/adwards.jpg" />
-        </li>-->
-        <!-- items mirrored twice, total of 12 -->
-    <!--</ul>
-</div>
 
-<script type="text/javascript">
-    $(window).load(function () {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            animationLoop: false,
-            itemWidth: 210,
-            itemMargin: 5
-        });
-    });
-</script>-->
 <!-- home-banner -- tin tức tour -->
 <section class="home-banner" style="margin-top: 30px">
     <div class="container">
@@ -214,13 +187,13 @@
                     </a>
                 </div>
             </div>
-            @Html.Action("HotTour")
+           @* @Html.Action("HotTour")*@
         </div>
     </div>
 </section>
 
 <!-- ds tour hiện có-->
-@Html.Action("lstTour")
+@Html.Partial("lstTour")
 @*@{ Html.RenderPartial("lstTour"); }*@
 
 @****************************** Thông báo xác nhận Mua Tour *********************************@
