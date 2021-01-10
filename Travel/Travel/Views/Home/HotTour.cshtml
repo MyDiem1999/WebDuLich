@@ -1,30 +1,51 @@
 ﻿@using Travel.Models;
 @model List<ChuongTrinhTours>
 
+
+<div class="sectionTitle">
+    <div class="content-title">
+        <span class="title"> ĐIỂM ĐẾN ĐANG HOT </span>
+        <i class="icon-hot"></i>
+    </div>
+</div>
+
 @foreach (var t in Model)
 {
-    <div class="col-md-4 col-sm-4 col-xs-12" style="margin-bottom: 18px">
-        <div class="sectionTitle">
-            <div class="content-title">
-                <span class="title"> ĐIỂM ĐẾN ĐANG HOT </span>
-                <i class="icon-hot"></i>
-            </div>
-        </div>
-        <div class="product-p-img">
+    <div class="col-sm-4 text-center mt-27">
+        <div class="high-slider-img-card">
             <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.Matour})" title="xem chi tiết tour">
-                <img src="~/Content/image/@t.Hinhanh" alt="" class="img-responsive">
+                <img src="~/Content/image/@t.Hinhanh" alt="" class="img">
             </a>
-
         </div>
-        <div class="product-p-content product-p-content-small text-center white-bg">
-            <a href="#" class="btn btn-violet-t text-uppercase"> ĐẶT TOUR </a>
-            <h5 class="title text-uppercase d-black text-bold"> Tenloai </h5>
-            <p class="mt-20 mb-20"> MÔ TẢ </p>
-            <span class="add v-light-gray text-uppercase">
-                GIÁ
-            </span>
+        <div class="box-infor-tour">
+
+            <div class="name-tour-detail">
+                <a href="#">
+                    @t.Tentour
+                </a>
+            </div>
+            <!-- Dat session kiem tra dang nhap o day -->
+            @if (Session["KH"] != null)
+            {
+                <a href="@Url.Action("ThemTourDat", "TourDaDat",  new { maTour = @t.Matour})" class="btn btn-buy-tour btn-orange" data-toggle="modal">
+                    Đặt Tour
+                </a>
+            }
+            else
+            {
+                <a id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                    Đặt Tour
+                </a>
+            }
+        </div>
+
+        <div class="box-tour-price">
+            <p class="text"> Giá từ </p>
+            <p class="price"> @t.Gianguoilon </p>
+            @* <p class="info"> 3 ngày 2 đêm </p>*@
+        </div>
+        <div class="promotion-tour">
+            <div class="text-promotion-tour" title="Tour Tết">@t.Tenloai</div>
         </div>
     </div>
 }
-
-

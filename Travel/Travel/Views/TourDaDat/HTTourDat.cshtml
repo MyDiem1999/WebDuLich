@@ -28,12 +28,13 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col" class="col-md-1"> Mã tour </th>
-                <th scope="col" class="col-md-4"> Tên Tour </th>
+                <th scope="col" class="col-md-3"> Tên Tour </th>
                 <th scope="col" class="col-md-1"> Số chỗ người lớn </th>
                 <th scope="col" class="col-md-1"> Số chỗ trẻ em </th>
                 <th scope="col" class="col-md-2"> Giá người lớn </th>
                 <th scope="col" class="col-md-2"> Giá người trẻ em </th>
                 <th scope="col" class="col-md-1"> Xóa </th>
+                <th scope="col" class="col-md-1"> Hủy tour </th>
             </tr>
         </thead>
 
@@ -42,7 +43,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-1 pd-16px"><a href="@Url.Action("ChiTietTour","Home", new { Ma = @tourdat.MaTour })" title="Xem chi tiết tour"> @tourdat.MaTour </a></td>
-                    <td class="col-md-4"><label class="name-tour"> @tourdat.TenTour </label></td>
+                    <td class="col-md-3"><label class="name-tour"> @tourdat.TenTour </label></td>
                     <td class="col-md-1">
                         <form action="@Url.Action("UpdateSoTourDat",new {Ma = @tourdat.MaTour })" method="post">
                             <input class="soluong" type="text" name="Txt_SLNL" value="@tourdat.Sochonguoilon" />
@@ -62,6 +63,9 @@
                     <td class="col-md-1 pd-16px">
                         <a href="@Url.Action("DeleteTourDat", new  { Ma = @tourdat.MaTour })" class="del" title="Xóa tour"> xóa </a>
                     </td>
+                    <td class="col-md-1 pd-16px">
+                        <a href="" class="del btn btn-orange" title="Xóa tour"> Hủy tour </a>
+                    </td>
                 </tr>
             </tbody>
         }
@@ -73,13 +77,14 @@
     </div>
 
     <div class="row">
-        <a class="btn btn-buy-tour btn-orange" href="@Url.Action("XL_DatTour")" onclick="myFunction()"> Đặt tour </a>
+        <a class="btn btn-buy-tour btn-primary" href="@Url.Action("XL_DatTour")" onclick="myFunction()"> Thanh toán </a>
     </div>
 
+    <div class="row comeback"><a href="@Url.Action("Index","Home")"> Tiếp tục! <i class="fa" style="padding-top: 2px"> &#xf101;</i></a> </div>
 
     <!---------------------------- thông báo thành công ---------------------------------->
     <script>
         function myFunction() {
-            alert("Đặt thành công!", 5000);
+            alert("Thanh toán thành công!", 5000);
         }
     </script>

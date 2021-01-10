@@ -77,7 +77,7 @@
         //    $('#call_back_form').find(':submit').attr('disabled', true);
         //    $.ajax({
         //        type: 'POST',
-        //        url: 'https://saigontourist.net/call-me-back',
+        //        url: 'https://Viettravel.net/call-me-back',
         //        data: form.serialize(),
         //        success: function (data) {
         //            if (data.success) {
@@ -116,10 +116,10 @@
         //    price: 7300000,
         //    quantity: 1,
         //    name: "Du lịch Tết Tân Sửu 2021 Côn Đảo [Mùng 4 tết]",
-        //    brandName: "saigontourist",
+        //    brandName: "Viettravel",
         //    desc: "3 ngày 2 đêm - Đi về bằng máy bay",
-        //    imageUrl: "https://saigontourist.net/uploads/destination/TrongNuoc/Condao/Tram-PhuHai_1677214198.jpg",
-        //    link: "https://saigontourist.net/vi/tour-trong-nuoc/2113/du-lich-tet-tan-suu-2021-con-dao-mung-4-tet"
+        //    imageUrl: "https://Viettravel.net/uploads/destination/TrongNuoc/Condao/Tram-PhuHai_1677214198.jpg",
+        //    link: "https://Viettravel.net/vi/tour-trong-nuoc/2113/du-lich-tet-tan-suu-2021-con-dao-mung-4-tet"
         //}];
         //ematics("log", "product", "browse", products);
 
@@ -133,7 +133,7 @@
         //                "id": 2113,
         //                "name": "Du lịch Tết Tân Sửu 2021 Côn Đảo [Mùng 4 tết]",
         //                "price": 7300000,
-        //                "brand": "saigontourist",
+        //                "brand": "Viettravel",
         //                "category": ""
         //            }]
         //        }
@@ -369,3 +369,11 @@
         minute: 30,
     });
 })
+
+//============================ SLIDER CAROUSEL ========================================
+var angle = 0;
+function galleryspin(sign) {
+    spinner = document.querySelector("#spinner");
+    if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+    spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
+}

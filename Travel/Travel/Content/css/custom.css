@@ -73,6 +73,43 @@
     /* transform: unset !important;*/
 }
 
+/****************************************************** custom lstTour *******************************************************/
+.high-slider-img-card {
+    overflow: hidden;
+}
+
+    .high-slider-img-card .img {
+        height: 250px !important
+    }
+
+.img {
+    transition: 1.3s;
+    cursor: pointer
+}
+
+    .img:hover {
+        transform: scale(1.2);
+        cursor: pointer
+    }
+
+.box-infor {
+    border: 0.5px solid #f4f4f4;
+    /*box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.39);*/
+    padding-bottom: 20px;
+    box-shadow: 1px 1px 2px 2px #f4f4f4
+}
+
+.products-main {
+    padding-top: 50px;
+}
+
+.mt-27 {
+    margin-top: 27px !important;
+}
+
+.mt-4x {
+    margin: 4px 0
+}
 /***************************************************** zoom to hover img ******************************************************/
 .high-slider-img {
     overflow: hidden;
@@ -566,77 +603,6 @@ form .has-error .form-control {
     margin-top: 3px !important;
 }
 
-/*.owl-item {
-    margin-right: -759px !important;
-}*/
-
-/*.owl-item:after {
-        margin-right: -759px !important;
-    }
-
-    .owl-item:before {
-        margin-right: -759px !important;
-    }
-
-    .owl-item.cloned {
-        margin-right: -759px !important;
-    }
-
-    .owl-item.active {
-        margin-right: -759px !important;
-    }*/
-
-.multi-item-carousel .carousel-inner > .item {
-    transition: 500ms ease-in-out left;
-}
-
-.multi-item-carousel .carousel-inner .active.left {
-    left: -33%;
-}
-
-.multi-item-carousel .carousel-inner .active.right {
-    left: 33%;
-}
-
-.multi-item-carousel .carousel-inner .next {
-    left: 33%;
-}
-
-.multi-item-carousel .carousel-inner .prev {
-    left: -33%;
-}
-
-@media all and (transform-3d), (-webkit-transform-3d) {
-    .multi-item-carousel .carousel-inner > .item {
-        transition: 500ms ease-in-out left;
-        transition: 500ms ease-in-out all;
-        -webkit-backface-visibility: visible;
-        backface-visibility: visible;
-        transform: none !important;
-    }
-}
-
-.multi-item-carousel .carouse-control.left,
-.multi-item-carousel .carouse-control.right {
-    background-image: none;
-}
-
-body {
-    background: #333;
-    color: #ddd;
-}
-
-h1 {
-    color: white;
-    font-size: 2.25em;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    text-shadow: 0px 2px 0px #000000;
-}
-
-
-
 /*-------------------------------------------------------------*/
 a.del:hover {
     text-decoration: underline !important;
@@ -672,4 +638,170 @@ tbody tr td {
 
     .comeback:hover {
         text-decoration: underline !important;
+    }
+
+/************************************************************/
+.myvideo {
+    /*padding: 35px 102px 0 0;*/
+    margin-top: 30px;
+    float: right;
+}
+
+@media only screen and (max-width: 640px) {
+    #ContactForm1_contact-form-name,
+    #ContactForm1_contact-form-email,
+    #ContactForm1_contact-form-submit {
+        width: 100%;
+        float: none
+    }
+}
+
+section.mainContentSection.bg-img {
+    height: 500px;
+    /* background-image: url(../../Content/image/Flower_garden.jpg);*/
+    /*opacity: 0.95;*/
+    background-size: cover;
+}
+
+/************************************************************************************/
+div#carousel {
+    perspective: 1200px;
+    background: #100000;
+    padding-top: 10%;
+    font-size: 0;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+figure#spinner {
+    transform-style: preserve-3d;
+    height: 300px;
+    transform-origin: 50% 50% -500px;
+    transition: 1s;
+}
+
+    figure#spinner img {
+        width: 40%;
+        max-width: 425px;
+        position: absolute;
+        left: 30%;
+        transform-origin: 50% 50% -500px;
+        outline: 1px solid transparent;
+    }
+
+        figure#spinner img:nth-child(1) {
+            transform: rotateY(0deg);
+        }
+
+        figure#spinner img:nth-child(2) {
+            transform: rotateY(-45deg);
+        }
+
+        figure#spinner img:nth-child(3) {
+            transform: rotateY(-90deg);
+        }
+
+        figure#spinner img:nth-child(4) {
+            transform: rotateY(-135deg);
+        }
+
+        figure#spinner img:nth-child(5) {
+            transform: rotateY(-180deg);
+        }
+
+        figure#spinner img:nth-child(6) {
+            transform: rotateY(-225deg);
+        }
+
+        figure#spinner img:nth-child(7) {
+            transform: rotateY(-270deg);
+        }
+
+        figure#spinner img:nth-child(8) {
+            transform: rotateY(-315deg);
+        }
+
+div#carousel ~ span {
+    color: #fff;
+    margin: 5%;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 0.6s color;
+    position: relative;
+    margin-top: -6rem;
+    border-bottom: none;
+    line-height: 0;
+}
+
+    div#carousel ~ span:hover {
+        color: #888;
+        cursor: pointer;
+    }
+
+/********************************* custom contact ************************************/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    display: block
+}
+
+.sb {
+    background-color: #c0392b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+    .sb:hover {
+        background-color: #e54433;
+    }
+
+.media {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.media, .media-body {
+    overflow: hidden;
+    zoom: 1;
+}
+
+    .media .media-left {
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+        text-align: center;
+        background-color: #ff891e;
+        color: #ffffff;
+        padding-right: 0;
+        margin-right: 25px;
+        font-size: 35px;
+        float: left;
+    }
+
+    .media p a {
+        color: #969696;
+        font-size: 14px;
+    }
+
+    .media p a:hover {
+        opacity: .8;
     }

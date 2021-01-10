@@ -7,20 +7,20 @@ namespace Travel.Models
 {
     public class ChuongTrinhTours
     {
-        private int matour;
-        private decimal giatreem;
-        private string noidung;
-        private DateTime ngaykhoihanh;
-        private decimal gianguoilon;
-        private string tentour;
-        private string hinhanh;
-        private string tenloai;
-        private string chinhsach;
-        private string lichtrinh;
-        private string ghichu;
-        private DateTime ngayketthuc;
-        private int maloaitour;
-        private string cauhoi;
+        public int matour;
+        public decimal giatreem;
+        public string noidung;
+        public DateTime ngaykhoihanh;
+        public decimal gianguoilon;
+        public string tentour;
+        public string hinhanh;
+        public string tenloai;
+        public string chinhsach;
+        public string lichtrinh;
+        public string ghichu;
+        public DateTime ngayketthuc;
+        public int maloaitour;
+        public string cauhoi;
 
         public int Matour { get => matour; set => matour = value; }
         public decimal Gianguoilon { get => gianguoilon; set => gianguoilon = value; }
