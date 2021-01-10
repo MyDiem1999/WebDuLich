@@ -1,0 +1,166 @@
+﻿@*@using Travel.Models;
+    @model List<CHUONG_TRINH_TOUR>*@
+@using Travel.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<Travel.Models.CHUONG_TRINH_TOUR>
+
+@helper Truncate(string input, int length)
+{
+    if(input == null)
+    {
+        @input
+    }
+    else if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+            @input.Substring(0, length)<text>...</text>
+    }
+}
+
+@{
+    ViewBag.Title = "QuanLyTour";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+
+<h2>QUẢN LÝ TOUR</h2>
+<p>
+    @Html.ActionLink("Thêm Tour", "ThemTour")
+</p>
+</p>
+
+<table class="table-bordered">
+    <tr align="center">
+        <th>
+            @Html.DisplayNameFor(model => model.First().MA_TOUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().HINH_ANH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TEN_TOUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MA_LOAI_TOUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GIA_NGUOI_LON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GIA_TRE_EM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NGAY_KHOI_HANH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NGAY_KET_THUC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().SO_CHO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GHI_CHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().LICH_TRINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().CHINH_SACH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NOI_DUNG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().CAU_HOI_THUONG_GAP)
+        </th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td align="center">@Html.DisplayFor(moldelItem => item.MA_TOUR)</td>
+            <td>@Html.DisplayFor(moldelItem => item.HINH_ANH)</td>
+            <td>@Html.DisplayFor(moldelItem => item.TEN_TOUR)</td>
+            <td>@Html.DisplayFor(moldelItem => item.MA_LOAI_TOUR)</td>
+            <td>@Html.DisplayFor(moldelItem => item.GIA_NGUOI_LON)</td>
+            <td>@Html.DisplayFor(moldelItem => item.GIA_TRE_EM)</td>
+            <td>@Html.DisplayFor(moldelItem => item.NGAY_KHOI_HANH)</td>
+            <td>@Html.DisplayFor(moldelItem => item.NGAY_KET_THUC)</td>
+            <td>@Html.DisplayFor(moldelItem => item.SO_CHO)</td>
+            <td>@Html.DisplayFor(moldelItem => item.GHI_CHU)</td>
+            @*<td>@Html.DisplayFor(moldelItem => item.LICH_TRINH)</td>
+        <td>@Html.DisplayFor(moldelItem => item.CHINH_SACH)</td>
+        <td>@Html.DisplayFor(moldelItem => item.NOI_DUNG)</td>
+        <td>@Html.DisplayFor(moldelItem => item.CAU_HOI_THUONG_GAP)</td>*@
+            <td>@Truncate(item.LICH_TRINH, 100)</td>
+            <td>@Truncate(item.CHINH_SACH, 100)</td>
+            <td>@Truncate(item.NOI_DUNG, 100)</td>
+            <td>@Truncate(item.CAU_HOI_THUONG_GAP, 100)</td>
+            <td width="100px">
+                @Html.ActionLink("Sửa", "SuaTour", new { id = item.MA_TOUR }) |
+                @Html.ActionLink("Chi Tiết", "ChiTietTour", new { id = item.MA_TOUR }) |
+                @Html.ActionLink("Xóa", "XoaTour", new { id = item.MA_TOUR })
+            </td>
+        </tr>
+        }
+</table>
+@*Tạo liên kết các trang*@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QuanLyTour",new { page = page}))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+@*<table class="table-bordered">
+        <thead>
+            <tr  align="center">
+                <td>Mã tour</td>
+                <td>Hình ảnh</td>
+                <td width="100px">Tên tour</td>
+                <td>Tên loại tour</td>
+                <td>Giá người lớn</td>
+                <td>Giá trẻ em</td>
+                <td>Ngày khởi hành</td>
+                <td>Ngày kết thúc</td>
+                <td>Số chổ</td>
+                <td width="100px">Ghi chú</td>
+                <td width="70%">Lịch trình</td>
+                <td width="100px">Nội dung</td>
+                <td width="20%">Chính sách</td>
+                <td width="30%">Câu hỏi thường gặp</td>
+                <td>Sửa</td>
+                <td>Xóa</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.MA_TOUR</td>
+                <td>@item.HINH_ANH</td>
+                <td>@item.TEN_TOUR</td>
+                <td>@item.MA_LOAI_TOUR</td>
+                <td>@item.GIA_NGUOI_LON</td>
+                <td>@item.GIA_TRE_EM</td>
+                <td>@item.NGAY_KHOI_HANH</td>
+                <td>@item.NGAY_KET_THUC</td>
+                <td>@item.SO_CHO</td>
+                <td>@item.GHI_CHU</td>
+                <td>@item.LICH_TRINH</td>
+                <td>@item.NOI_DUNG</td>
+                <td>@item.CHINH_SACH</td>
+                <td>@item.CAU_HOI_THUONG_GAP</td>
+                <td><a href="/Tour/Edit/@item.MA_TOUR"><h2>Sửa</h2></a></td>
+                <td><a href="/Tour/Delete/@item.MA_TOUR"><h2>Xóa</h2></a></td>
+
+
+            </tr>
+            }
+        </tbody>
+    </table>*@

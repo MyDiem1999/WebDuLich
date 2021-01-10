@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DU_LICH" Class="WEB_DULICHDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-JRLFG0U\SQLEXPRESS;Initial Catalog=DU_LICH;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DU_LICHConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CHI_TIET_TOUR" Member="CHI_TIET_TOURs">
-    <Type Name="CHI_TIET_TOUR">
-      <Column Name="MA_TOUR" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MA_DIEM_DL" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="CHUONG_TRINH_TOUR_CHI_TIET_TOUR" Member="CHUONG_TRINH_TOUR" ThisKey="MA_TOUR" OtherKey="MA_TOUR" Type="CHUONG_TRINH_TOUR" IsForeignKey="true" />
-      <Association Name="DIEM_DU_LICH_CHI_TIET_TOUR" Member="DIEM_DU_LICH" ThisKey="MA_DIEM_DL" OtherKey="MA_DIEM_DL" Type="DIEM_DU_LICH" IsForeignKey="true" />
-    </Type>
-  </Table>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DATHUNG\SQLEXPRESS;Initial Catalog=DU_LICH;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DU_LICHConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TINH" Member="TINHs">
     <Type Name="TINH">
       <Column Name="MA_TINH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -15,6 +7,14 @@
       <Column Name="MA_MIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="TINH_DIEM_DU_LICH" Member="DIEM_DU_LICHes" ThisKey="MA_TINH" OtherKey="MA_TINH" Type="DIEM_DU_LICH" />
       <Association Name="MIEN_TINH" Member="MIEN" ThisKey="MA_MIEN" OtherKey="MA_MIEN" Type="MIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHI_TIET_TOUR" Member="CHI_TIET_TOURs">
+    <Type Name="CHI_TIET_TOUR">
+      <Column Name="MA_TOUR" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MA_DIEM_DL" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CHUONG_TRINH_TOUR_CHI_TIET_TOUR" Member="CHUONG_TRINH_TOUR" ThisKey="MA_TOUR" OtherKey="MA_TOUR" Type="CHUONG_TRINH_TOUR" IsForeignKey="true" />
+      <Association Name="DIEM_DU_LICH_CHI_TIET_TOUR" Member="DIEM_DU_LICH" ThisKey="MA_DIEM_DL" OtherKey="MA_DIEM_DL" Type="DIEM_DU_LICH" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CHUONG_TRINH_TOUR" Member="CHUONG_TRINH_TOURs">

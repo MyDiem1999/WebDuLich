@@ -1,0 +1,129 @@
+﻿@model Travel.Models.CHUONG_TRINH_TOUR
+
+@{
+    ViewBag.Title = "XoaTour";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>XÁC NHẬN THÔNG TIN XÓA TOUR</h2>
+
+<h3>Bạn có muốn xóa tour này không ?</h3>
+<div>
+    <h4>CHUONG_TRINH_TOUR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HINH_ANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINH_ANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEN_TOUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN_TOUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MA_LOAI_TOUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MA_LOAI_TOUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIA_NGUOI_LON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA_NGUOI_LON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIA_TRE_EM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA_TRE_EM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_KHOI_HANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_KHOI_HANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_KET_THUC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_KET_THUC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SO_CHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SO_CHO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LICH_TRINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LICH_TRINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOI_DUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOI_DUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHINH_SACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHINH_SACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAU_HOI_THUONG_GAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAU_HOI_THUONG_GAP)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" onclick="return confirm('Bạn có muốn xóa tour này?')" /> |
+            @Html.ActionLink("| Trở về", "QuanLyTour")
+        </div>
+    }
+</div>

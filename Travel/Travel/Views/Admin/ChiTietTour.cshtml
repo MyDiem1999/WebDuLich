@@ -1,0 +1,122 @@
+﻿@model Travel.Models.CHUONG_TRINH_TOUR
+
+@{
+    ViewBag.Title = "ChiTietTour";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT TOUR</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Hình ảnh: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINH_ANH)
+        </dd>
+
+        <dt>
+            Tên tour: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN_TOUR)
+        </dd>
+
+        <dt>
+            Mã loại tour: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MA_LOAI_TOUR)
+        </dd>
+
+        <dt>
+            Giá người lớn: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA_NGUOI_LON)
+        </dd>
+
+        <dt>
+            Giá trẻ em: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA_TRE_EM)
+        </dd>
+
+        <dt>
+            Ngày khởi hành: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_KHOI_HANH)
+        </dd>
+
+        <dt>
+            Ngày kết thúc: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_KET_THUC)
+        </dd>
+
+        <dt>
+            Số chổ: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SO_CHO)
+        </dd>
+
+        <dt>
+            Ghi chú: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            Lịch trình:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LICH_TRINH)
+        </dd>
+
+        <dt>
+            Nội dung: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOI_DUNG)
+        </dd>
+
+        <dt>
+            Chính sách: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHINH_SACH)
+        </dd>
+
+        <dt>
+            Câu hỏi thường gặp: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAU_HOI_THUONG_GAP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("SỬA | ", "SuaTour", new { id = Model.MA_TOUR })
+    @Html.ActionLink("QUAY LẠI", "QuanLyTour")
+</p>

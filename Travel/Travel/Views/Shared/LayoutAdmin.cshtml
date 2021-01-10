@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+
+
+
+    <link href="~/Content/css/admincss.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>TRANG ADMIN WEBSITE DU LỊCH</h2>
+
+    @*<div class="row container">
+            <div class="left" style="background-color:#bbb ;">
+                <h2>Menu</h2>
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+                <ul id="myMenu">
+                    <li><a href="#">Quản Lý Tour</a></li>
+                    <li><a href="#">Hủy Đặt Tour</a></li>
+                    <li><a href="#">Thống Kê</a></li>
+                </ul>
+            </div>
+        </div>*@
+    <div id="menu">
+        <ul>
+            <li>@Html.ActionLink("QUẢN LÝ TOUR", "QuanLyTour", "Admin")</li>
+            <li><a href="#">Hủy Đặt Tour</a></li>
+            <li><a href="#">Thống Kê</a></li>
+        </ul>
+    </div>
+    <style id="menu">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*==Style cơ bản cho website==*/
+        body {
+            font-family: sans-serif;
+            color: #333;
+        }
+
+        /*==Style cho menu===*/
+        #menu ul {
+            background: #1F568B;
+            list-style-type: none;
+            text-align: center;
+        }
+
+        #menu li {
+            color: #f1f1f1;
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: -5px;
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+
+            #menu a:hover {
+                background: #F1F1F1;
+                color: #333;
+            }
+    </style>
+
+    <div class="">
+        @RenderBody()
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+    <script src="~/Scripts/js/adminscripts.js"></script>
+</body>
+</html>
