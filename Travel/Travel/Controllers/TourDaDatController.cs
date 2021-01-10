@@ -57,16 +57,21 @@ namespace Travel.Controllers
             return View(lstTourDaDat);
         }
 
+        // xóa tour đã chọn
         public ActionResult DeleteTourDat(int Ma)
         {
             lstTourDaDat = LaySoTourDat();
             TourDat tours = lstTourDaDat.SingleOrDefault(t => t.maTour == Ma);
             if (tours != null)
             {
-                int index = lstTourDaDat.FindIndex(x => x.MaTour == Ma);
+                int index = isExisting(Ma);
+                List<TourDat> cart = (List<TourDat>)Session["TourDat"];
+
+                /* int index = lstTourDaDat.FindIndex(x => x.MaTour == Ma);  */
                 lstTourDaDat.RemoveAt(index);
+                Session["TourDat"] = cart;
             }
-            Session["TourDat"] = null;
+
             return RedirectToAction("HTTourDat");
         }
 
@@ -86,6 +91,15 @@ namespace Travel.Controllers
             }
 
             return Redirect("HTTourDat");
+        }
+        // ktra session TourDat
+        private int isExisting(int id)
+        {
+            List<TourDat> cart = (List<TourDat>)Session["TourDat"];
+            for (int i = 0; i < cart.Count; i++)
+                if (cart[i].MaTour == id)
+                    return i;
+            return -1;
         }
 
         public int TongSoLuong()

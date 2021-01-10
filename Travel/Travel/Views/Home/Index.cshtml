@@ -9,237 +9,58 @@
 @Html.Partial("_slidebanner")
 
 <!-- Tour introduce -->
-<section class="highlights no-margin" data-toggle="modal">
+<section class="products-main">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 content-title" style="top: 4px; left: 10px">
-                <h4 class="title text-uppercase white text-bold"> TOUR TẾT </h4>
+        <div class="sectionTitle">
+            <div class="col-md-12 content-title">
+                <span class="title"> CÁC ĐỊA ĐIỂM DU LỊCH </span>
             </div>
         </div>
 
-        <div class="high-slider">
+        <div class="row">
             @foreach (var t in Model)
             {
-                <div class="item">
-                    <div class="row">
-                        <div class="col-sm-4 text-center mt-40">
-                            <div class="high-slider-img">
-                                <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.Matour})" title="xem chi tiết tour">
-                                    <img src="~/Content/image/@t.Hinhanh" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="box-infor-tour">
-                                <div class="top-details">
-                                    <a class="tour-tag" href="#">
-                                        <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
-                                        <span class="number-detail">có 12 tour</span>
-                                    </a>
-                                </div>
-                                <div class="name-tour-detail">
-                                    <a href="#">
-                                        @t.Tentour
-                                    </a>
-                                </div>
-                                <!-- Dat session kiem tra dang nhap o day -->
-                                @if (Session["KH"] != null)
-                                {
-                                    <a href="@Url.Action("ThemTourDat", "TourDaDat",  new { maTour = @t.Matour})" class="btn btn-buy-tour btn-orange" data-toggle="modal">
-                                        Đặt Tour
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
-                                        Đặt Tour
-                                    </a>
-                                }
-                            </div>
+                <div class="col-sm-4 text-center mt-40">
+                    <div class="high-slider-img-card">
+                        <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.Matour})" title="xem chi tiết tour">
+                            <img src="~/Content/image/@t.Hinhanh" alt="" class="img">
+                        </a>
+                    </div>
+                    <div class="box-infor-tour">
 
-                            <div class="box-tour-price">
-                                <p class="text"> Giá từ </p>
-                                <p class="price"> @t.Gianguoilon </p>
-                                <p class="info"> 3 ngày 2 đêm </p>
-                            </div>
-                            <div class="promotion-tour">
-                                <div class="text-promotion-tour" title="Tour Tết">@t.Tenloai</div>
-                            </div>
+                        <div class="name-tour-detail">
+                            <a href="#">
+                                @t.Tentour
+                            </a>
                         </div>
+                        <!-- Dat session kiem tra dang nhap o day -->
+                        @if (Session["KH"] != null)
+                        {
+                            <a href="@Url.Action("ThemTourDat", "TourDaDat",  new { maTour = @t.Matour})" class="btn btn-buy-tour btn-orange" data-toggle="modal">
+                                Đặt Tour
+                            </a>
+                        }
+                        else
+                        {
+                            <a id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
+                                Đặt Tour
+                            </a>
+                        }
+                    </div>
+
+                    <div class="box-tour-price">
+                        <p class="text"> Giá từ </p>
+                        <p class="price"> @t.Gianguoilon </p>
+                       @* <p class="info"> 3 ngày 2 đêm </p>*@
+                    </div>
+                    <div class="promotion-tour">
+                        <div class="text-promotion-tour" title="Tour Tết">@t.Tenloai</div>
                     </div>
                 </div>
             }
-
-            <!---->
-            @foreach (var t in Model)
-            {
-                <div class="item">
-                    <div class="row">
-                        <div class="col-sm-4 text-center mt-40">
-                            <div class="high-slider-img">
-                                <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.Matour})" title="xem chi tiết tour">
-                                    <img src="~/Content/image/@t.Hinhanh" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="box-infor-tour">
-                                <div class="top-details">
-                                    <a class="tour-tag" href="#">
-                                        <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
-                                        <span class="number-detail">có 12 tour</span>
-                                    </a>
-                                </div>
-                                <div class="name-tour-detail">
-                                    <a href="#">
-                                        @t.Tentour
-                                    </a>
-                                </div>
-                                <!-- Dat session kiem tra dang nhap o day -->
-                                @if (Session["KH"] != null)
-                                {
-                                    <a href="@Url.Action("ThemTourDat", "TourDaDat",  new { maTour = @t.Matour})" class="btn btn-buy-tour btn-orange" data-toggle="modal">
-                                        Đặt Tour
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
-                                        Đặt Tour
-                                    </a>
-                                }
-                            </div>
-
-                            <div class="box-tour-price">
-                                <p class="text"> Giá từ </p>
-                                <p class="price"> @t.Gianguoilon </p>
-                                <p class="info"> 3 ngày 2 đêm </p>
-                            </div>
-                            <div class="promotion-tour">
-                                <div class="text-promotion-tour" title="Tour Tết">@t.Tenloai</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-
-            @foreach (var t in Model)
-            {
-                <div class="item">
-                    <div class="row">
-                        <div class="col-sm-4 text-center mt-40">
-                            <div class="high-slider-img">
-                                <a href="@Url.Action("ChiTietTour","Home", new { ma = @t.Matour})" title="xem chi tiết tour">
-                                    <img src="~/Content/image/@t.Hinhanh" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="box-infor-tour">
-                                <div class="top-details">
-                                    <a class="tour-tag" href="#">
-                                        <span class="tag-detail overflow-ellipsis" title="Tour miền Tây">Tour miền Tây</span>
-                                        <span class="number-detail">có 12 tour</span>
-                                    </a>
-                                </div>
-                                <div class="name-tour-detail">
-                                    <a href="#">
-                                        @t.Tentour
-                                    </a>
-                                </div>
-                                <!-- Dat session kiem tra dang nhap o day -->
-                                @if (Session["KH"] != null)
-                                {
-                                    <a href="@Url.Action("ThemTourDat", "TourDaDat",  new { maTour = @t.Matour})" class="btn btn-buy-tour btn-orange" data-toggle="modal">
-                                        Đặt Tour
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a id="btnBuy" class="btn btn-buy-tour btn-orange" data-toggle="modal" data-target="#Modal_Buy">
-                                        Đặt Tour
-                                    </a>
-                                }
-                            </div>
-
-                            <div class="box-tour-price">
-                                <p class="text"> Giá từ </p>
-                                <p class="price"> @t.Gianguoilon </p>
-                                <p class="info"> 3 ngày 2 đêm </p>
-                            </div>
-                            <div class="promotion-tour">
-                                <div class="text-promotion-tour" title="Tour Tết">@t.Tenloai</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-
         </div>
     </div>
 </section>
-
-<!--_________________________________________________________________________________-->
-@*<div class="top-content">
-    <div class="container-fluid">
-        <div id="carousel-example" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-                    <img src="assets/img/backgrounds/1.jpg" class="img-fluid mx-auto d-block" alt="img1">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="assets/img/backgrounds/2.jpg" class="img-fluid mx-auto d-block" alt="img2">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="assets/img/backgrounds/3.jpg" class="img-fluid mx-auto d-block" alt="img3">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="assets/img/backgrounds/4.jpg" class="img-fluid mx-auto d-block" alt="img4">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="assets/img/backgrounds/5.jpg" class="img-fluid mx-auto d-block" alt="img5">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="assets/img/backgrounds/6.jpg" class="img-fluid mx-auto d-block" alt="img6">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="assets/img/backgrounds/7.jpg" class="img-fluid mx-auto d-block" alt="img7">
-                </div>
-                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-                    <img src="assets/img/backgrounds/8.jpg" class="img-fluid mx-auto d-block" alt="img8">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-    $('#carousel-example').on('slide.bs.carousel', function (e) {
-        /*
-            CC 2.0 License Iatek LLC 2018 - Attribution required
-        */
-        var $e = $(e.relatedTarget);
-        var idx = $e.index();
-        var itemsPerSlide = 5;
-        var totalItems = $('.carousel-item').length;
-
-        if (idx >= totalItems - (itemsPerSlide - 1)) {
-            var it = itemsPerSlide - (totalItems - idx);
-            for (var i = 0; i < it; i++) {
-                // append slides to end
-                if (e.direction == "left") {
-                    $('.carousel-item').eq(i).appendTo('.carousel-inner');
-                }
-                else {
-                    $('.carousel-item').eq(0).appendTo('.carousel-inner');
-                }
-            }
-        }
-    });
-</script>*@
-<!--_________________________________________________________________________________-->->
-
 
 <!-- home-banner -- tin tức tour -->
 <section class="home-banner" style="margin-top: 30px">
@@ -253,16 +74,12 @@
                     </a>
                 </div>
             </div>
-            @* @Html.Action("HotTour")*@
+            @Html.Action("HotTour")
         </div>
     </div>
 </section>
 
-<!-- ds tour hiện có-->
-@Html.Partial("lstTour")
-@*@{ Html.RenderPartial("lstTour"); }*@
-
-@****************************** Thông báo xác nhận Mua Tour *********************************@
+@****************************** Thông báo Y/C đăng nhập *********************************@
 <!-- Modal -->
 <div class="modal fade" id="Modal_Buy" role="dialog">
     <div class="modal-dialog">

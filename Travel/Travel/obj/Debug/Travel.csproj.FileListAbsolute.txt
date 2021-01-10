@@ -1,3 +1,4 @@
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csproj.CoreCompileInputs.cache
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Travel.dll.config
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Travel.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Travel.pdb
@@ -53,8 +54,7 @@ E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\System.Web.WebPages.Razor.xml
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Newtonsoft.Json.xml
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Antlr3.Runtime.pdb
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csprojAssemblyReference.cache
-E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csproj.CoreCompileInputs.cache
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csproj.CopyComplete
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.dll
 E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.pdb
+E:\2020_Website_DuLich\WebDuLich\Travel\Travel\obj\Debug\Travel.csprojAssemblyReference.cache

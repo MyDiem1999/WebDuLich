@@ -404,7 +404,8 @@ a, .btn {
 }
 
 .white {
-    color: #ffffff;
+    /*color: #ffffff;*/
+    color: #ffe000;
 }
 
 .dark-gray {
@@ -1193,13 +1194,15 @@ ul.nav.navbar-nav:before {
 /*highlights*/
 .highlights {
     position: relative;
-    top: -45px;
+    /*top: -45px;*/
+    top: 115px;
     z-index: 3;
 }
 
     .highlights h4.title {
-        margin-left: 80px;
+        /*margin-left: 80px;*/
         font-size: 26px;
+        text-align: center;
     }
 
 .high-slider-img > img {

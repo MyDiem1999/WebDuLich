@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="pageTitle" style="background-image:url(../../Content/image/Contact.jpg )">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="titleTable">
+                    <div class="titleTableInner">
+                        <div class="pageTitleInfo">
+                            <h1> LIÊN HỆ VỚI CHÚNG TÔI </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="height: 500px">
+    <div class="col-md-6 mt-40">
+        <div class="media">
+            <a class="media-left" href="#">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Tư vấn &amp; đặt dịch vụ</h4>
+                <p>
+                    Điện thoại: (84-28) 38 279 279 <br>
+                    Hotline: 1900 1808
+                </p>
+            </div>
+        </div>
+        <div class="media">
+            <a class="media-left" href="#">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Email</h4>
+                <p>
+                    <a href="mailto:info@viettravel.vn"> Email: info@viettravel.vn </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mt-40">
+        <form action="">
+            <label for="fname"> Họ tên </label>
+            <input class="input" type="text" id="fname" name="firstname" placeholder="Your full name..">
+
+            <label for="lname"> Email </label>
+            <input class="input" type="email" id="lname" name="lastname" placeholder="Your email..">
+
+            <label for="subject"> Nội dung </label>
+            <textarea class="input" id="subject" name="subject" placeholder="Nội dung.." style="height:200px"></textarea>
+
+            <input class="sb" type="submit" value="Gửi">
+        </form>
+    </div>
+
+</div>

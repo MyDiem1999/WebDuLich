@@ -135,7 +135,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChuongTrinhTours.cs" />
-    <Compile Include="Models\Mien_Chauluc.cs" />
     <Compile Include="Models\TourDat.cs" />
     <Compile Include="Models\WEB_DULICH.designer.cs">
       <AutoGen>True</AutoGen>
@@ -190,6 +189,7 @@
     <Content Include="Content\image\ajax-loader.gif" />
     <Content Include="Content\image\ArrowheadLeft-WF.png" />
     <Content Include="Content\image\ArrowHeadRight-WF.png" />
+    <Content Include="Content\image\bg-intro.jpg" />
     <Content Include="Content\image\bg_DN.jpg" />
     <Content Include="Content\image\bg_tour.jpg" />
     <Content Include="Content\image\binhminh.jpg" />
@@ -198,9 +198,12 @@
     <Content Include="Content\image\Chopper.png" />
     <Content Include="Content\image\con-dao-beach.jpg" />
     <Content Include="Content\image\condao.jpg" />
+    <Content Include="Content\image\Contact.jpg" />
     <Content Include="Content\image\danang.jpg" />
     <Content Include="Content\image\dinhty.jpg" />
+    <Content Include="Content\image\Dulichluhanh.jpg" />
     <Content Include="Content\image\email.png" />
+    <Content Include="Content\image\Flower_garden.jpg" />
     <Content Include="Content\image\gridtile.png" />
     <Content Include="Content\image\gridtile_3x3.png" />
     <Content Include="Content\image\gridtile_3x3_white.png" />
@@ -2063,8 +2066,9 @@
     <Content Include="Views\Home\ChiTietTour.cshtml" />
     <Content Include="Views\TourDaDat\HTTourDat.cshtml" />
     <Content Include="Views\Account\Xem_TTKH.cshtml" />
-    <Content Include="Views\Home\lstTour.cshtml" />
     <Content Include="Views\Home\HotTour.cshtml" />
+    <Content Include="Views\Home\GioiThieu.cshtml" />
+    <Content Include="Views\Home\LienHe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

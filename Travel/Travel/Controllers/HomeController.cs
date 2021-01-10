@@ -10,12 +10,12 @@ namespace Travel.Controllers
     {
         WEB_DULICHDataContext dl = new WEB_DULICHDataContext();
 
-        // Trang chủ -- hiển thị tour tết
+        // Trang chủ -- hiển thị các tour hiện có
         public ActionResult Index()
         {
             var tour = (from ctt in dl.CHUONG_TRINH_TOURs
                         from l in dl.LOAI_TOURs
-                        where ctt.MA_LOAI_TOUR == l.MA_LOAI_TOUR && ctt.MA_LOAI_TOUR == 1
+                        where ctt.MA_LOAI_TOUR == l.MA_LOAI_TOUR
                         select new
                         {
                             ctt.MA_TOUR,
@@ -94,46 +94,7 @@ namespace Travel.Controllers
             return PartialView(lstTourHot);
         }
 
-        // Hiển thị danh sách các tour hiện có
-        public ActionResult lstTour()
-        {
-            /*var lsttour = (from ctt in dl.CHUONG_TRINH_TOURs
-                           select new
-                           {
-                               ctt.MA_TOUR,
-                               ctt.MA_LOAI_TOUR,
-                               ctt.TEN_TOUR,
-                               ctt.GIA_NGUOI_LON,
-                               ctt.GIA_TRE_EM,
-                               ctt.HINH_ANH,
-                               ctt.CHINH_SACH,
-                               ctt.LICH_TRINH,
-                               ctt.GHI_CHU,
-                               ctt.NGAY_KET_THUC,
-                               ctt.NGAY_KHOI_HANH,
-                               ctt.NOI_DUNG
-                           }).ToList();*/
-
-            List<ChuongTrinhTours> lst = new List<ChuongTrinhTours>();
-            ChuongTrinhTours ct;
-            foreach (var item in dl.CHUONG_TRINH_TOURs.Select(t => t))
-            {
-                ct = new ChuongTrinhTours();
-                ct.Matour = item.MA_TOUR;
-                ct.Tentour = item.TEN_TOUR;
-                ct.Gianguoilon = (decimal)item.GIA_NGUOI_LON;
-                ct.Hinhanh = item.HINH_ANH;
-                ct.Chinhsach = item.CHINH_SACH;
-                ct.Lichtrinh = item.LICH_TRINH;
-                ct.Ghichu = item.GHI_CHU;
-                ct.Noidung = item.NOI_DUNG;
-                ct.Maloaitour = (int)item.MA_LOAI_TOUR;
-                lst.Add(ct);
-            }
-            return PartialView(lst);
-        }
-
-        //chi tiet 1 tour
+        //Xem chi tiet 1 tour
         public ActionResult ChiTietTour(int ma)
         {
             var kq = dl.CHUONG_TRINH_TOURs.FirstOrDefault(x => x.MA_TOUR == ma);
@@ -196,5 +157,16 @@ namespace Travel.Controllers
             return View("Index", lst);
         }
 
+        // Giới thiệu về VietTravel
+        public ActionResult GioiThieu()
+        {
+            return View();
+        }
+
+        // Liên hệ
+        public ActionResult LienHe()
+        {
+            return View();
+        }
     }
 }

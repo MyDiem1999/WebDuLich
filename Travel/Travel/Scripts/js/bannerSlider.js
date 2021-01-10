@@ -57,7 +57,7 @@ function showDivs(n) {
 //function updateRegion(id) {
 //    $.ajax({
 //        type: "POST",
-//        url: 'https://www.saigontourist.net/update-region',
+//        url: 'https://www.Viettravel.net/update-region',
 //        data: { 'id': id },
 //        success: function (data) {
 //            $("#region").modal('hide');
