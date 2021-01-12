@@ -38,6 +38,10 @@ namespace Travel.Models
             Sochotreem = 0;
         }
 
+        public TourDat()
+        {
+        }
+
         public decimal ThanhTien
         {
             get { return ((Sochonguoilon * GiaNguoiLon) + (Sochotreem * GiaTreEm)); }

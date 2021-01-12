@@ -19,12 +19,12 @@
                     <div class="form-content">
                         <div class="form-group label-top">
                             <input class="label-top" type="text" name="_username" value="" id="user_name" required data-validation="required email">
-                            <label for="user_name"> Full name <label style="color:red"> (*) </label> </label>
+                            <label for="user_name"> Họ tên <label style="color:red"> (*) </label> </label>
                             <div class="bt"></div>
                         </div>
                         <div class="form-group label-top">
                             <input class="label-top" type="text" name="_userID" value="" id="_userID" required data-validation="required email">
-                            <label for="user_name"> user ID <label style="color:red"> (*) </label> </label>
+                            <label for="user_name"> Tài khoản <label style="color:red"> (*) </label> </label>
                             <div class="bt"></div>
                             <span class="msg">@ViewData["TB_DK"]</span>
                         </div>
@@ -35,34 +35,34 @@
                         </div>
                         <div class="form-group label-top">
                             <input id="_password" class="label-top" type="password" name="_password" required data-validation="required">
-                            <label for="login_password"> Password <label style="color:red"> (*) </label></label>
+                            <label for="login_password"> Mật khẩu <label style="color:red"> (*) </label></label>
                             <div class="bt"></div>
                         </div>
                         <div class="form-group label-top">
                             <input id="_confirmpassword" class="label-top" type="password" name="_confirmpassword" required data-validation="required" onkeypress="check()">
-                            <label for="confirm_password"> Confirm Password <label style="color:red"> (*) </label></label>
+                            <label for="confirm_password"> Nhập lại mật khẩu <label style="color:red"> (*) </label></label>
                             <div class="bt"></div>
                             <span id="message"></span>
                         </div>
                         <br />
                         <div class="form-group label-top">
                             <input id="login_password" class="label-top" type="text" name="_phone">
-                            <label for="phone"> Phone Number </label>
+                            <label for="phone"> Số điện thoại </label>
                             <div class="bt"></div>
                         </div>
                         <br />
                         <div class="form-group label-top">
                             <input id="login_password" class="label-top" type="text" name="_address">
-                            <label for="address"> Address </label>
+                            <label for="address"> Địa chỉ </label>
                             <div class="bt"></div>
                         </div>
                     </div>
                     <div class="form-footer">
-                        <a><input type="submit" name="btn_Register" value="Register" id="login" onkeyup="check()"></a>
-                        <a href="@Url.Action("Index","Home")"><input type="button" name="btn_Cancel" value="Cancel"></a>
+                        <a><input type="submit" name="btn_Register" value="Dăng ký" id="login" onkeyup="check()"></a>
+                        <a href="@Url.Action("Index","Home")"><input type="button" name="btn_Cancel" value="Hủy"></a>
                     </div>
                     <div class="text-left">
-                        <a href="@Url.Action("DangNhap","Account")"> Have an account? </a>
+                        <a href="@Url.Action("DangNhap","Account")"> Đã có tài khoản? </a>
                     </div>
                 </form>
             </div>

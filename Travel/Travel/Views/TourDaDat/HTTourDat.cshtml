@@ -14,7 +14,7 @@
                 <div class="titleTable">
                     <div class="titleTableInner">
                         <div class="pageTitleInfo">
-                            <h1> THÔNG TIN ĐẶT TOUR CỦA BẠN </h1>
+                            <h1> THÔNG TIN ĐẶT TOUR CỦA BẠN! </h1>
                         </div>
                     </div>
                 </div>
@@ -28,13 +28,12 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col" class="col-md-1"> Mã tour </th>
-                <th scope="col" class="col-md-3"> Tên Tour </th>
+                <th scope="col" class="col-md-4"> Tên Tour </th>
                 <th scope="col" class="col-md-1"> Số chỗ người lớn </th>
                 <th scope="col" class="col-md-1"> Số chỗ trẻ em </th>
                 <th scope="col" class="col-md-2"> Giá người lớn </th>
                 <th scope="col" class="col-md-2"> Giá người trẻ em </th>
                 <th scope="col" class="col-md-1"> Xóa </th>
-                <th scope="col" class="col-md-1"> Hủy tour </th>
             </tr>
         </thead>
 
@@ -43,7 +42,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-1 pd-16px"><a href="@Url.Action("ChiTietTour","Home", new { Ma = @tourdat.MaTour })" title="Xem chi tiết tour"> @tourdat.MaTour </a></td>
-                    <td class="col-md-3"><label class="name-tour"> @tourdat.TenTour </label></td>
+                    <td class="col-md-4"><label class="name-tour"> @tourdat.TenTour </label></td>
                     <td class="col-md-1">
                         <form action="@Url.Action("UpdateSoTourDat",new {Ma = @tourdat.MaTour })" method="post">
                             <input class="soluong" type="text" name="Txt_SLNL" value="@tourdat.Sochonguoilon" />
@@ -51,7 +50,7 @@
                     </td>
                     <td class="col-md-1">
                         <form action="@Url.Action("UpdateSoTourDat",new {Ma = @tourdat.MaTour })" method="post">
-                            <input class="soluong" type="text" name="Txt_SLTE" value="@tourdat.Sochotreem" />
+                            <input disabled class="soluong" type="text" name="Txt_SLTE" value="@tourdat.Sochotreem" />
                         </form>
                     </td>
                     <td class="col-md-2 pd-16px">
@@ -63,13 +62,11 @@
                     <td class="col-md-1 pd-16px">
                         <a href="@Url.Action("DeleteTourDat", new  { Ma = @tourdat.MaTour })" class="del" title="Xóa tour"> xóa </a>
                     </td>
-                    <td class="col-md-1 pd-16px">
-                        <a href="" class="del btn btn-orange" title="Xóa tour"> Hủy tour </a>
-                    </td>
                 </tr>
             </tbody>
         }
     </table>
+
 
     <div class="row mt-3">
         <div class="col-md-2" style="float: left"><label> Tổng số tour: </label> @ViewBag.SoluongTong</div>
@@ -77,14 +74,19 @@
     </div>
 
     <div class="row">
-        <a class="btn btn-buy-tour btn-primary" href="@Url.Action("XL_DatTour")" onclick="myFunction()"> Thanh toán </a>
+        <a class="btn btn-buy-tour b-btn-primary" href="@Url.Action("XL_DatTour")" onclick="myFunction()"> Thanh toán </a>
     </div>
 
-    <div class="row comeback"><a href="@Url.Action("Index","Home")"> Tiếp tục! <i class="fa" style="padding-top: 2px"> &#xf101;</i></a> </div>
+    <div class="row comeback" onclick="click_back()"><a href="@Url.Action("Index","Home")"><i class="fa" style="padding-top: 2px"> &#xf100;</i> Trở về! </a> </div>
+</section>
+<!---------------------------- thông báo thành công ---------------------------------->
+<script>
+    function myFunction() {
+        alert("Thanh toán thành công!", 5000);
 
-    <!---------------------------- thông báo thành công ---------------------------------->
-    <script>
-        function myFunction() {
-            alert("Thanh toán thành công!", 5000);
-        }
-    </script>
+    }
+
+    function click_back() {
+        Session["TourDat"] = null;
+    }
+</script>

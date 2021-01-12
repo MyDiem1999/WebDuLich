@@ -142,7 +142,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ChuongTrinhTours.cs" />
-    <Compile Include="Models\Mien_Chauluc.cs" />
+    <Compile Include="Models\TourDaDat.cs" />
     <Compile Include="Models\TourDat.cs" />
     <Compile Include="Models\WEB_DULICH.designer.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +246,7 @@
     <Content Include="Content\image\shadow1.png" />
     <Content Include="Content\image\shadow2.png" />
     <Content Include="Content\image\shadow3.png" />
+    <Content Include="Content\image\Ticket.png" />
     <Content Include="Content\image\timer.png" />
     <Content Include="Content\image\top_banner_img.jpg" />
     <Content Include="Content\image\travel01.jpg" />
@@ -2169,6 +2170,7 @@
     <Content Include="Views\Admin\XoaTour.cshtml" />
     <Content Include="Views\Admin\SuaTour.cshtml" />
     <Content Include="Views\Admin\View.cshtml" />
+    <Content Include="Views\TourDaDat\Xem_TourDaDat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

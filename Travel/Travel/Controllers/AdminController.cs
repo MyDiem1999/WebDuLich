@@ -85,6 +85,8 @@ namespace Travel.Controllers
             }
             return (View(tour));
         }
+
+        // xóa tour
         public ActionResult XoaTour(int id)
         {
             CHUONG_TRINH_TOUR tour = dl.CHUONG_TRINH_TOURs.SingleOrDefault(n => n.MA_TOUR == id);

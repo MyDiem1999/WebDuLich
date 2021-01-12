@@ -26,6 +26,7 @@ namespace Travel.Controllers
 
         public ActionResult ThemTourDat(int maTour)
         {
+
             // lấy session ra
             lstTourDaDat = LaySoTourDat();
 
@@ -67,7 +68,6 @@ namespace Travel.Controllers
                 int index = isExisting(Ma);
                 List<TourDat> cart = (List<TourDat>)Session["TourDat"];
 
-                /* int index = lstTourDaDat.FindIndex(x => x.MaTour == Ma);  */
                 lstTourDaDat.RemoveAt(index);
                 Session["TourDat"] = cart;
             }
@@ -156,6 +156,14 @@ namespace Travel.Controllers
             Session["TourDat"] = null;
 
             return RedirectToAction("Index", "Home");
+        }
+
+        // Xem thông tin tour đã đặt
+        public ActionResult Xem_TourDaDat()
+        {
+
+            var tourdadat = dl.DAT_TOURs.ToList();
+            return View(tourdadat);
         }
     }
 }

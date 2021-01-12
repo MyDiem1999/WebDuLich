@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Xem_TourDaDat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Travel.Models;
+@model List<DAT_TOUR>
+
+<section class="pageTitle" style="background-image:url(../../Content/image/bg_tour.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="titleTable">
+                    <div class="titleTableInner">
+                        <div class="pageTitleInfo">
+                            <h1> THÔNG TIN TOUR ĐÃ ĐẶT CỦA BẠN! </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Session["KH"] == null)
+{
+    <section class="mainContentSection booking-container formatmainContent">
+        <div> BẠN CHƯA ĐẶT TOUR NÀO! </div>
+        <div class="row comeback"><a href="@Url.Action("Index","Home")"><i class="fa" style="padding-top: 2px"> &#xf100;</i> Trở về để đặt tour! </a> </div>
+    </section>
+}
+else
+{
+    <section class="mainContentSection booking-container" style="padding: 100px; text-align: center">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="col-md-1"> Mã tour </th>
+                    <th scope="col" class="col-md-2"> Giá người lớn </th>
+                    <th scope="col" class="col-md-2"> Giá người trẻ em </th>
+                    <th scope="col" class="col-md-1"> Số chỗ người lớn </th>
+                    <th scope="col" class="col-md-1"> Số chỗ trẻ em </th>
+                    <th scope="col" class="col-md-3"> Thành tiền </th>
+                    <th scope="col" class="col-md-2"> Hủy tour </th>
+                </tr>
+            </thead>
+
+            @foreach (var tourdadat in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td class="col-md-1 pd-16px">
+                            <label>  @tourdadat.MA_DAT_TOUR</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label>  @tourdadat.GIA_NGUOI_LON</label>
+                        </td>
+                        <td class="col-md-2">
+                            <label>  @tourdadat.GIA_TRE_EM </label>
+                        </td>
+                        <td class="col-md-1 pd-16px">
+                            <label> @tourdadat.SO_CHO_NGUOI_LON </label>
+                        </td>
+                        <td class="col-md-1 pd-16px">
+                            <label> @tourdadat.SO_CHO_TRE_EM </label>
+                        </td>
+                        <td class="col-md-3 pd-16px">
+                            <label>  @tourdadat.THANH_TIEN</label>
+                        </td>
+                        <td class="col-md-2 pd-16px">
+                            <a href="" class="del btn btn-orange" title="Hủy" onclick="myFunction()"> Hủy tour </a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+        <div class="row comeback"><a href="@Url.Action("Index","Home")"><i class="fa" style="padding-top: 2px"> &#xf100;</i> Trở về! </a> </div>
+    </section>
+}
+
+<script>
+    function myFunction() {
+        alert("Hệ thống sẽ liên hệ với bạn để xác nhận hủy!", 5000);
+    }
+</script>

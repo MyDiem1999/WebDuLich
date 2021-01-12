@@ -30,12 +30,14 @@ namespace Travel.Controllers
                 if (dl.KHACH_HANGs.FirstOrDefault(x => x.MAT_KHAU_KH == col["_password"]) == null)
                     ViewData["MK"] = "Sai mật khẩu";
                 return View("DangNhap");
+           
             }
             else
             {
                 Session["KH"] = kh;
                 return RedirectToAction("Index", "Home");
             }
+
         }
 
         // Đăng xuất

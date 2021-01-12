@@ -98,10 +98,22 @@
                                     <img src="~/Content/image/ic-vietnamese.png" />&nbsp;VietNam
                                 </a>
                             </li>
-                            <li title="Tour đã đặt">
-                                <a href="@Url.Action("HTTourDat", "TourDaDat")" class="buy-tour">
-                                    <i class="fas fa-suitcase-rolling"></i>
-                                </a>
+                            <li title="Xem tour đã đặt của bạn">
+                                <!-- Đặt session kt KHĐN rồi mới được xem tour đặt của mình -->
+                                @if (Session["KH"] == null)
+                                {
+                                    <a href="@Url.Action("Xem_TourDaDat", "TourDaDat")" class="buy-tour">
+                                        <i class="fas fa-suitcase-rolling"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    KHACH_HANG kh = (KHACH_HANG)Session["KH"];
+                                    <a href="@Url.Action("Xem_TourDaDat", "TourDaDat")" class="buy-tour">
+                                        <i class="fas fa-suitcase-rolling"></i>
+                                    </a>
+                                }
+
                             </li>
                         </ul>
                     </div>
@@ -126,6 +138,7 @@
                 </div>
             </div>
         </div>
+
         <!-- #logo end -->
         <!-- dropdown options menu-->
         <div class="container">
@@ -134,7 +147,7 @@
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown singleDrop">
-                                <a href="@Url.Action("Index","Home")">
+                                <a href="@Url.Action("Index","Home")" onclick="click_back()">
                                     TRANG CHỦ
                                 </a>
                             </li>
@@ -586,6 +599,10 @@
                 // clear input
                 container.find('.search-input').val('');
             }
+        }
+
+        function click_back() {
+            Session["TourDat"] = null;
         }
     </script>
 

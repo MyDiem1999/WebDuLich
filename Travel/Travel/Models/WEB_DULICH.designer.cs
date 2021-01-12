@@ -30,12 +30,12 @@ namespace Travel.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTINH(TINH instance);
-    partial void UpdateTINH(TINH instance);
-    partial void DeleteTINH(TINH instance);
     partial void InsertCHI_TIET_TOUR(CHI_TIET_TOUR instance);
     partial void UpdateCHI_TIET_TOUR(CHI_TIET_TOUR instance);
     partial void DeleteCHI_TIET_TOUR(CHI_TIET_TOUR instance);
+    partial void InsertTINH(TINH instance);
+    partial void UpdateTINH(TINH instance);
+    partial void DeleteTINH(TINH instance);
     partial void InsertCHUONG_TRINH_TOUR(CHUONG_TRINH_TOUR instance);
     partial void UpdateCHUONG_TRINH_TOUR(CHUONG_TRINH_TOUR instance);
     partial void DeleteCHUONG_TRINH_TOUR(CHUONG_TRINH_TOUR instance);
@@ -66,7 +66,7 @@ namespace Travel.Models
     #endregion
 		
 		public WEB_DULICHDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DU_LICHConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DU_LICHConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -95,19 +95,19 @@ namespace Travel.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<TINH> TINHs
-		{
-			get
-			{
-				return this.GetTable<TINH>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CHI_TIET_TOUR> CHI_TIET_TOURs
 		{
 			get
 			{
 				return this.GetTable<CHI_TIET_TOUR>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TINH> TINHs
+		{
+			get
+			{
+				return this.GetTable<TINH>();
 			}
 		}
 		
@@ -180,6 +180,174 @@ namespace Travel.Models
 			get
 			{
 				return this.GetTable<QUOC_GIA>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHI_TIET_TOUR")]
+	public partial class CHI_TIET_TOUR : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MA_TOUR;
+		
+		private int _MA_DIEM_DL;
+		
+		private EntityRef<CHUONG_TRINH_TOUR> _CHUONG_TRINH_TOUR;
+		
+		private EntityRef<DIEM_DU_LICH> _DIEM_DU_LICH;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMA_TOURChanging(int value);
+    partial void OnMA_TOURChanged();
+    partial void OnMA_DIEM_DLChanging(int value);
+    partial void OnMA_DIEM_DLChanged();
+    #endregion
+		
+		public CHI_TIET_TOUR()
+		{
+			this._CHUONG_TRINH_TOUR = default(EntityRef<CHUONG_TRINH_TOUR>);
+			this._DIEM_DU_LICH = default(EntityRef<DIEM_DU_LICH>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_TOUR", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MA_TOUR
+		{
+			get
+			{
+				return this._MA_TOUR;
+			}
+			set
+			{
+				if ((this._MA_TOUR != value))
+				{
+					if (this._CHUONG_TRINH_TOUR.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMA_TOURChanging(value);
+					this.SendPropertyChanging();
+					this._MA_TOUR = value;
+					this.SendPropertyChanged("MA_TOUR");
+					this.OnMA_TOURChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_DIEM_DL", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MA_DIEM_DL
+		{
+			get
+			{
+				return this._MA_DIEM_DL;
+			}
+			set
+			{
+				if ((this._MA_DIEM_DL != value))
+				{
+					if (this._DIEM_DU_LICH.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMA_DIEM_DLChanging(value);
+					this.SendPropertyChanging();
+					this._MA_DIEM_DL = value;
+					this.SendPropertyChanged("MA_DIEM_DL");
+					this.OnMA_DIEM_DLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUONG_TRINH_TOUR_CHI_TIET_TOUR", Storage="_CHUONG_TRINH_TOUR", ThisKey="MA_TOUR", OtherKey="MA_TOUR", IsForeignKey=true)]
+		public CHUONG_TRINH_TOUR CHUONG_TRINH_TOUR
+		{
+			get
+			{
+				return this._CHUONG_TRINH_TOUR.Entity;
+			}
+			set
+			{
+				CHUONG_TRINH_TOUR previousValue = this._CHUONG_TRINH_TOUR.Entity;
+				if (((previousValue != value) 
+							|| (this._CHUONG_TRINH_TOUR.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CHUONG_TRINH_TOUR.Entity = null;
+						previousValue.CHI_TIET_TOURs.Remove(this);
+					}
+					this._CHUONG_TRINH_TOUR.Entity = value;
+					if ((value != null))
+					{
+						value.CHI_TIET_TOURs.Add(this);
+						this._MA_TOUR = value.MA_TOUR;
+					}
+					else
+					{
+						this._MA_TOUR = default(int);
+					}
+					this.SendPropertyChanged("CHUONG_TRINH_TOUR");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DIEM_DU_LICH_CHI_TIET_TOUR", Storage="_DIEM_DU_LICH", ThisKey="MA_DIEM_DL", OtherKey="MA_DIEM_DL", IsForeignKey=true)]
+		public DIEM_DU_LICH DIEM_DU_LICH
+		{
+			get
+			{
+				return this._DIEM_DU_LICH.Entity;
+			}
+			set
+			{
+				DIEM_DU_LICH previousValue = this._DIEM_DU_LICH.Entity;
+				if (((previousValue != value) 
+							|| (this._DIEM_DU_LICH.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DIEM_DU_LICH.Entity = null;
+						previousValue.CHI_TIET_TOURs.Remove(this);
+					}
+					this._DIEM_DU_LICH.Entity = value;
+					if ((value != null))
+					{
+						value.CHI_TIET_TOURs.Add(this);
+						this._MA_DIEM_DL = value.MA_DIEM_DL;
+					}
+					else
+					{
+						this._MA_DIEM_DL = default(int);
+					}
+					this.SendPropertyChanged("DIEM_DU_LICH");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -360,174 +528,6 @@ namespace Travel.Models
 		{
 			this.SendPropertyChanging();
 			entity.TINH = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHI_TIET_TOUR")]
-	public partial class CHI_TIET_TOUR : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MA_TOUR;
-		
-		private int _MA_DIEM_DL;
-		
-		private EntityRef<CHUONG_TRINH_TOUR> _CHUONG_TRINH_TOUR;
-		
-		private EntityRef<DIEM_DU_LICH> _DIEM_DU_LICH;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMA_TOURChanging(int value);
-    partial void OnMA_TOURChanged();
-    partial void OnMA_DIEM_DLChanging(int value);
-    partial void OnMA_DIEM_DLChanged();
-    #endregion
-		
-		public CHI_TIET_TOUR()
-		{
-			this._CHUONG_TRINH_TOUR = default(EntityRef<CHUONG_TRINH_TOUR>);
-			this._DIEM_DU_LICH = default(EntityRef<DIEM_DU_LICH>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_TOUR", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MA_TOUR
-		{
-			get
-			{
-				return this._MA_TOUR;
-			}
-			set
-			{
-				if ((this._MA_TOUR != value))
-				{
-					if (this._CHUONG_TRINH_TOUR.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMA_TOURChanging(value);
-					this.SendPropertyChanging();
-					this._MA_TOUR = value;
-					this.SendPropertyChanged("MA_TOUR");
-					this.OnMA_TOURChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MA_DIEM_DL", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MA_DIEM_DL
-		{
-			get
-			{
-				return this._MA_DIEM_DL;
-			}
-			set
-			{
-				if ((this._MA_DIEM_DL != value))
-				{
-					if (this._DIEM_DU_LICH.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMA_DIEM_DLChanging(value);
-					this.SendPropertyChanging();
-					this._MA_DIEM_DL = value;
-					this.SendPropertyChanged("MA_DIEM_DL");
-					this.OnMA_DIEM_DLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUONG_TRINH_TOUR_CHI_TIET_TOUR", Storage="_CHUONG_TRINH_TOUR", ThisKey="MA_TOUR", OtherKey="MA_TOUR", IsForeignKey=true)]
-		public CHUONG_TRINH_TOUR CHUONG_TRINH_TOUR
-		{
-			get
-			{
-				return this._CHUONG_TRINH_TOUR.Entity;
-			}
-			set
-			{
-				CHUONG_TRINH_TOUR previousValue = this._CHUONG_TRINH_TOUR.Entity;
-				if (((previousValue != value) 
-							|| (this._CHUONG_TRINH_TOUR.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CHUONG_TRINH_TOUR.Entity = null;
-						previousValue.CHI_TIET_TOURs.Remove(this);
-					}
-					this._CHUONG_TRINH_TOUR.Entity = value;
-					if ((value != null))
-					{
-						value.CHI_TIET_TOURs.Add(this);
-						this._MA_TOUR = value.MA_TOUR;
-					}
-					else
-					{
-						this._MA_TOUR = default(int);
-					}
-					this.SendPropertyChanged("CHUONG_TRINH_TOUR");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DIEM_DU_LICH_CHI_TIET_TOUR", Storage="_DIEM_DU_LICH", ThisKey="MA_DIEM_DL", OtherKey="MA_DIEM_DL", IsForeignKey=true)]
-		public DIEM_DU_LICH DIEM_DU_LICH
-		{
-			get
-			{
-				return this._DIEM_DU_LICH.Entity;
-			}
-			set
-			{
-				DIEM_DU_LICH previousValue = this._DIEM_DU_LICH.Entity;
-				if (((previousValue != value) 
-							|| (this._DIEM_DU_LICH.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DIEM_DU_LICH.Entity = null;
-						previousValue.CHI_TIET_TOURs.Remove(this);
-					}
-					this._DIEM_DU_LICH.Entity = value;
-					if ((value != null))
-					{
-						value.CHI_TIET_TOURs.Add(this);
-						this._MA_DIEM_DL = value.MA_DIEM_DL;
-					}
-					else
-					{
-						this._MA_DIEM_DL = default(int);
-					}
-					this.SendPropertyChanged("DIEM_DU_LICH");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1018,8 +1018,6 @@ namespace Travel.Models
 		
 		private System.Nullable<decimal> _GIA_TRE_EM;
 		
-		private System.Nullable<int> _SO_NGAY;
-		
 		private System.Nullable<int> _SO_CHO_NGUOI_LON;
 		
 		private System.Nullable<int> _SO_CHO_TRE_EM;
@@ -1048,8 +1046,6 @@ namespace Travel.Models
     partial void OnGIA_NGUOI_LONChanged();
     partial void OnGIA_TRE_EMChanging(System.Nullable<decimal> value);
     partial void OnGIA_TRE_EMChanged();
-    partial void OnSO_NGAYChanging(System.Nullable<int> value);
-    partial void OnSO_NGAYChanged();
     partial void OnSO_CHO_NGUOI_LONChanging(System.Nullable<int> value);
     partial void OnSO_CHO_NGUOI_LONChanged();
     partial void OnSO_CHO_TRE_EMChanging(System.Nullable<int> value);
@@ -1100,7 +1096,7 @@ namespace Travel.Models
 			{
 				if ((this._MA_TOUR != value))
 				{
-					if ((this._CHUONG_TRINH_TOUR.HasLoadedOrAssignedValue || this._KHACH_HANG.HasLoadedOrAssignedValue))
+					if (this._CHUONG_TRINH_TOUR.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1124,6 +1120,10 @@ namespace Travel.Models
 			{
 				if ((this._MA_KH != value))
 				{
+					if (this._KHACH_HANG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMA_KHChanging(value);
 					this.SendPropertyChanging();
 					this._MA_KH = value;
@@ -1169,26 +1169,6 @@ namespace Travel.Models
 					this._GIA_TRE_EM = value;
 					this.SendPropertyChanged("GIA_TRE_EM");
 					this.OnGIA_TRE_EMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SO_NGAY", DbType="Int")]
-		public System.Nullable<int> SO_NGAY
-		{
-			get
-			{
-				return this._SO_NGAY;
-			}
-			set
-			{
-				if ((this._SO_NGAY != value))
-				{
-					this.OnSO_NGAYChanging(value);
-					this.SendPropertyChanging();
-					this._SO_NGAY = value;
-					this.SendPropertyChanged("SO_NGAY");
-					this.OnSO_NGAYChanged();
 				}
 			}
 		}
@@ -1327,7 +1307,7 @@ namespace Travel.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACH_HANG_DAT_TOUR", Storage="_KHACH_HANG", ThisKey="MA_TOUR", OtherKey="MA_KH", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACH_HANG_DAT_TOUR", Storage="_KHACH_HANG", ThisKey="MA_KH", OtherKey="MA_KH", IsForeignKey=true)]
 		public KHACH_HANG KHACH_HANG
 		{
 			get
@@ -1350,11 +1330,11 @@ namespace Travel.Models
 					if ((value != null))
 					{
 						value.DAT_TOURs.Add(this);
-						this._MA_TOUR = value.MA_KH;
+						this._MA_KH = value.MA_KH;
 					}
 					else
 					{
-						this._MA_TOUR = default(int);
+						this._MA_KH = default(int);
 					}
 					this.SendPropertyChanged("KHACH_HANG");
 				}
@@ -2151,7 +2131,7 @@ namespace Travel.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACH_HANG_DAT_TOUR", Storage="_DAT_TOURs", ThisKey="MA_KH", OtherKey="MA_TOUR")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACH_HANG_DAT_TOUR", Storage="_DAT_TOURs", ThisKey="MA_KH", OtherKey="MA_KH")]
 		public EntitySet<DAT_TOUR> DAT_TOURs
 		{
 			get
