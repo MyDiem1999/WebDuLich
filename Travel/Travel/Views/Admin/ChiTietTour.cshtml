@@ -39,7 +39,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GIA_NGUOI_LON)
+            @String.Format("{0:0,0}", Model.GIA_NGUOI_LON) VNĐ
         </dd>
 
         <dt>
@@ -47,7 +47,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GIA_TRE_EM)
+            @String.Format("{0:0,0}", Model.GIA_TRE_EM) VNĐ
         </dd>
 
         <dt>
@@ -55,7 +55,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NGAY_KHOI_HANH)
+           @String.Format("{0:dd/MM/yyyy}",Model.NGAY_KHOI_HANH)
         </dd>
 
         <dt>
@@ -63,7 +63,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NGAY_KET_THUC)
+            @String.Format("{0:dd/MM/yyyy}", Model.NGAY_KET_THUC)
         </dd>
 
         <dt>

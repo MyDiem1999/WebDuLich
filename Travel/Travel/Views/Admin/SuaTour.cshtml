@@ -16,12 +16,12 @@
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.MA_TOUR)
 
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.MA_TOUR, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-group">
+                @Html.LabelFor(model => model.MA_TOUR,new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     <div style="font:18px; padding: 5px 0 0 5px">@Model.MA_TOUR</div>
                 </div>
-            </div>*@
+            </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.HINH_ANH, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -100,43 +100,45 @@
         <div class="form-group">
             @Html.LabelFor(model => model.LICH_TRINH, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*<textarea name="LICH_TRINH"> @Model.LICH_TRINH</textarea>*@
-                @Html.EditorFor(model => model.LICH_TRINH, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LICH_TRINH, "", new { @class = "text-danger" })
+                <textarea name="LICH_TRINH"> @Model.LICH_TRINH</textarea>
+                @*@Html.EditorFor(model => model.LICH_TRINH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LICH_TRINH, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.NOI_DUNG, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*<textarea name="NOI_DUNG">@Model.NOI_DUNG</textarea>*@
-                @Html.EditorFor(model => model.NOI_DUNG, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NOI_DUNG, "", new { @class = "text-danger" })
+                <textarea name="NOI_DUNG">@Model.NOI_DUNG</textarea>
+                @*@Html.EditorFor(model => model.NOI_DUNG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NOI_DUNG, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CHINH_SACH, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*<textarea name="CHINH_SACH">@Model.CHINH_SACH</textarea>*@
-                @Html.EditorFor(model => model.CHINH_SACH, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CHINH_SACH, "", new { @class = "text-danger" })
+                <textarea name="CHINH_SACH">@Model.CHINH_SACH</textarea>
+                @*@Html.EditorFor(model => model.CHINH_SACH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CHINH_SACH, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CAU_HOI_THUONG_GAP, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*<textarea name="CAU_HOI_THUONG_GAP">@Model.CAU_HOI_THUONG_GAP</textarea>*@
-                @Html.EditorFor(model => model.CAU_HOI_THUONG_GAP, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CAU_HOI_THUONG_GAP, "", new { @class = "text-danger" })
+                <textarea name="CAU_HOI_THUONG_GAP">@Model.CAU_HOI_THUONG_GAP</textarea>
+                @*@Html.EditorFor(model => model.CAU_HOI_THUONG_GAP, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CAU_HOI_THUONG_GAP, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    <input type="submit" value="Sửa" class="btn btn-default" />
+                    
                 </div>
+
             </div>
     </div>
 }
@@ -144,3 +146,10 @@
 <div>
     @Html.ActionLink("Trờ về", "QuanLyTour")
 </div>
+
+<script>
+    function myFunction() {
+        alert("thành công!", 5000);
+
+    }
+</script>
