@@ -7,13 +7,11 @@
 
 <h2>XÁC NHẬN THÔNG TIN XÓA TOUR</h2>
 
-<h3>Bạn có muốn xóa tour này không ?</h3>
 <div>
-    <h4>CHUONG_TRINH_TOUR</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.HINH_ANH)
+            Hình ảnh:
         </dt>
 
         <dd>
@@ -21,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TEN_TOUR)
+            Tên tour:
         </dt>
 
         <dd>
@@ -29,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MA_LOAI_TOUR)
+            Mã loại tour:
         </dt>
 
         <dd>
@@ -37,39 +35,39 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.GIA_NGUOI_LON)
+            Giá người lớn:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GIA_NGUOI_LON)
+            @String.Format("{0:0,0}", Model.GIA_NGUOI_LON) VNĐ
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.GIA_TRE_EM)
+            Giá trẻ em:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GIA_TRE_EM)
+            @String.Format("{0:0,0}", Model.GIA_TRE_EM) VNĐ
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NGAY_KHOI_HANH)
+            Ngày khởi hành:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NGAY_KHOI_HANH)
+            @String.Format("{0:dd/MM/yyyy}", Model.NGAY_KHOI_HANH)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NGAY_KET_THUC)
+            Ngày kết thúc:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NGAY_KET_THUC)
+            @String.Format("{0:dd/MM/yyyy}", Model.NGAY_KET_THUC)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SO_CHO)
+            Số chổ:
         </dt>
 
         <dd>
@@ -77,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.GHI_CHU)
+            Ghi chú:
         </dt>
 
         <dd>
@@ -85,7 +83,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LICH_TRINH)
+            Lịch trình:
         </dt>
 
         <dd>
@@ -93,7 +91,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NOI_DUNG)
+            Nội dung:
         </dt>
 
         <dd>
@@ -101,7 +99,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CHINH_SACH)
+            Chính sách:
         </dt>
 
         <dd>
@@ -109,7 +107,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CAU_HOI_THUONG_GAP)
+            Câu hỏi thường gặp:
         </dt>
 
         <dd>
