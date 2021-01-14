@@ -20,22 +20,32 @@ namespace Travel.Controllers
         }
 
         [HttpPost]
-        public ActionResult XL_DangNhap(FormCollection col, KHACH_HANG kh)
+        public ActionResult XL_DangNhap(FormCollection col, KHACH_HANG kh, QUAN_TRI_VIEN ad)
         {
             kh = dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == col["_userID"] && x.MAT_KHAU_KH == col["_password"]);
-            if (kh == null)
+            var userID = col["_userID"];
+            var password = col["_password"];
+            ad = dl.QUAN_TRI_VIENs.FirstOrDefault(t => t.TAI_KHOAN == userID && t.MAT_KHAU == password);
+
+            if (kh != null)
+            {
+                Session["KH"] = kh;
+                return RedirectToAction("Index", "Home");
+
+            }
+            else if (ad != null)
+            {
+                Session["AD"] = kh;
+                return RedirectToAction("QuanLyTour", "Admin");
+            }
+            else
             {
                 if (dl.KHACH_HANGs.FirstOrDefault(x => x.TAI_KHOAN_KH == col["_userID"]) == null)
                     ViewData["ID"] = "Sai tài khoản đăng nhập!";
                 if (dl.KHACH_HANGs.FirstOrDefault(x => x.MAT_KHAU_KH == col["_password"]) == null)
                     ViewData["MK"] = "Sai mật khẩu";
                 return View("DangNhap");
-           
-            }
-            else
-            {
-                Session["KH"] = kh;
-                return RedirectToAction("Index", "Home");
+                
             }
 
         }
