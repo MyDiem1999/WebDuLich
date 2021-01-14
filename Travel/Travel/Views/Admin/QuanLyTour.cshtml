@@ -28,53 +28,53 @@
 
 <h2>QUẢN LÝ TOUR</h2>
 <p>
-    @Html.ActionLink("Thêm Tour", "ThemTour")
+    @Html.ActionLink("THÊM TOUR", "ThemTour")
 </p>
 </p>
 
 <table class="table-bordered">
     <tr align="center">
         <th>
-            @Html.DisplayNameFor(model => model.First().MA_TOUR)
+            Mã Tour
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().HINH_ANH)
+            Hình Ảnh
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().TEN_TOUR)
+            Tên Tour
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().MA_LOAI_TOUR)
+            Mã Loại Tour
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().GIA_NGUOI_LON)
+            Giá Người Lớn
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().GIA_TRE_EM)
+            Giá Trẻ Em
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().NGAY_KHOI_HANH)
+            Ngày Khởi Hành
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().NGAY_KET_THUC)
+            Ngày Kết Thúc
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().SO_CHO)
+            Số Chỗ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().GHI_CHU)
+            Ghi Chú
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().LICH_TRINH)
+            Lịch Trình
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().CHINH_SACH)
+            Chính Sách
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().NOI_DUNG)
+            Nội Dung
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().CAU_HOI_THUONG_GAP)
+            Câu Hỏi Thường Gặp
         </th>
     </tr>
     <tbody>
@@ -84,13 +84,14 @@
             <td align="center">@Html.DisplayFor(moldelItem => item.MA_TOUR)</td>
             <td>@Html.DisplayFor(moldelItem => item.HINH_ANH)</td>
             <td>@Html.DisplayFor(moldelItem => item.TEN_TOUR)</td>
-            <td>@Html.DisplayFor(moldelItem => item.MA_LOAI_TOUR)</td>
+            <td align="center">@Html.DisplayFor(moldelItem => item.MA_LOAI_TOUR)</td>
             <td>@Html.DisplayFor(moldelItem => item.GIA_NGUOI_LON)</td>
             <td>@Html.DisplayFor(moldelItem => item.GIA_TRE_EM)</td>
             <td>@Html.DisplayFor(moldelItem => item.NGAY_KHOI_HANH)</td>
             <td>@Html.DisplayFor(moldelItem => item.NGAY_KET_THUC)</td>
             <td>@Html.DisplayFor(moldelItem => item.SO_CHO)</td>
             <td>@Html.DisplayFor(moldelItem => item.GHI_CHU)</td>
+
             @*<td>@Html.DisplayFor(moldelItem => item.LICH_TRINH)</td>
         <td>@Html.DisplayFor(moldelItem => item.CHINH_SACH)</td>
         <td>@Html.DisplayFor(moldelItem => item.NOI_DUNG)</td>

@@ -2171,6 +2171,7 @@
     <Content Include="Views\Admin\SuaTour.cshtml" />
     <Content Include="Views\Admin\View.cshtml" />
     <Content Include="Views\TourDaDat\Xem_TourDaDat.cshtml" />
+    <Content Include="Views\Admin\HuyDatTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

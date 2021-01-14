@@ -165,5 +165,14 @@ namespace Travel.Controllers
             var tourdadat = dl.DAT_TOURs.ToList();
             return View(tourdadat);
         }
+        
+        public ActionResult XacNhanHuyDatTour(int id)
+        {
+            DAT_TOUR dattour = dl.DAT_TOURs.SingleOrDefault(n => n.MA_DAT_TOUR == id);
+            dattour.TRANGTHAI = true;
+            UpdateModel(dattour);
+            dl.SubmitChanges();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
