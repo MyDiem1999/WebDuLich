@@ -161,11 +161,18 @@ namespace Travel.Controllers
         // Xem thông tin tour đã đặt
         public ActionResult Xem_TourDaDat()
         {
-
             var tourdadat = dl.DAT_TOURs.ToList();
             return View(tourdadat);
         }
-        
+
+        [HttpGet]
+        public ActionResult Xem_DatTour(int makh)
+        {
+            KHACH_HANG kh = dl.KHACH_HANGs.FirstOrDefault(t => t.MA_KH == makh);
+
+            return View(kh);
+        }
+
         public ActionResult XacNhanHuyDatTour(int id)
         {
             DAT_TOUR dattour = dl.DAT_TOURs.SingleOrDefault(n => n.MA_DAT_TOUR == id);

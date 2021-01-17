@@ -6,7 +6,7 @@
 
 @helper Truncate(string input, int length)
 {
-    if(input == null)
+    if (input == null)
     {
         @input
     }
@@ -16,7 +16,7 @@
     }
     else
     {
-            @input.Substring(0, length)<text>...</text>
+        @input.Substring(0, length)<text>...</text>
     }
 }
 
@@ -25,11 +25,9 @@
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
 }
 
-
 <h2>QUẢN LÝ TOUR</h2>
 <p>
     @Html.ActionLink("THÊM TOUR", "ThemTour")
-</p>
 </p>
 
 <table class="table-bordered">
@@ -76,42 +74,44 @@
         <th>
             Câu Hỏi Thường Gặp
         </th>
+        <th>
+        </th>
     </tr>
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td align="center">@Html.DisplayFor(moldelItem => item.MA_TOUR)</td>
-            <td>@Html.DisplayFor(moldelItem => item.HINH_ANH)</td>
-            <td>@Html.DisplayFor(moldelItem => item.TEN_TOUR)</td>
-            <td align="center">@Html.DisplayFor(moldelItem => item.MA_LOAI_TOUR)</td>
-            <td>@Html.DisplayFor(moldelItem => item.GIA_NGUOI_LON)</td>
-            <td>@Html.DisplayFor(moldelItem => item.GIA_TRE_EM)</td>
-            <td>@Html.DisplayFor(moldelItem => item.NGAY_KHOI_HANH)</td>
-            <td>@Html.DisplayFor(moldelItem => item.NGAY_KET_THUC)</td>
-            <td>@Html.DisplayFor(moldelItem => item.SO_CHO)</td>
-            <td>@Html.DisplayFor(moldelItem => item.GHI_CHU)</td>
+            <tr>
+                <td align="center">@Html.DisplayFor(moldelItem => item.MA_TOUR)</td>
+                <td>@Html.DisplayFor(moldelItem => item.HINH_ANH)</td>
+                <td>@Html.DisplayFor(moldelItem => item.TEN_TOUR)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.MA_LOAI_TOUR)</td>
+                <td>@Html.DisplayFor(moldelItem => item.GIA_NGUOI_LON)</td>
+                <td>@Html.DisplayFor(moldelItem => item.GIA_TRE_EM)</td>
+                <td>@Html.DisplayFor(moldelItem => item.NGAY_KHOI_HANH)</td>
+                <td>@Html.DisplayFor(moldelItem => item.NGAY_KET_THUC)</td>
+                <td>@Html.DisplayFor(moldelItem => item.SO_CHO)</td>
+                <td>@Html.DisplayFor(moldelItem => item.GHI_CHU)</td>
 
-            @*<td>@Html.DisplayFor(moldelItem => item.LICH_TRINH)</td>
-        <td>@Html.DisplayFor(moldelItem => item.CHINH_SACH)</td>
-        <td>@Html.DisplayFor(moldelItem => item.NOI_DUNG)</td>
-        <td>@Html.DisplayFor(moldelItem => item.CAU_HOI_THUONG_GAP)</td>*@
-            <td>@Truncate(item.LICH_TRINH, 100)</td>
-            <td>@Truncate(item.CHINH_SACH, 100)</td>
-            <td>@Truncate(item.NOI_DUNG, 100)</td>
-            <td>@Truncate(item.CAU_HOI_THUONG_GAP, 100)</td>
-            <td width="100px">
-                @Html.ActionLink("Sửa", "SuaTour", new { id = item.MA_TOUR }) |
-                @Html.ActionLink("Chi Tiết", "ChiTietTour", new { id = item.MA_TOUR }) |
-                @Html.ActionLink("Xóa", "XoaTour", new { id = item.MA_TOUR })
-            </td>
-        </tr>
+                @*<td>@Html.DisplayFor(moldelItem => item.LICH_TRINH)</td>
+                    <td>@Html.DisplayFor(moldelItem => item.CHINH_SACH)</td>
+                    <td>@Html.DisplayFor(moldelItem => item.NOI_DUNG)</td>
+                    <td>@Html.DisplayFor(moldelItem => item.CAU_HOI_THUONG_GAP)</td>*@
+                <td>@Truncate(item.LICH_TRINH, 100)</td>
+                <td>@Truncate(item.CHINH_SACH, 100)</td>
+                <td>@Truncate(item.NOI_DUNG, 100)</td>
+                <td>@Truncate(item.CAU_HOI_THUONG_GAP, 100)</td>
+                <td width="100px">
+                    @*@Html.ActionLink("Sửa", "SuaTour", new { id = item.MA_TOUR }) |*@
+                    @Html.ActionLink("Chi Tiết", "ChiTietTour", new { id = item.MA_TOUR }) |
+                    @Html.ActionLink("Xóa", "XoaTour", new { id = item.MA_TOUR })
+                </td>
+            </tr>
         }
 </table>
 @*Tạo liên kết các trang*@
 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
 <div class="MenuTrang">
-    @Html.PagedListPager(Model, page => Url.Action("QuanLyTour",new { page = page}))
+    @Html.PagedListPager(Model, page => Url.Action("QuanLyTour", new { page = page }))
 </div>
 <style>
     .MenuTrang li {

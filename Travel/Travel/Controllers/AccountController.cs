@@ -35,7 +35,7 @@ namespace Travel.Controllers
             }
             else if (ad != null)
             {
-                Session["AD"] = kh;
+                Session["AD"] = ad;
                 return RedirectToAction("QuanLyTour", "Admin");
             }
             else
