@@ -8,20 +8,36 @@
     @Scripts.Render("~/bundles/modernizr")
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    
-    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector: 'textarea' });</script>
-
-
-
     <link href="~/Content/css/admincss.css" rel="stylesheet" />
 </head>
 <body>
-    <<h2> TRANG ADMIN WEBSITE DU LỊCH</h2>
+    @using Travel.Models;
+
+    <ul id="w0" class="login-container">
+        <li title="Đăng nhập">
+            <!-- Lấy ID Khách hàng -->
+            @if (Session["AD"] == null)
+            {
+                <a href="@Url.Action("DangNhap","Account")" class="login-href" title="Đăng nhập">
+                    <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
+                    &nbsp;Đăng nhập
+                </a>
+            }
+            else
+            {
+                QUAN_TRI_VIEN ad = (QUAN_TRI_VIEN)Session["AD"];
+                <div class="style-name">
+                    <a class="welcome"> Xin chào @ad.TAI_KHOAN </a>
+                    <a href="@Url.Action("LogOut","Account")" class="login-href" title="Đăng xuất">
+                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                        &nbsp;Đăng xuất
+                    </a>
+                </div>
+            }
+        </li>
+    </ul>
+
+    <h2> TRANG ADMIN WEBSITE DU LỊCH</h2>
 
     @*<div class="row container">
             <div class="left" style="background-color:#bbb ;">
@@ -92,5 +108,12 @@
 
 
     <script src="~/Scripts/js/adminscripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
 </body>
 </html>

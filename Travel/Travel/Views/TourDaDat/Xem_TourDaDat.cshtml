@@ -25,9 +25,9 @@
 
 @if (Session["KH"] == null)
 {
-    <section class="mainContentSection booking-container formatmainContent">
-        <div> BẠN CHƯA ĐẶT TOUR NÀO! </div>
-        <div class="row comeback"><a href="@Url.Action("Index","Home")"><i class="fa" style="padding-top: 2px"> &#xf100;</i> Trở về để đặt tour! </a> </div>
+    <section class="mainContentSection booking-container formatmainContent" style="padding: 200px 100px">
+        <div class="d-flex infor"> BẠN CHƯA ĐẶT TOUR NÀO! </div>
+        <div class="row comeback" style="padding: 30px 0"><a href="@Url.Action("Index","Home")"><i class="fa" style="padding-top: 2px"> &#xf100;</i> Trở về để đặt tour! </a> </div>
     </section>
 }
 else
@@ -69,7 +69,9 @@ else
                             <label>  @tourdadat.THANH_TIEN</label>
                         </td>
                         <td class="col-md-2 pd-16px">
-                            @Html.ActionLink("Hủy Đặt", "XacNhanHuyDatTour", new { id=tourdadat.MA_DAT_TOUR })
+@*                            <button class="btn btn-buy-tour btn-orange" onclick="myFunction()" style="color: #fff !important">
+*@                                @Html.ActionLink("Hủy Đặt", "XacNhanHuyDatTour", new { id = tourdadat.MA_DAT_TOUR })
+                            @*</button>*@
                         </td>
                     </tr>
                 </tbody>
@@ -82,6 +84,6 @@ else
 <script>
     function myFunction() {
             
-             alert("Hệ thống sẽ liên hệ với bạn để xác nhận hủy!", 5000);
+             alert("Bạn muốn hủy tour?", 5000);
          }
 </script>

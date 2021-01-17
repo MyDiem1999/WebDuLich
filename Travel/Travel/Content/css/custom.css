@@ -816,5 +816,11 @@ body {
 .formatmainContent {
     padding: 100px;
     text-align: left;
+}
 
+.infor {
+    text-align: center;
+    color: red;
+    font-weight: 700;
+    font-size: 30px;
 }
