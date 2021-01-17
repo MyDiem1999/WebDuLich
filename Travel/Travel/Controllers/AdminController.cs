@@ -159,7 +159,8 @@ namespace Travel.Controllers
             return View(dl.DAT_TOURs.ToList().Where(n => n.TRANGTHAI == true));
         }
 
-        [HttpPost, ActionName("HuyDatTour")]
+        //[HttpPost, ActionName("HuyDatTour")]
+        //[HttpPost]
         public ActionResult XacNhanHuyDatTour(int id)
         {
             DAT_TOUR dt = dl.DAT_TOURs.SingleOrDefault(n => n.MA_DAT_TOUR == id);

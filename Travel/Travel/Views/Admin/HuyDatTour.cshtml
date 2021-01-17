@@ -77,9 +77,10 @@
         @*<td>
             @Html.DisplayFor(modelItem => item.TRANGTHAI)
         </td>*@
-        <td>
-            @Html.ActionLink("Hủy Đặt Tour", "XacNhanHuyDatTour", new { id=item.MA_DAT_TOUR })
-        </td>
+    <td>
+        @Html.ActionLink("Hủy Đặt Tour", "XacNhanHuyDatTour", new { id=item.MA_DAT_TOUR })
+        @*<input type="submit" value="Xóa" class="btn btn-default" onclick="return confirm('Bạn có muốn xóa tour này?')" /> |*@
+    </td>
     </tr>
 }
 
