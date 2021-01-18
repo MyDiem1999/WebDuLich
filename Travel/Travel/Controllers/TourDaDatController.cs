@@ -85,7 +85,6 @@ namespace Travel.Controllers
                 if (tours.MaTour == Ma)
                 {
                     tours.Sochonguoilon = int.Parse(col["Txt_SLNL"]);
-                    /*tours.Sochotreem = int.Parse(col["Txt_SLTE"]);*/
                     Session["TourDat"] = lstTourDaDat;
                 }
             }
@@ -158,19 +157,21 @@ namespace Travel.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // Xem thông tin tour đã đặt
-        public ActionResult Xem_TourDaDat()
+        //[HttpGet]
+        public ActionResult Xem_TourDaDat(int maKH)
         {
-            var tourdadat = dl.DAT_TOURs.ToList();
-            return View(tourdadat);
-        }
+            KHACH_HANG kh = dl.KHACH_HANGs.FirstOrDefault(x => x.MA_KH == maKH);
 
-        [HttpGet]
-        public ActionResult Xem_DatTour(int makh)
-        {
-            KHACH_HANG kh = dl.KHACH_HANGs.FirstOrDefault(t => t.MA_KH == makh);
+            if (Session["KH"] == null)
+            {
+                return View(dl.DAT_TOURs.ToList());
+            }
+            else
+            {
+                var tourdadat = dl.DAT_TOURs.Where(t => t.MA_KH == kh.MA_KH).ToList();
+                return View(tourdadat);
+            }
 
-            return View(kh);
         }
 
         public ActionResult XacNhanHuyDatTour(int id)

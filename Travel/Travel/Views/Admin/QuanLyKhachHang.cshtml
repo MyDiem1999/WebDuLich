@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyKhachHang";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@using Travel.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<Travel.Models.KHACH_HANG>
+
+@helper Truncate(string input, int length)
+{
+    if (input == null)
+    {
+        @input
+    }
+    else if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+<table class="table-bordered">
+    <tr align="center">
+        <th>
+            Mã khách hàng
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Giới tính
+        </th>
+        <th>
+            CMND
+        </th>
+        <th>
+            Passport
+        </th>
+        <th>
+            Mã Quốc gia
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Tài khoản
+        </th>
+        <th>
+            Mật Khẩu
+        </th>
+        <th>
+            Ghi Chú
+        </th>
+    </tr>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">@Html.DisplayFor(moldelItem => item.MA_KH)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.TEN_KH)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.NGAY_SINH)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.GIOI_TINH)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.CMND)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.PASSPORT)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.MA_QUOC_GIA)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.DIA_CHI)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.EMAIL)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.DIEN_THOAI)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.TAI_KHOAN_KH)</td>
+                <td align="center">@Html.DisplayFor(moldelItem => item.MAT_KHAU_KH)</td>
+                <td align="center">@Truncate(item.GHI_CHU, 100)</td>
+            </tr>
+        }
+</table>
+@*Tạo liên kết các trang*@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QuanLyKhachHang", new { page = page }))
+</div>
+
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+
+    .table-bordered {
+        width: 100% !important
+    }
+</style>

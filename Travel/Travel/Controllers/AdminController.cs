@@ -17,7 +17,7 @@ namespace Travel.Controllers
         public ActionResult TrangChuAdmin()
         {
             return View();
-            
+
         }
 
         public ActionResult QuanLyTour(int? page)
@@ -51,7 +51,7 @@ namespace Travel.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    
+
                     //Lưu tên file
                     var fileName = Path.GetFileName(fileupload.FileName);
                     //Lưu đường dẫn file
@@ -93,7 +93,7 @@ namespace Travel.Controllers
         {
             CHUONG_TRINH_TOUR tour = dl.CHUONG_TRINH_TOURs.SingleOrDefault(n => n.MA_TOUR == id);
             ViewBag.MA_TOUR = tour.MA_TOUR;
-            
+
             if (tour == null)
             {
                 Response.StatusCode = 404;
@@ -103,17 +103,17 @@ namespace Travel.Controllers
         }
         [HttpPost, ActionName("XoaTour")]
         public ActionResult XacNhanXoa(int id)
-        {        
+        {
             CHUONG_TRINH_TOUR tour = dl.CHUONG_TRINH_TOURs.SingleOrDefault(n => n.MA_TOUR == id);
             ViewBag.MA_TOUR = tour.MA_TOUR;
             if (tour == null)
             {
                 Response.StatusCode = 404;
                 return null;
-                
+
             }
             dl.CHUONG_TRINH_TOURs.DeleteOnSubmit(tour);
-            
+
             dl.SubmitChanges();
             return RedirectToAction("QuanLyTour");
         }
@@ -124,7 +124,7 @@ namespace Travel.Controllers
         {
             //Lấy đối tượng theo mã tour
             CHUONG_TRINH_TOUR tour = dl.CHUONG_TRINH_TOURs.SingleOrDefault(n => n.MA_TOUR == id);
-            ViewBag.MA_LOAI_TOUR = new SelectList(dl.LOAI_TOURs.ToList().OrderBy(n => n.TEN_LOAI), "MA_LOAI_TOUR", "TEN_LOAI",tour.MA_LOAI_TOUR);
+            ViewBag.MA_LOAI_TOUR = new SelectList(dl.LOAI_TOURs.ToList().OrderBy(n => n.TEN_LOAI), "MA_LOAI_TOUR", "TEN_LOAI", tour.MA_LOAI_TOUR);
             if (tour == null)
             {
                 Response.StatusCode = 404;
@@ -132,6 +132,7 @@ namespace Travel.Controllers
             }
             return View(tour);
         }
+
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult SuaT(CHUONG_TRINH_TOUR tour, HttpPostedFileBase fileUpload)
@@ -153,6 +154,7 @@ namespace Travel.Controllers
             return RedirectToAction("QuanLyTour");
 
         }
+
         [HttpGet]
         public ActionResult HuyDatTour()
         {
@@ -175,6 +177,20 @@ namespace Travel.Controllers
 
             dl.SubmitChanges();
             return RedirectToAction("HuyDatTour");
+        }
+
+        public ActionResult QuanLyKhachHang(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 7;
+            return View(dl.KHACH_HANGs.ToList().OrderBy(n => n.MA_KH).ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult ThongKe(int matour)
+        {
+
+            DAT_TOUR dattour = dl.DAT_TOURs.FirstOrDefault(n => n.MA_TOUR == matour);
+            return View();
         }
     }
 }

@@ -52,6 +52,7 @@
         </div>*@
     <div id="menu">
         <ul>
+            <li class="ql_kh">@Html.ActionLink("QUẢN LÝ THÔNG TIN KHÁCH HÀNG", "QuanLyKhachHang", "Admin")</li>
             <li>@Html.ActionLink("QUẢN LÝ TOUR", "QuanLyTour", "Admin")</li>
             <li>@Html.ActionLink("HỦY ĐẶT TOUR", "HuyDatTour", "Admin")</li>
             <li><a href="#">Thống Kê</a></li>
@@ -63,6 +64,9 @@
             padding: 0;
         }
 
+        #menu .ql_kh {
+            width: 18%;
+        }
         /*==Style cơ bản cho website==*/
         body {
             font-family: sans-serif;

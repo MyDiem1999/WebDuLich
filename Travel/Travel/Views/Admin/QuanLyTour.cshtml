@@ -101,7 +101,7 @@
                 <td>@Truncate(item.NOI_DUNG, 100)</td>
                 <td>@Truncate(item.CAU_HOI_THUONG_GAP, 100)</td>
                 <td width="100px">
-                    @*@Html.ActionLink("Sửa", "SuaTour", new { id = item.MA_TOUR }) |*@
+                    @Html.ActionLink("Sửa", "SuaTour", new { id = item.MA_TOUR }) |
                     @Html.ActionLink("Chi Tiết", "ChiTietTour", new { id = item.MA_TOUR }) |
                     @Html.ActionLink("Xóa", "XoaTour", new { id = item.MA_TOUR })
                 </td>

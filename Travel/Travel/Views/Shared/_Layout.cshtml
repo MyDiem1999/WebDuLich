@@ -102,14 +102,15 @@
                                 <!-- Đặt session kt KHĐN rồi mới được xem tour đặt của mình -->
                                 @if (Session["KH"] == null)
                                 {
-                                    <a href="@Url.Action("Xem_TourDaDat", "TourDaDat")" class="buy-tour">
+                                    KHACH_HANG kh = new KHACH_HANG();
+                                    <a href="@Url.Action("Xem_TourDaDat", "TourDaDat", new { maKH = kh.MA_KH})" class="buy-tour">
                                         <i class="fas fa-suitcase-rolling"></i>
                                     </a>
                                 }
                                 else
                                 {
                                     KHACH_HANG kh = (KHACH_HANG)Session["KH"];
-                                    <a href="@Url.Action("Xem_TourDaDat", "TourDaDat")" class="buy-tour">
+                                    <a href="@Url.Action("Xem_TourDaDat", "TourDaDat", new { maKH = kh.MA_KH})" title="Xem thông tin Tour đã đặt" class="buy-tour">
                                         <i class="fas fa-suitcase-rolling"></i>
                                     </a>
                                 }

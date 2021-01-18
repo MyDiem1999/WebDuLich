@@ -51,7 +51,7 @@ else
                 <tbody>
                     <tr>
                         <td class="col-md-1 pd-16px">
-                            <label>  @tourdadat.MA_DAT_TOUR</label>
+                            <label>  @tourdadat.MA_TOUR</label>
                         </td>
                         <td class="col-md-2">
                             <label>  @tourdadat.GIA_NGUOI_LON</label>
@@ -69,9 +69,10 @@ else
                             <label>  @tourdadat.THANH_TIEN</label>
                         </td>
                         <td class="col-md-2 pd-16px">
-@*                            <button class="btn btn-buy-tour btn-orange" onclick="myFunction()" style="color: #fff !important">
-*@                                @Html.ActionLink("Hủy Đặt", "XacNhanHuyDatTour", new { id = tourdadat.MA_DAT_TOUR })
-                            @*</button>*@
+                            @*<div class="btn btn-buy-tour btn-orange" onclick="myFunction()">*@
+                                @*@Html.ActionLink("Hủy Đặt", "XacNhanHuyDatTour", new { id = tourdadat.MA_DAT_TOUR })*@
+                                <a class="btn btn-buy-tour btn-orange" onclick="myFunction()" href="@Url.Action("XacNhanHuyDatTour", "TourDaDat",new { id = tourdadat.MA_DAT_TOUR})"> Hủy Đặt </a>
+                            @*</div>*@
                         </td>
                     </tr>
                 </tbody>
@@ -81,9 +82,9 @@ else
     </section>
 }
 
+<!--------------------------------------- xác nhận hủy ---------------------------------------------->
 <script>
     function myFunction() {
-            
-             alert("Bạn muốn hủy tour?", 5000);
-         }
+        alert("Xác nhận yêu cầu hủy tour của bạn?", 5000);
+    }
 </script>
